@@ -1,27 +1,26 @@
 ---
-title: Creating a Repository
+title: リポジトリの作成
 teaching: 10
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a local Git repository.
-- Describe the purpose of the `.git` directory.
+- ローカルのGitリポジトリを作成する。
+- `.git` ディレクトリの目的を説明する。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- Where does Git store information?
+- Gitはどこに情報を格納しますか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Once Git is configured,
-we can start using it.
+Gitの設定ができたら、
+それを使い始めることができます。
 
-We will continue with the story of Wolfman and Dracula who are investigating if it
-is possible to send a planetary lander to Mars.
+火星に惑星着陸船を送ることが可能かどうかを調査しているウルフマンとドラキュラの話に戻りましょう。
 
 ![](fig/motivatingexample.png){alt='motivatingexample'}
 [Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
@@ -37,7 +36,7 @@ Courtesy NASA/JPL-Caltech.
 © Luc Viatour / [https://lucnix.be](https://lucnix.be/) /
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 
-First, let's create a new directory in the `Desktop` folder for our work and then change the current working directory to the newly created one:
+まず、`Desktop`フォルダーに作業用のディレクトリを作成し、そのディレクトリに移動しましょう:
 
 ```bash
 $ cd ~/Desktop
