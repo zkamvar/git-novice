@@ -1,5 +1,5 @@
 ---
-title: 'Supplemental: Using Git from RStudio'
+title: "Supplemental: Using Git from RStudio"
 teaching: 10
 exercises: 0
 ---
@@ -76,7 +76,6 @@ RStudio.
 Note: Even if you have Git installed, you may need
 to accept the Xcode license if you are using macOS.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Next, RStudio will ask which existing directory we want to use. Click
@@ -125,7 +124,6 @@ Grayed out Push/Pull commands generally mean that RStudio doesn't know the
 location of your remote repository (e.g. on GitHub). To fix this, open a
 terminal to the repository and enter the command: `git push -u origin main`. Then restart RStudio.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 If we click on "History", we can see a graphical version of what `git log`
@@ -146,7 +144,6 @@ file:
 Generally you do not want to version control disposable output (or read-only
 data). You should modify the `.gitignore` file to tell Git to ignore these
 files and directories.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -170,8 +167,6 @@ dir.create("./graphs")
 Then open up the `.gitignore` file from the right-hand panel of Rstudio and add
 `graphs/` to the list of files to ignore.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -180,13 +175,11 @@ There are many more features in the RStudio Git menu, but these should be
 enough to get you started!
 
 [rstudio]: https://www.rstudio.com/
-[rstudio-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
 
+[rstudio-projects]: https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Using RStudio's Git integration allows you to version control a project over time.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

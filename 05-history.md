@@ -22,7 +22,7 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 As we saw in the previous episode, we can refer to commits by their
-identifiers.  You can refer to the *most recent commit* of the working
+identifiers.  You can refer to the _most recent commit_ of the working
 directory by using the identifier `HEAD`.
 
 We've been adding one line at a time to `mars.txt`, so it's easy to track our
@@ -62,7 +62,7 @@ index b36abfd..0848c8d 100644
 which is the same as what you would get if you leave out `HEAD` (try it).  The
 real goodness in all this is when you can refer to previous commits.  We do
 that by adding `~1`
-(where "~" is "tilde", pronounced [**til**\-d*uh*])
+(where "\~" is "tilde", pronounced \[**til**-d_uh_])
 to refer to the commit one before `HEAD`.
 
 ```bash
@@ -89,7 +89,7 @@ index df0654a..b36abfd 100644
 ```
 
 We could also use `git show` which shows us what changes we made at an older commit as
-well as the commit message, rather than the *differences* between a commit and our
+well as the commit message, rather than the _differences_ between a commit and our
 working directory that we see by using `git diff`.
 
 ```bash
@@ -284,12 +284,11 @@ The "detached HEAD" is like "look, but don't touch" here,
 so you shouldn't make any changes in this state.
 After investigating your repo's past state, reattach your `HEAD` with `git checkout main`.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
-*before* the change we're trying to undo.
+_before_ the change we're trying to undo.
 A common mistake is to use the number of
 the commit in which we made the change we're trying to discard.
 In the example below, we want to retrieve the state from before the most
@@ -300,7 +299,7 @@ recent commit (`HEAD~1`), which is commit `f22b25e`:
 So, to put it all together,
 here's how Git works in cartoon form:
 
-![https://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+![https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266](fig/git_staging.svg)
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -319,7 +318,6 @@ The double dash `--` is needed to separate the names of the files being recovere
 from the command itself:
 without it,
 Git would try to use the name of the file as the commit identifier.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -361,21 +359,19 @@ let her recover the last committed version of her Python script called
 The answer is (5)-Both 2 and 4.
 
 The `checkout` command restores files from the repository, overwriting the files in your working
-directory. Answers 2 and 4 both restore the *latest* version *in the repository* of the file
-`data_cruncher.py`. Answer 2 uses `HEAD` to indicate the *latest*, whereas answer 4 uses the
+directory. Answers 2 and 4 both restore the _latest_ version _in the repository_ of the file
+`data_cruncher.py`. Answer 2 uses `HEAD` to indicate the _latest_, whereas answer 4 uses the
 unique ID of the last commit, which is what `HEAD` means.
 
-Answer 3 gets the version of `data_cruncher.py` from the commit *before* `HEAD`, which is NOT
+Answer 3 gets the version of `data_cruncher.py` from the commit _before_ `HEAD`, which is NOT
 what we wanted.
 
 Answer 1 can be dangerous! Without a filename, `git checkout` will restore **all files**
 in the current directory (and all directories below it) to their state at the commit specified.
 This command will restore `data_cruncher.py` to the latest commit version, but it will also
-restore *any other files that are changed* to that version, erasing any changes you may
+restore _any other files that are changed_ to that version, erasing any changes you may
 have made to those files!
-As discussed above, you are left in a *detached* `HEAD` state, and you don't want to be there.
-
-
+As discussed above, you are left in a _detached_ `HEAD` state, and you don't want to be there.
 
 :::::::::::::::::::::::::
 
@@ -419,8 +415,6 @@ The command `git show HEAD` shows changes made at the latest commit, and lists
 the commit ID; however, Jennifer should double-check it is the correct commit, and no one
 else has committed changes to the repository.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -442,18 +436,25 @@ $ cat venus.txt #this will print the contents of venus.txt to the screen
 ```
 
 1. ```output
-  Venus is too hot to be suitable as a base
-  ```
+   ```
+
+Venus is too hot to be suitable as a base
+
+````
 2. ```output
-  Venus is beautiful and full of love
-  ```
+Venus is beautiful and full of love
+````
+
 3. ```output
-  Venus is beautiful and full of love
-  Venus is too hot to be suitable as a base
-  ```
+   ```
+
+Venus is beautiful and full of love
+Venus is too hot to be suitable as a base
+
+````
 4. ```output
-  Error because you have changed venus.txt without committing the changes
-  ```
+Error because you have changed venus.txt without committing the changes
+````
 
 :::::::::::::::  solution
 
@@ -490,10 +491,9 @@ Venus is beautiful and full of love.
 Consider this command: `git diff HEAD~9 mars.txt`. What do you predict this command
 will do if you execute it? What happens when you do execute it? Why?
 
-Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
+Try another command, `git diff [ID] mars.txt`, where \[ID] is replaced with
 the unique identifier for your most recent commit. What do you think will happen,
 and what does happen?
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -524,7 +524,7 @@ Changes to be committed:
 
 Note that if you don't have the same output
 you may either have forgotten to change the file,
-or you have added it *and* committed it.
+or you have added it _and_ committed it.
 
 Using the command `git checkout -- mars.txt` now does not give an error,
 but it does not restore the file either.
@@ -621,5 +621,3 @@ $ git log --patch HEAD~9 *.txt
 - `git checkout` recovers old versions of files.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

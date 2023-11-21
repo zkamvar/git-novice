@@ -32,7 +32,6 @@ a second terminal window.
 This window will represent your partner, working on another computer. You
 won't need to give anyone access on GitHub, because both 'partners' are you.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The Owner needs to give the Collaborator access. In your repository page on GitHub, click the "Settings"
@@ -90,7 +89,7 @@ $ git commit -m "Add notes about Pluto"
  create mode 100644 pluto.txt
 ```
 
-Then push the change to the *Owner's repository* on GitHub:
+Then push the change to the _Owner's repository_ on GitHub:
 
 ```bash
 $ git push origin main
@@ -147,7 +146,6 @@ associated with a repository. Here are some of the most useful ones:
   adding it!
 - `git remote rename [oldname] [newname]` changes the local alias by which a remote
   is known - its name. For example, one could use this to change `upstream` to `fred`.
-  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -193,7 +191,6 @@ It is better to make many commits with smaller changes rather than
 of one commit with massive changes: small commits are easier to
 read and review.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -201,7 +198,6 @@ read and review.
 ## Switch Roles and Repeat
 
 Switch roles and repeat the whole process.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -225,8 +221,6 @@ will see the changes output in the terminal.
 On GitHub, the Collaborator can go to the repository and click on
 "commits" to view the most recent commits pushed to the repository.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -243,7 +237,6 @@ code to comment, a blue comment icon appears to open a comment window.
 
 The Collaborator posts her comments and suggestions using the GitHub interface.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -254,7 +247,6 @@ Some backup software can keep a history of the versions of your files. They also
 allows you to recover specific versions. How is this functionality different from version control?
 What are some of the benefits of using version control, Git and GitHub?
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
@@ -262,5 +254,3 @@ What are some of the benefits of using version control, Git and GitHub?
 - `git clone` copies a remote repository to create a local repository with a remote called `origin` automatically set up.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

@@ -172,8 +172,6 @@ different directory structure
 that presents an alternative solution.
 Further, the discussion page has more detail on ignore rules.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -202,8 +200,6 @@ The exclamation point operator will include a previously excluded entry.
 Note also that because you've previously committed `.csv` files in this
 lesson they will not be ignored with this new rule. Only future additions
 of `.csv` files added to the root directory will be ignored.
-
-
 
 :::::::::::::::::::::::::
 
@@ -271,8 +267,6 @@ Appending `results/data/position/gps/*.csv` will match every file in `results/da
 that ends with `.csv`.
 The file `results/data/position/gps/info.txt` will not be ignored.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -305,8 +299,6 @@ In the `.gitignore` file, write:
 
 This will ignore all the `.csv` files, regardless of their position in the directory tree.
 You can still include some specific exception with the exclamation point operator.
-
-
 
 :::::::::::::::::::::::::
 
@@ -357,9 +349,8 @@ You want to keep them but you do not want to track them through `git`.
 ## Solution
 
 1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
+
 2. track `log_01` using   `git add -f log_01`
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -370,5 +361,3 @@ You want to keep them but you do not want to track them through `git`.
 - The `.gitignore` file tells Git what files to ignore.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

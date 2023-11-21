@@ -18,7 +18,7 @@ exercises: 5
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
-> 
+>
 > \--- John Wilbanks
 
 Free sharing of information might be the ideal in science,
@@ -106,7 +106,6 @@ Anything that is hosted in a version control repository (data, code, papers,
 etc.) can be turned into a citable object. You'll learn how to do this in
 [the later episode on Citation](12-citation.md).
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -117,7 +116,6 @@ Ask one of your labmates to reproduce a result you recently obtained
 using only what they can find in your papers or on the web.
 Try to do the same for one of their results,
 then try to do it for a result from a lab you work with.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -133,7 +131,6 @@ You might also find useful [these data repositories recommended by Nature](https
 Discuss with your neighbor which data repository you might want to
 approach for your current project and explain why.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -147,8 +144,7 @@ a remote server and replaces the file with a text pointer within the github repo
 
 Try downloading and installing the Git Large File Storage extension tool, then add
 tracking of a large file to your github repository.  Ask a colleague to clone your
-repository and describe what they see when they access that large file.  
-
+repository and describe what they see when they access that large file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -157,5 +153,3 @@ repository and describe what they see when they access that large file.
 - Open scientific work is more useful and more highly cited than closed.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

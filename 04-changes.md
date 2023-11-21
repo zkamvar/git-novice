@@ -136,7 +136,7 @@ If we just run `git commit` without the `-m` option,
 Git will launch `nano` (or whatever other editor we configured as `core.editor`)
 so that we can write a longer message.
 
-[Good commit messages][commit-messages] start with a brief (\<50 characters) statement about the
+[Good commit messages][commit-messages] start with a brief (<50 characters) statement about the
 changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
 If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
 
@@ -185,7 +185,6 @@ That's because Git saves information about files' history
 in the special `.git` directory mentioned earlier
 so that our filesystem doesn't become cluttered
 (and so that we can't accidentally edit or delete an old version).
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -252,15 +251,15 @@ telling them how to reconstruct one file given the other.
 If we break it down into pieces:
 
 1. The first line tells us that Git is producing output similar to the Unix `diff` command
-  comparing the old and new versions of the file.
+   comparing the old and new versions of the file.
 2. The second line tells exactly which versions of the file
-  Git is comparing;
-  `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
+   Git is comparing;
+   `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
 3. The third and fourth lines once again show the name of the file being changed.
 4. The remaining lines are the most interesting, they show us the actual differences
-  and the lines on which they occur.
-  In particular,
-  the `+` marker in the first column shows where we added a line.
+   and the lines on which they occur.
+   In particular,
+   the `+` marker in the first column shows where we added a line.
 
 After reviewing our change, it's time to commit it:
 
@@ -301,11 +300,11 @@ For example,
 suppose we're adding a few citations to relevant research to our thesis.
 We might want to commit those additions,
 and the corresponding bibliography entries,
-but *not* commit some of our work drafting the conclusion
+but _not_ commit some of our work drafting the conclusion
 (which we haven't finished yet).
 
 To allow for this,
-Git has a special *staging area*
+Git has a special _staging area_
 where it keeps track of things that have been added to
 the current [changeset](../learners/reference.md#changeset)
 but not yet committed.
@@ -315,13 +314,13 @@ but not yet committed.
 ## Staging Area
 
 If you think of Git as taking snapshots of changes over the life of a project,
-`git add` specifies *what* will go in a snapshot
+`git add` specifies _what_ will go in a snapshot
 (putting things in the staging area),
-and `git commit` then *actually takes* the snapshot, and
+and `git commit` then _actually takes_ the snapshot, and
 makes a permanent record of it (as a commit).
 If you don't have anything staged when you type `git commit`,
 Git will prompt you to use `git commit -a` or `git commit --all`,
-which is kind of like gathering *everyone* to take a group photo!
+which is kind of like gathering _everyone_ to take a group photo!
 However, it's almost always better to
 explicitly add things to the staging area, because you might
 commit changes you forgot you made. (Going back to the group photo simile,
@@ -330,7 +329,6 @@ the stage for the picture because you used `-a`!)
 Try to stage things manually,
 or you might find yourself searching for "git undo commit" more
 than you would like!
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -461,7 +459,6 @@ diff is too coarse. That is where the `--color-words` option of
 `git diff` comes in very useful as it highlights the changed
 words using colors.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -479,7 +476,6 @@ screen is a `:`, instead of your usual prompt.
   press <kbd>/</kbd>
   and type `some_word`.
   Navigate through matches pressing <kbd>N</kbd>.
-  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -542,43 +538,43 @@ $ git log --oneline --graph
 Two important facts you should know about directories in Git.
 
 1. Git does not track directories on their own, only files within them.
-  Try it for yourself:
-  
-  ```bash
-  $ mkdir spaceships
-  $ git status
-  $ git add spaceships
-  $ git status
-  ```
-  
-  Note, our newly created empty directory `spaceships` does not appear in
-  the list of untracked files even if we explicitly add it (*via* `git add`) to our
-  repository. This is the reason why you will sometimes see `.gitkeep` files
-  in otherwise empty directories. Unlike `.gitignore`, these files are not special
-  and their sole purpose is to populate a directory so that Git adds it to
-  the repository. In fact, you can name such files anything you like.
+   Try it for yourself:
+
+```bash
+$ mkdir spaceships
+$ git status
+$ git add spaceships
+$ git status
+```
+
+Note, our newly created empty directory `spaceships` does not appear in
+the list of untracked files even if we explicitly add it (_via_ `git add`) to our
+repository. This is the reason why you will sometimes see `.gitkeep` files
+in otherwise empty directories. Unlike `.gitignore`, these files are not special
+and their sole purpose is to populate a directory so that Git adds it to
+the repository. In fact, you can name such files anything you like.
 
 2. If you create a directory in your Git repository and populate it with files,
-  you can add all files in the directory at once by:
-  
-  ```bash
-  git add <directory-with-files>
-  ```
-  
-  Try it for yourself:
-  
-  ```bash
-  $ touch spaceships/apollo-11 spaceships/sputnik-1
-  $ git status
-  $ git add spaceships
-  $ git status
-  ```
-  
-  Before moving on, we will commit these changes.
-  
-  ```bash
-  $ git commit -m "Add some initial thoughts on spaceships"
-  ```
+   you can add all files in the directory at once by:
+
+```bash
+git add <directory-with-files>
+```
+
+Try it for yourself:
+
+```bash
+$ touch spaceships/apollo-11 spaceships/sputnik-1
+$ git status
+$ git add spaceships
+$ git status
+```
+
+Before moving on, we will commit these changes.
+
+```bash
+$ git commit -m "Add some initial thoughts on spaceships"
+```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -608,8 +604,6 @@ Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
 and answer 2 is redundant to using "git diff" to see what changed in this commit;
 but answer 3 is good: short, descriptive, and imperative.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -622,30 +616,38 @@ Which command(s) below would save the changes of `myfile.txt`
 to my local Git repository?
 
 1. ```bash
-  $ git commit -m "my recent changes"
-  ```
+   ```
+
+$ git commit -m "my recent changes"
+
+````
 2. ```bash
-  $ git init myfile.txt
-  $ git commit -m "my recent changes"
-  ```
+$ git init myfile.txt
+$ git commit -m "my recent changes"
+````
+
 3. ```bash
-  $ git add myfile.txt
-  $ git commit -m "my recent changes"
-  ```
+   ```
+
+$ git add myfile.txt
+$ git commit -m "my recent changes"
+
+````
 4. ```bash
-  $ git commit -m myfile.txt "my recent changes"
-  ```
+$ git commit -m myfile.txt "my recent changes"
+````
 
 :::::::::::::::  solution
 
 ## Solution
 
 1. Would only create a commit if files have already been staged.
+
 2. Would try to create a new repository.
+
 3. Is correct: first add the file to the staging area, then commit.
+
 4. Would try to commit a file "my recent changes" with the message myfile.txt.
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -659,11 +661,11 @@ The staging area can hold changes from any number of files
 that you want to commit as a single snapshot.
 
 1. Add some text to `mars.txt` noting your decision
-  to consider Venus as a base
+   to consider Venus as a base
 2. Create a new file `venus.txt` with your initial thoughts
-  about Venus as a base for you and your friends
+   about Venus as a base for you and your friends
 3. Add changes from both files to the staging area,
-  and commit those changes.
+   and commit those changes.
 
 :::::::::::::::  solution
 
@@ -776,11 +778,9 @@ $ git diff me.txt
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 [commit-messages]: https://chris.beams.io/posts/git-commit/
-[git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
+[git-references]: https://git-scm.com/book/en/v2/Git-Internals-Git-References
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -791,5 +791,3 @@ $ git diff me.txt
 - Write a commit message that accurately describes your changes.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-

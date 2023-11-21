@@ -201,8 +201,6 @@ But be careful! Running this command in the wrong directory will remove
 the entire Git history of a project you might want to keep.
 Therefore, always check your current directory using the command `pwd`.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -213,5 +211,3 @@ Therefore, always check your current directory using the command `pwd`.
 - Git stores all of its repository data in the `.git` directory.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
