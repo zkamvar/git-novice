@@ -160,7 +160,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-create.html">3. Creating a Repository</a>
+        <a href="03-create.html">3. リポジトリの作成</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -317,7 +317,7 @@
           Previous: 自動的なバージョン管理
         </a>
         <a class="chapter-link float-end" href="../instructor/03-create.html" rel="next">
-          Next: Creating a... 
+          Next: リポジトリの作成... 
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -329,7 +329,7 @@
         
         
         
-        <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
+        <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> NA minutes </p>
         
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -375,8 +375,7 @@ Git を始めるにあたって、私達が変更する設定をいくつか表�
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.name <span class="st">"Vlad Dracula"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.email <span class="st">"vlad@tran.sylvan.ia"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Vim</span> の終了の仕方</span></code></pre>
 </div>
 <p>ここでは、ドラキュラの代わりに自分の名前とメールアドレスを使いましょう。
 ここで入力した名前とメールアドレスは、これから行う Git
@@ -471,100 +470,96 @@ Git book</a> を読んでください。</p>
 </tr><tr class="odd"><td align="left">VS Code</td>
 <td align="left"><code>$ git config --global core.editor "code --wait"</code></td>
 </tr></tbody></table><p>設定したテキストエディタもいつでも変更することができます。</p>
-<div id="exiting-vim" class="callout callout">
+<div id="vim-の終了の仕方" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="exiting-vim" class="callout-inner">
-<h3 class="callout-title">Exiting Vim<a class="anchor" aria-label="anchor" href="#exiting-vim"></a>
+<div id="vim-の終了の仕方" class="callout-inner">
+<h3 class="callout-title">Vim の終了の仕方<a class="anchor" aria-label="anchor" href="#vim-%E3%81%AE%E7%B5%82%E4%BA%86%E3%81%AE%E4%BB%95%E6%96%B9"></a>
 </h3>
 <div class="callout-content">
-<p>Note that Vim is the default editor for many programs. If you haven’t
-used Vim before and wish to exit a session without saving your changes,
-press <kbd>Esc</kbd> then type <code>:q!</code> and hit <kbd>Enter</kbd>
-or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>. If you want to save your
-changes and quit, press <kbd>Esc</kbd> then type <code>:wq</code> and
-hit <kbd>Enter</kbd> or <kbd>↵</kbd> or on Macs, <kbd>Return</kbd>.</p>
+<p>多くのソフトの初期設定では、Vim
+がデフォルトのテキストエディタに設定されています。 保存せずに Vim
+を終了するには、<kbd>Esc</kbd>を押した後に <code>:q!</code>
+と入力してから<kbd>Enter</kbd>または<kbd>↵</kbd>（Macの場合は<kbd>Return</kbd>）を押してください。
+保存してから終了するには、<kbd>Esc</kbd>を押してから <code>:wq</code>
+と入力して<kbd>Enter</kbd>または<kbd>↵</kbd>（Mac の場合は
+<kbd>Return</kbd>）を押してください。</p>
 </div>
 </div>
 </div>
-<p>Git (2.28+) allows configuration of the name of the branch created
-when you initialize any new repository. Dracula decides to use that
-feature to set it to <code>main</code> so it matches the cloud service
-he will eventually use.</p>
+<p>Git (2.28以上)
+では、新しいリポジトリを初期化したときに作成されるブランチの名前を設定できます。
+ドラキュラはその機能を使って、最終的に使うクラウドサービスと一致するように<code>main</code>に設定することにします。</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> init.defaultBranch main</span></code></pre>
 </div>
-<div id="default-git-branch-naming" class="callout callout">
+<div id="gitブランチ名の設定" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="default-git-branch-naming" class="callout-inner">
-<h3 class="callout-title">Default Git branch naming<a class="anchor" aria-label="anchor" href="#default-git-branch-naming"></a>
+<div id="gitブランチ名の設定" class="callout-inner">
+<h3 class="callout-title">Gitブランチ名の設定<a class="anchor" aria-label="anchor" href="#git%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E8%A8%AD%E5%AE%9A"></a>
 </h3>
 <div class="callout-content">
-<p>Source file changes are associated with a “branch.” For new learners
-in this lesson, it’s enough to know that branches exist, and this lesson
-uses one branch.<br>
-By default, Git will create a branch called <code>master</code> when you
-create a new repository with <code>git init</code> (as explained in the
-next Episode). This term evokes the racist practice of human slavery and
-the <a href="https://github.com/github/renaming" class="external-link">software development
-community</a> has moved to adopt more inclusive language.</p>
-<p>In 2020, most Git code hosting services transitioned to using
-<code>main</code> as the default branch. As an example, any new
-repository that is opened in GitHub and GitLab default to
-<code>main</code>. However, Git has not yet made the same change. As a
-result, local repositories must be manually configured have the same
-main branch name as most cloud services.</p>
-<p>For versions of Git prior to 2.28, the change can be made on an
-individual repository level. The command for this is in the next
-episode. Note that if this value is unset in your local Git
-configuration, the <code>init.defaultBranch</code> value defaults to
-<code>master</code>.</p>
+<p>ソースファイルのどんな変更でも、ある「ブランチ」に属しています。
+このレッスンの新しい学習者にとっては、ブランチが存在し、このレッスンでは1つのブランチを使うことを知っていれば十分です。<br>
+デフォルトでは、<code>git init</code>
+で新しいリポジトリを作成すると、Git が<code>master</code>
+というブランチを作成します (次のエピソードで説明します)。 この用語は、
+人身売買という人種差別的慣習を想起させ、 <a href="https://github.com/github/renaming" class="external-link">ソフトウェア開発コミュニティ</a>
+は、 より包括的な言葉を採用するように動いています。</p>
+<p>2020年には、ほとんどのGit
+ホスティングサービスは、<code>main</code>をデフォルトの
+ブランチとして使うように移行しました。 例として、GitHub やGitLab
+で新規に開いたリポジトリのデフォルトは <code>main</code>です。
+しかし、Gitはまだ同じ変更を行っていません。
+その結果、ローカル・リポジトリは、ほとんどのクラウド・サービスと同じブランチ名を手動で設定する必要があります。</p>
+<p>2.28より前のバージョンのGitでは、個々のリポジトリで変更が可能です。
+そのためのコマンドは次回のエピソードで紹介します。 ローカルのGit
+の設定でこの値が設定されていない場合、<code>init.defaultBranch</code>
+のデフォルト値は <code>master</code> になることに注意しましょう。</p>
 </div>
 </div>
 </div>
-<p>The five commands we just ran above only need to be run once: the
-flag <code>--global</code> tells Git to use the settings for every
-project, in your user account, on this computer.</p>
-<p>Let’s review those settings and test our <code>core.editor</code>
-right away:</p>
+<p>上記の5つのコマンドは、一度実行するだけで十分です。<code>--global</code>
+フラグは Git に、
+今使っているパソコン内にある自分のアカウントに関連する全てのプロジェクトに同じ設定をするように指示しています。</p>
+<p>さっそくこれらの設定を確認し、<code>core.editor</code>をテストしてみましょう：</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> <span class="at">--edit</span></span></code></pre>
 </div>
-<p>Let’s close the file without making any additional changes. Remember,
-since typos in the config file will cause issues, it’s safer to view the
-configuration with:</p>
+<p>追加の変更を加えずにファイルを閉じましょう。
+設定ファイルのタイプミスは問題を引き起こすため、以下のように設定を表示する方が安全です。</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--list</span></span></code></pre>
 </div>
-<p>And if necessary, change your configuration using the same commands
-to choose another editor or update your email address. This can be done
-as many times as you want.</p>
-<div id="proxy" class="callout callout">
+<p>また、必要であれば、同じコマンドを使えば、違うエディタやメールアドレスに変えることができます。
+これは何度でもできます。</p>
+<div id="プロキシ" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="proxy" class="callout-inner">
-<h3 class="callout-title">Proxy<a class="anchor" aria-label="anchor" href="#proxy"></a>
+<div id="プロキシ" class="callout-inner">
+<h3 class="callout-title">プロキシ<a class="anchor" aria-label="anchor" href="#%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7"></a>
 </h3>
 <div class="callout-content">
-<p>In some networks you need to use a <a href="https://en.wikipedia.org/wiki/Proxy_server" class="external-link">proxy</a>. If this is
-the case, you may also need to tell Git about the proxy:</p>
+<p>ネットワーク環境によっては<a href="https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7" class="external-link">プロキシ</a>
+を使わなければならないかもしれません。
+この場合、プロキシの設定が必要です：</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> http.proxy proxy-url</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> https.proxy proxy-url</span></code></pre>
 </div>
-<p>To disable the proxy, use</p>
+<p>プロキシを無効にするには：</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -582,21 +577,25 @@ the case, you may also need to tell Git about the proxy:</p>
 <h3 class="callout-title">Git のヘルプとマニュアル<a class="anchor" aria-label="anchor" href="#git-%E3%81%AE%E3%83%98%E3%83%AB%E3%83%97%E3%81%A8%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB"></a>
 </h3>
 <div class="callout-content">
-<p>Always remember that if you forget the subcommands or options of a
-<code>git</code> command, you can access the relevant list of options
-typing <code>git &lt;command&gt; -h</code> or access the corresponding
-Git manual by typing <code>git &lt;command&gt; --help</code>, e.g.:</p>
+<p><code>git</code> のコマンドを忘れた時は、<code>-h</code>
+を使えばコマンドの一覧を、<code>--help</code>
+を使えばマニュアルを見ることができます：ある <code>git</code>
+コマンドのサブコマンドやオプションを忘れてしまった場合は、
+<code>git &lt;command&gt; -h</code>
+とタイプすることによって関連するオプションのリストを見るか、<code>git &lt;command&gt; --help</code>
+とタイプすることによって対応する Git
+マニュアルを見ることができます：</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">-h</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--help</span></span></code></pre>
 </div>
-<p>While viewing the manual, remember the <code>:</code> is a prompt
-waiting for commands and you can press <kbd>Q</kbd> to exit the
-manual.</p>
-<p>More generally, you can get the list of available <code>git</code>
-commands and further resources of the Git manual typing:</p>
+<p>マニュアルを見ている間、<code>:</code>はコマンドを待っているプロンプトであり、
+<kbd>Q</kbd>
+を押してマニュアルを終了できることを覚えておいてください。</p>
+<p>より一般的には、利用可能な <code>git</code> コマンドのリストや、Git
+マニュアルを入手することができます：</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -613,9 +612,9 @@ commands and further resources of the Git manual typing:</p>
 <h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Use <code>git config</code> with the <code>--global</code> option to
-configure a user name, email address, editor, and other preferences once
-per machine.</li>
+<ul><li>
+<code>git config</code> と <code>--global</code>
+オプションを使い、ユーザー名、メールアドレス、エディタ、その他の設定を行う。</li>
 </ul></div>
 </div>
 </div>
@@ -634,7 +633,7 @@ per machine.</li>
           Previous: 自動的なバージョン管理
         </a>
         <a class="chapter-link float-end" href="../instructor/03-create.html" rel="next">
-          Next: Creating a... 
+          Next: リポジトリの作成... 
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
