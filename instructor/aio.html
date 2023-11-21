@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Version Control with Git: All in One View</title>
+<title>Gitによるバージョン管理: All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="../assets/styles.css">
 <script src="../assets/scripts.js" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config">
@@ -58,7 +58,7 @@
       <img class="small-logo" alt="Software Carpentry" src="../assets/images/software-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Version Control with Git
+      Gitによるバージョン管理
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -69,7 +69,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Version Control with Git
+            Gitによるバージョン管理
           </span>
         </li>
         <li class="nav-item">
@@ -99,7 +99,7 @@
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
-  Version Control with Git
+  Gitによるバージョン管理
 </div>
 
 <aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
@@ -172,7 +172,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="01-basics.html">1. Automated Version Control</a>
+        <a href="01-basics.html">1. 自動的なバージョン管理</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -184,7 +184,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02-setup.html">2. Setting Up Git</a>
+        <a href="02-setup.html">2. Gitの設定</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -391,11 +391,11 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-01-basics"><p>Content from <a href="01-basics.html">Automated Version Control</a></p>
+<section id="aio-01-basics"><p>Content from <a href="01-basics.html">自動的なバージョン管理</a></p>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/01-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/01-basics.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -408,7 +408,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is version control and why should I use it?</li>
+<li>バージョン管理とは何で、なぜそれを使うべきなのでしょうか?</li>
 </ul>
 </div>
 </div>
@@ -418,87 +418,78 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Understand the benefits of an automated version control system.</li>
-<li>Understand the basics of how automated version control systems
-work.</li>
+<li>自動バージョン管理システムの利点を理解しましょう。</li>
+<li>自動バージョン管理システムの仕組みの基本を理解しましょう。</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>We’ll start by exploring how version control can be used to keep
-track of what one person did and when. Even if you aren’t collaborating
-with other people, automated version control is much better than this
-situation:</p>
-<figure><img src="../fig/phd101212s.png" alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"' class="figure mx-auto d-block"><figcaption>“notFinal.doc” by Jorge Cham, <a href="https://www.phdcomics.com" class="external-link uri">https://www.phdcomics.com</a></figcaption></figure><p>We’ve all been in this situation before: it seems unnecessary to have
-multiple nearly-identical versions of the same document. Some word
-processors let us deal with this a little better, such as Microsoft
-Word’s <a href="https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a" class="external-link">Track
-Changes</a>, Google Docs’ <a href="https://support.google.com/docs/answer/190843?hl=en" class="external-link">version
-history</a>, or LibreOffice’s <a href="https://help.libreoffice.org/Common/Recording_and_Displaying_Changes" class="external-link">Recording
-and Displaying Changes</a>.</p>
-<p>Version control systems start with a base version of the document and
-then record changes you make each step of the way. You can think of it
-as a recording of your progress: you can rewind to start at the base
-document and play back each change you made, eventually arriving at your
-more recent version.</p>
-<figure><img src="../fig/play-changes.svg" alt="Changes Are Saved Sequentially" class="figure mx-auto d-block"></figure><p>Once you think of changes as separate from the document itself, you
-can then think about “playing back” different sets of changes on the
-base document, ultimately resulting in different versions of that
-document. For example, two users can make independent sets of changes on
-the same document.</p>
-<figure><img src="../fig/versions.svg" alt="Different Versions Can be Saved" class="figure mx-auto d-block"></figure><p>Unless multiple users make changes to the same section of the
-document - a conflict - you can incorporate two sets of changes into the
-same base document.</p>
-<figure><img src="../fig/merge.svg" alt="Multiple Versions Can be Merged" class="figure mx-auto d-block"></figure><p>A version control system is a tool that keeps track of these changes
-for us, effectively creating different versions of our files. It allows
-us to decide which changes will be made to the next version (each record
-of these changes is called a <a href="reference.html#commit">commit</a>), and keeps useful metadata
-about them. The complete history of commits for a particular project and
-their metadata make up a <a href="reference.html#repository">repository</a>. Repositories can be
-kept in sync across different computers, facilitating collaboration
-among different people.</p>
-<div id="the-long-history-of-version-control-systems" class="callout callout">
+<p>それではまず、どのようにしてバージョン管理システムが
+「いつ」、「何」を、「誰」が編集したのかを記録・管理しているかを見ていきましょう。
+他の人と共同作業をしていなくても、
+以下の状況に陥るより、自動的なバージョン管理を使うほうが大分良いはずです：</p>
+<figure><img src="../fig/phd101212s.png" alt='Comic: a PhD student sends "FINAL.doc" to their supervisor, but after several increasingly intense and frustrating rounds of comments and revisions they end up with a file named "FINAL_rev.22.comments49.corrections.10.#@$%WHYDIDCOMETOGRADSCHOOL????.doc"' class="figure mx-auto d-block"><figcaption>「高く、深く積み上げる」Jorge Cham 作、 <a href="https://www.phdcomics.com" class="external-link uri">https://www.phdcomics.com</a></figcaption></figure><p>皆さんもこんな経験をされたことがあるはずです。複数の、（それもほとんど
+内容が同じの）文書のコピーを保存しておくのは馬鹿げたことです。
+文書作成ソフトの中には、例えばMicrosoft Wordの<a href="https://support.office.com/en-us/article/Track-changes-in-Word-197ba630-0f5f-4a8e-9a77-3712475e806a" class="external-link">変更履歴</a>、Google
+Docsの<a href="https://support.google.com/docs/answer/190843?hl=en" class="external-link">バージョン履歴</a>、LibreOfficeの<a href="https://help.libreoffice.org/Common/Recording_and_Displaying_Changes" class="external-link">変更の記録・表示</a>、こういった状況にある程度うまく対応できるものもあります。</p>
+<p>バージョン管理システムは、基礎となるドキュメントを元に、
+加えられた全ての変更点を記録していきます。
+バージョン管理システムは、基礎となるドキュメントを元に、
+加えられた全ての変更点を記録していきます。ドキュメントの
+進歩を記録していると考えてもらって構いません。変更点を最初の状況まで
+戻してから、最新版になるまでの変更を一つずつ再現していくことができます。</p>
+<p><img src="../fig/play-changes.svg" alt="変更は連続して保存されます" class="figure">。</p>
+<p>「変更点」と「ドキュメント」を別々の物として考えてみると、基礎となるドキュメントに
+異なる変更点を「再現」する事によって、結果的に違ったバージョンのドキュメントを
+作る事が可能だという事が分かります。
+例えば、下の図のように二人のユーザーが同じドキュメントに違った編集を加えた場合です。</p>
+<p><img src="../fig/versions.svg" alt="異なるバージョンの保存ができます" class="figure">。</p>
+<p>変更点の衝突（コンフリクト）が無ければ、二つ以上の違った変更点を基礎ドキュメントに加えることさえできます。</p>
+<p><img src="../fig/merge.svg" alt="複数のバージョンをマージできます" class="figure">。</p>
+<p>バージョン管理システムは、ユーザーがドキュメントに加えた変更点を記録するツールであり、
+結果的にドキュメントの違ったバージョンを作成する事ができます。
+このツールを活用
+する事によって、次のバージョンに加える変更点（個々の変更点は 「<a href="reference.html#commit">commit（コミット）</a>」と呼びます）を決める事ができ、変更点に関するメタデータも一緒に保存する事ができます。
+特定のプロジェクトのコミット履歴とそれに関するメタデータを総じて 「<a href="../(../learners/reference.html#repository)">repository（リポジトリ）</a>」と呼びます。
+リポジトリは
+別々のコンピュータと同期させる事が出来るので、他人との共同作業を潤滑に進めることが可能になります。</p>
+<div id="バージョン管理システムの長い歴史" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="the-long-history-of-version-control-systems" class="callout-inner">
-<h3 class="callout-title">The Long History of Version Control
-Systems<a class="anchor" aria-label="anchor" href="#the-long-history-of-version-control-systems"></a>
+<div id="バージョン管理システムの長い歴史" class="callout-inner">
+<h3 class="callout-title">バージョン管理システムの長い歴史<a class="anchor" aria-label="anchor" href="#%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E9%95%B7%E3%81%84%E6%AD%B4%E5%8F%B2"></a>
 </h3>
 <div class="callout-content">
-<p>Automated version control systems are nothing new. Tools like <a href="https://en.wikipedia.org/wiki/Revision_Control_System" class="external-link">RCS</a>, <a href="https://en.wikipedia.org/wiki/Concurrent_Versions_System" class="external-link">CVS</a>,
-or <a href="https://en.wikipedia.org/wiki/Apache_Subversion" class="external-link">Subversion</a>
-have been around since the early 1980s and are used by many large
-companies. However, many of these are now considered legacy systems
-(i.e., outdated) due to various limitations in their capabilities. More
-modern systems, such as Git and <a href="https://swcarpentry.github.io/hg-novice/" class="external-link">Mercurial</a>, are
-<em>distributed</em>, meaning that they do not need a centralized server
-to host the repository. These modern systems also include powerful
-merging tools that make it possible for multiple authors to work on the
-same files concurrently.</p>
+<p>自動化されたバージョン管理システムは最近発明されたものではありません。
+<a href="https://ja.wikipedia.org/wiki/Revision_Control_System" class="external-link">RCS</a>、<a href="https://ja.wikipedia.org/wiki/Concurrent_Versions_System" class="external-link">CVS</a>、<a href="https://ja.wikipedia.org/wiki/Apache_Subversion" class="external-link">Subversion</a>などのツールは1980年前半から存在しており、多くの会社に使われていました。
+しかし、これらのツールでは出来る事に制限があり、多くはもう時代遅れとされています。
+現代使われているシステム、例えばGitや<a href="https://swcarpentry.github.io/hg-novice/" class="external-link">Mercurial</a>、は
+_分散_されています。というのは、特定のサーバーを必要とせずにシステムをホストする事が出来るという事です。
+現代のシステムには大変便利で効果的な「merge（マージ）」機能が備われており、同じファイルを
+複数人で作業する事が可能になりました。</p>
 </div>
 </div>
 </div>
-<div id="paper-writing" class="callout challenge">
+<div id="論文を書くにあたって" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="paper-writing" class="callout-inner">
-<h3 class="callout-title">Paper Writing<a class="anchor" aria-label="anchor" href="#paper-writing"></a>
+<div id="論文を書くにあたって" class="callout-inner">
+<h3 class="callout-title">論文を書くにあたって<a class="anchor" aria-label="anchor" href="#%E8%AB%96%E6%96%87%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%AB%E3%81%82%E3%81%9F%E3%81%A3%E3%81%A6"></a>
 </h3>
 <div class="callout-content">
 <ul>
-<li><p>Imagine you drafted an excellent paragraph for a paper you are
-writing, but later ruin it. How would you retrieve the
-<em>excellent</em> version of your conclusion? Is it even
-possible?</p></li>
-<li><p>Imagine you have 5 co-authors. How would you manage the changes
-and comments they make to your paper? If you use LibreOffice Writer or
-Microsoft Word, what happens if you accept changes made using the
-<code>Track Changes</code> option? Do you have a history of those
-changes?</p></li>
+<li><p>例えば、論文のために数百行書いたとします。しばらくして、間違えてその文章を編集してしまいます。
+どうしたら以前書いた文章を取り戻すことができるのでしょう？
+そもそも、可能なのでしょうか？</p></li>
+<li><p>五人の共著者がいるとします。
+どうやって全員の変更やコメントを管理すれば良いのでしょう？ LibreOffice
+WriterやMicrosoft
+Wordの場合、こういった変更やコメントを変更履歴機能で受け入れると
+どうなるのでしょう？ 変更点は記録されるのでしょうか？</p></li>
 </ul>
 </div>
 </div>
@@ -507,27 +498,20 @@ changes?</p></li>
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">
-  Show me the solution
+  解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
-<li><p>Recovering the excellent version is only possible if you created
-a copy of the old version of the paper. The danger of losing good
-versions often leads to the problematic workflow illustrated in the PhD
-Comics cartoon at the top of this page.</p></li>
-<li><p>Collaborative writing with traditional word processors is
-cumbersome. Either every collaborator has to work on a document
-sequentially (slowing down the process of writing), or you have to send
-out a version to all collaborators and manually merge their comments
-into your document. The ‘track changes’ or ‘record changes’ option can
-highlight changes for you and simplifies merging, but as soon as you
-accept changes you will lose their history. You will then no longer know
-who suggested that change, why it was suggested, or when it was merged
-into the rest of the document. Even online word processors like Google
-Docs or Microsoft Office Online do not fully resolve these
-problems.</p></li>
+<li><p>以前書いた数百行の回復は、古いバージョンの論文のコピーを作成した場合にのみ可能です。
+前に書いた文章を失う危険性は、このページの上にある漫画に描かれているような問題のあるワークフローになることが多いです。</p></li>
+<li><p>従来のワープロを使った共同執筆は面倒です。
+すべての共同作業者が文書に順番に書く（執筆のプロセスを遅らせる）か、一つのバージョンをすべての全員に送り、手作業で彼らのコメントをあなたの文書にマージしなければなりません。
+「変更の追跡」または「変更の記録」オプションは、変更をハイライトし、マージを簡略化することができますが、変更を受け入れるとすぐにその履歴が失われます。
+そうなると、誰がその変更を提案したのか、なぜそれが提案されたのか、いつ文書にマージされたのか、わからなくなります。
+Google DocsやMicrosoft Office
+Onlineのようなオンライン・ワープロでさえ、こうした問題を完全に解決することはできません。</p></li>
 </ul>
 </div>
 </div>
@@ -542,16 +526,16 @@ problems.</p></li>
 </h3>
 <div class="callout-content">
 <ul>
-<li>Version control is like an unlimited ‘undo’.</li>
-<li>Version control also allows many people to work in parallel.</li>
+<li>バージョン管理とは、制限無く「元に戻す」ことができる機能。</li>
+<li>バージョン管理を使えば、複数の人と同時進行で作業をする事ができます。</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-02-setup"><p>Content from <a href="02-setup.html">Setting Up Git</a></p>
+</div></section><section id="aio-02-setup"><p>Content from <a href="02-setup.html">Gitの設定</a></p>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/02-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/02-setup.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -564,7 +548,7 @@ problems.</p></li>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I get set up to use Git?</li>
+<li>Git を使うために必要な設定は何ですか？</li>
 </ul>
 </div>
 </div>
@@ -574,86 +558,86 @@ problems.</p></li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Configure <code>git</code> the first time it is used on a
-computer.</li>
-<li>Understand the meaning of the <code>--global</code> configuration
-flag.</li>
+<li>コンピュータで初めて <code>git</code>
+を使うための設定が出来るようになりましょう。</li>
+<li>
+<code>--global</code> 設定フラグの意味を理解しましょう。</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>When we use Git on a new computer for the first time, we need to
-configure a few things. Below are a few examples of configurations we
-will set as we get started with Git:</p>
+<p>Git
+を新しいパソコンで初めて使う場合、いくつかの設定を変更しなければなりません。
+Git を始めるにあたって、私達が変更する設定をいくつか表記します：</p>
 <ul>
-<li>our name and email address,</li>
-<li>what our preferred text editor is,</li>
-<li>and that we want to use these settings globally (i.e. for every
-project).</li>
+<li>名前とメールアドレス、</li>
+<li>使用したいテキストエディタ、</li>
+<li>以上の設定をグローバル設定として使う（つまり、全てのプロジェクトに反映させる）。</li>
 </ul>
-<p>On a command line, Git commands are written as
-<code>git verb options</code>, where <code>verb</code> is what we
-actually want to do and <code>options</code> is additional optional
-information which may be needed for the <code>verb</code>. So here is
-how Dracula sets up his new laptop:</p>
+<p>コマンドラインでは、Git コマンドは
+<code>git &lt;動詞&gt; &lt;オプション&gt;</code>
+と入力します。ここでの「動詞」は、Git
+に何をさせたいのかを表し、「オプション」はその動詞にとって必要とされる追加の情報です。
+ドラキュラが新しいユーザーの場合、以下のようにコンピュータを設定します：</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.name <span class="st">"Vlad Dracula"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> user.email <span class="st">"vlad@tran.sylvan.ia"</span></span></code></pre>
 </div>
-<p>Please use your own name and email address instead of Dracula’s. This
-user name and email will be associated with your subsequent Git
-activity, which means that any changes pushed to <a href="https://github.com/" class="external-link">GitHub</a>, <a href="https://bitbucket.org/" class="external-link">BitBucket</a>, <a href="https://gitlab.com/" class="external-link">GitLab</a> or another Git host server after
-this lesson will include this information.</p>
-<p>For this lesson, we will be interacting with <a href="https://github.com/" class="external-link">GitHub</a> and so the email address used
-should be the same as the one used when setting up your GitHub account.
-If you are concerned about privacy, please review <a href="https://help.github.com/articles/keeping-your-email-address-private/" class="external-link">GitHub’s
-instructions for keeping your email address private</a>.</p>
-<div id="keeping-your-email-private" class="callout callout">
+<p>ここでは、ドラキュラの代わりに自分の名前とメールアドレスを使いましょう。
+ここで入力した名前とメールアドレスは、これから行う Git
+での作業に関わってきます。というのも、これからのレッスンで<a href="https://github.com/" class="external-link">GitHub</a>、<a href="https://bitbucket.org/" class="external-link">BitBucket</a>、<a href="https://gitlab.com/" class="external-link">GitLab</a>、またはその他のGit
+をホストするサーバーに変更箇所を「プシュ」した（送った）際に、これらの情報が使われるからです。</p>
+<p>これらのレッスンでは、<a href="https://github.com/" class="external-link">GitHub</a>
+に接続するので、GitHub
+アカウントと同じメールアドレスに設定してください。
+プライバシーについて気になる方は、<a href="https://help.github.com/articles/keeping-your-email-address-private/" class="external-link">GitHub
+のメールアドレスをプライベートにするための説明</a>
+を参照してください。</p>
+<div id="電子メールの非公開" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="keeping-your-email-private" class="callout-inner">
-<h3 class="callout-title">Keeping your email private<a class="anchor" aria-label="anchor" href="#keeping-your-email-private"></a>
+<div id="電子メールの非公開" class="callout-inner">
+<h3 class="callout-title">電子メールの非公開<a class="anchor" aria-label="anchor" href="#%E9%9B%BB%E5%AD%90%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E9%9D%9E%E5%85%AC%E9%96%8B"></a>
 </h3>
 <div class="callout-content">
-<p>If you elect to use a private email address with GitHub, then use
-that same email address for the <code>user.email</code> value,
-e.g. <code>username@users.noreply.github.com</code> replacing
-<code>username</code> with your GitHub one.</p>
+<p>GitHub
+でプライベートのメールアドレスを使う場合は、同じメールアドレスを
+<code>user.email</code>
+の値に設定してください（例：<code>username@users.noreply.github.com</code>）。</p>
 </div>
 </div>
 </div>
-<div id="line-endings" class="callout callout">
+<div id="改行コード" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="line-endings" class="callout-inner">
-<h3 class="callout-title">Line Endings<a class="anchor" aria-label="anchor" href="#line-endings"></a>
+<div id="改行コード" class="callout-inner">
+<h3 class="callout-title">改行コード<a class="anchor" aria-label="anchor" href="#%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3%83%89"></a>
 </h3>
 <div class="callout-content">
-<p>As with other keys, when you hit <kbd>Enter</kbd> or <kbd>↵</kbd> or
-on Macs, <kbd>Return</kbd> on your keyboard, your computer encodes this
-input as a character. Different operating systems use different
-character(s) to represent the end of a line. (You may also hear these
-referred to as newlines or line breaks.) Because Git uses these
-characters to compare files, it may cause unexpected issues when editing
-a file on different machines. Though it is beyond the scope of this
-lesson, you can read more about this issue <a href="https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf" class="external-link">in
-the Pro Git book</a>.</p>
-<p>You can change the way Git recognizes and encodes line endings using
-the <code>core.autocrlf</code> command to <code>git config</code>. The
-following settings are recommended:</p>
-<p>On macOS and Linux:</p>
+<p>他のキーと同様に、キーボードで <kbd>Enter</kbd> または <kbd>↵</kbd>
+（またはMacでは
+<kbd>Return</kbd>）を押すと、コンピュータはそれを文字として入力します。
+話が長くなるので詳しい説明は省きますが、行末に使われる文字はオペレーティングシステム（OS）よって違います。
+（行末に使われる文字を「改行コード」と呼びます。） Git
+は、改行コードを使ってファイルの違いを確かめるため、違うパソコンでファイルを編集した時に思わぬ問題が起こるかもしれません。
+このレッスンの範囲外ですが、この問題については <a href="https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_core_autocrlf" class="external-link">Pro
+Git book</a> を読んでください。</p>
+<p>Git がどのように改行コードを理解・変換するかは、
+<code>git config</code> の <code>core.autocrlf</code>
+コマンドを使って変更できます。 以下の設定をおすすめします：</p>
+<p>macOS および Linux:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> core.autocrlf input</span></code></pre>
 </div>
-<p>And on Windows:</p>
+<p>またはWindowsの場合:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -662,16 +646,15 @@ following settings are recommended:</p>
 </div>
 </div>
 </div>
-<p>Dracula also has to set his favorite text editor, following this
-table:</p>
+<p>以下の表を参考に、ドラキュラはテキストエディタも設定しました：</p>
 <table class="table">
 <colgroup>
-<col width="27%">
-<col width="72%">
+<col width="18%">
+<col width="81%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">Editor</th>
-<th align="left">Configuration command</th>
+<th align="left">エディタ</th>
+<th align="left">設定コマンド</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -683,7 +666,7 @@ table:</p>
 <td align="left"><code>$ git config --global core.editor "nano -w"</code></td>
 </tr>
 <tr class="odd">
-<td align="left">BBEdit (Mac, with command line tools)</td>
+<td align="left">BBEdit（Mac、コマンドラインツール付き）</td>
 <td align="left"><code>$ git config --global core.editor "bbedit -w"</code></td>
 </tr>
 <tr class="even">
@@ -691,23 +674,23 @@ table:</p>
 <td align="left"><code>$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"</code></td>
 </tr>
 <tr class="odd">
-<td align="left">Sublime Text (Win, 32-bit install)</td>
+<td align="left">Sublime Text (Win、32ビットインストール)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"</code></td>
 </tr>
 <tr class="even">
-<td align="left">Sublime Text (Win, 64-bit install)</td>
+<td align="left">Sublime Text (Win、64ビットインストール)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"</code></td>
 </tr>
 <tr class="odd">
-<td align="left">Notepad (Win)</td>
+<td align="left">メモ帳（Win）</td>
 <td align="left"><code>$ git config --global core.editor "c:/Windows/System32/notepad.exe"</code></td>
 </tr>
 <tr class="even">
-<td align="left">Notepad++ (Win, 32-bit install)</td>
+<td align="left">Notepad++ (Win、 32 ビットインストール)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</code></td>
 </tr>
 <tr class="odd">
-<td align="left">Notepad++ (Win, 64-bit install)</td>
+<td align="left">Notepad++ (Win、 64 ビットインストール)</td>
 <td align="left"><code>$ git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"</code></td>
 </tr>
 <tr class="even">
@@ -736,8 +719,7 @@ table:</p>
 </tr>
 </tbody>
 </table>
-<p>It is possible to reconfigure the text editor for Git whenever you
-want to change it.</p>
+<p>設定したテキストエディタもいつでも変更することができます。</p>
 <div id="exiting-vim" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -841,12 +823,12 @@ the case, you may also need to tell Git about the proxy:</p>
 </div>
 </div>
 </div>
-<div id="git-help-and-manual" class="callout callout">
+<div id="git-のヘルプとマニュアル" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="git-help-and-manual" class="callout-inner">
-<h3 class="callout-title">Git Help and Manual<a class="anchor" aria-label="anchor" href="#git-help-and-manual"></a>
+<div id="git-のヘルプとマニュアル" class="callout-inner">
+<h3 class="callout-title">Git のヘルプとマニュアル<a class="anchor" aria-label="anchor" href="#git-%E3%81%AE%E3%83%98%E3%83%AB%E3%83%97%E3%81%A8%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB"></a>
 </h3>
 <div class="callout-content">
 <p>Always remember that if you forget the subcommands or options of a
@@ -891,7 +873,7 @@ per machine.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/03-create.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 10 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -1165,7 +1147,7 @@ directory.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -1854,26 +1836,23 @@ imperative.</p>
 <li><div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"></code></pre>
 </div></li>
-<li><div class="codewrapper sourceCode" id="cb53">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">$</span> git init myfile.txt</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
-</div></li>
+</ol>
+<p>$ git commit -m “my recent changes”</p>
+<pre><code>2. ```bash
+$ git init myfile.txt
+$ git commit -m "my recent changes"</code></pre>
+<ol start="3" style="list-style-type: decimal">
 <li><div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">$</span> git add myfile.txt</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"my recent changes"</span></span></code></pre>
-</div></li>
-<li><div class="codewrapper sourceCode" id="cb55">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">$</span> git commit <span class="at">-m</span> myfile.txt <span class="st">"my recent changes"</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"></code></pre>
 </div></li>
 </ol>
+<p>$ git add myfile.txt $ git commit -m “my recent changes”</p>
+<pre><code>4. ```bash
+$ git commit -m myfile.txt "my recent changes"</code></pre>
 </div>
 </div>
 </div>
@@ -1887,12 +1866,13 @@ imperative.</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li>Would only create a commit if files have already been staged.</li>
-<li>Would try to create a new repository.</li>
-<li>Is correct: first add the file to the staging area, then
-commit.</li>
-<li>Would try to commit a file “my recent changes” with the message
-myfile.txt.</li>
+<li><p>Would only create a commit if files have already been
+staged.</p></li>
+<li><p>Would try to create a new repository.</p></li>
+<li><p>Is correct: first add the file to the staging area, then
+commit.</p></li>
+<li><p>Would try to commit a file “my recent changes” with the message
+myfile.txt.</p></li>
 </ol>
 </div>
 </div>
@@ -2084,7 +2064,7 @@ the local repository.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -2162,8 +2142,8 @@ index b36abfd..0848c8d 100644
 <p>which is the same as what you would get if you leave out
 <code>HEAD</code> (try it). The real goodness in all this is when you
 can refer to previous commits. We do that by adding <code>~1</code>
-(where “~” is “tilde”, pronounced [<strong>til</strong>-d<em>uh</em>])
-to refer to the commit one before <code>HEAD</code>.</p>
+(where “~” is “tilde”, pronounced [<strong>til</strong>-d_uh_]) to refer
+to the commit one before <code>HEAD</code>.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2402,7 +2382,7 @@ which we made the change we’re trying to discard. In the example below,
 we want to retrieve the state from before the most recent commit
 (<code>HEAD~1</code>), which is commit <code>f22b25e</code>:</p>
 <figure><img src="../fig/git-checkout.svg" alt="Git Checkout" class="figure mx-auto d-block"></figure><p>So, to put it all together, here’s how Git works in cartoon form:</p>
-<figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How_Git_works_a_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How_Git_works_a_cartoon/1328266</a></figcaption></figure><div id="simplifying-the-common-case" class="callout callout">
+<figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How%5C_Git%5C_works%5C_a%5C_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266</a></figcaption></figure><div id="simplifying-the-common-case" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -2463,7 +2443,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>checkout</code> command restores files from the repository,
@@ -2527,7 +2507,7 @@ e.g. 0b1d055).</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -2563,25 +2543,23 @@ changes to the repository.</p>
 <li><div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>  Venus is too hot to be suitable as a base</code></pre>
-</div></li>
-<li><div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>  Venus is beautiful and full of love</code></pre>
-</div></li>
-<li><div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>  Venus is beautiful and full of love
-  Venus is too hot to be suitable as a base</code></pre>
-</div></li>
-<li><div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>  Error because you have changed venus.txt without committing the changes</code></pre>
+<pre class="output" tabindex="0"><code></code></pre>
 </div></li>
 </ol>
+<p>Venus is too hot to be suitable as a base</p>
+<pre><code>2. ```output
+Venus is beautiful and full of love</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code></code></pre>
+</div></li>
+</ol>
+<p>Venus is beautiful and full of love Venus is too hot to be suitable
+as a base</p>
+<pre><code>4. ```output
+Error because you have changed venus.txt without committing the changes</code></pre>
 </div>
 </div>
 </div>
@@ -2592,7 +2570,7 @@ changes to the repository.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The command <code>git add venus.txt</code> places the current version
@@ -2658,7 +2636,7 @@ use <code>git checkout</code> to see if you can remove your change.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>After adding a change, <code>git checkout</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -2790,7 +2768,7 @@ both commit messages and the difference between each commit.</p>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/06-ignore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/06-ignore.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -3245,10 +3223,10 @@ via <code>.gitignore</code>.</p></li>
 <div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
-<li>append either <code>log_*</code> or <code>log*</code> as a new entry
-in your .gitignore</li>
-<li>track <code>log_01</code> using <code>git add -f log_01</code>
-</li>
+<li><p>append either <code>log_*</code> or <code>log*</code> as a new
+entry in your .gitignore</p></li>
+<li><p>track <code>log_01</code> using
+<code>git add -f log_01</code></p></li>
 </ol>
 </div>
 </div>
@@ -3272,7 +3250,7 @@ ignore.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/07-github.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/07-github.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 45 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -3684,10 +3662,8 @@ instead of using a password manager, type:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> unset SSH_ASKPASS</span></code></pre>
 </div>
 <p>in the terminal, before you run <code>git push</code>. Despite the
-name, <a href="https://git-scm.com/docs/gitcredentials#_requesting_credentials" class="external-link">Git
-uses <code>SSH_ASKPASS</code> for all credential entry</a>, so you may
-want to unset <code>SSH_ASKPASS</code> whether you are using Git via SSH
-or https.</p>
+name, Git uses , so you may want to unset <code>SSH_ASKPASS</code>
+whether you are using Git via SSH or https.</p>
 <p>You may also want to add <code>unset SSH_ASKPASS</code> at the end of
 your <code>~/.bashrc</code> to make Git default to using the terminal
 for usernames and passwords.</p>
@@ -3955,7 +3931,7 @@ local repository.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/08-collab.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/08-collab.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 25 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -4217,7 +4193,7 @@ has changed with command line? And on GitHub?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4284,7 +4260,7 @@ up.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/09-conflict.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/09-conflict.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 15 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -4850,11 +4826,6 @@ right, see if you can write the corresponding commands in the
 <em>command</em> column. A few steps are populated to get you
 started.</p>
 <table class="table">
-<colgroup>
-<col width="6%">
-<col width="34%">
-<col width="59%">
-</colgroup>
 <thead><tr class="header">
 <th>order</th>
 <th>action . . . . . . . . . .</th>
@@ -4907,9 +4878,9 @@ started.</p>
 <div class="accordion-body">
 <table class="table">
 <colgroup>
-<col width="6%">
-<col width="34%">
-<col width="59%">
+<col width="7%">
+<col width="26%">
+<col width="66%">
 </colgroup>
 <thead><tr class="header">
 <th>order</th>
@@ -4974,7 +4945,7 @@ resolved.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/10-open.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/10-open.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 10 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -5163,7 +5134,7 @@ closed.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/11-licensing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/11-licensing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 5 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -5221,8 +5192,8 @@ distribute their source code.</li>
 <p>Choosing a license that is in common use makes life easier for
 contributors and users, because they are more likely to already be
 familiar with the license and don’t have to wade through a bunch of
-jargon to decide if they’re ok with it. The <a href="https://opensource.org/licenses" class="external-link">Open Source Initiative</a> and <a href="https://www.gnu.org/licenses/license-list.html" class="external-link">Free Software
-Foundation</a> both maintain lists of licenses which are good
+jargon to decide if they’re ok with it. The Open Source Initiative and
+Free Software Foundation both maintain lists of licenses which are good
 choices.</p>
 <p><a href="https://doi.org/10.1371/journal.pcbi.1002598" class="external-link">This
 article</a> provides an excellent overview of licensing and licensing
@@ -5305,7 +5276,7 @@ scratch.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/12-citation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/12-citation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 2 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -5337,8 +5308,7 @@ scratch.</li>
 </div>
 <p>You may want to include a file called <code>CITATION</code> or
 <code>CITATION.txt</code> that describes how to reference your project;
-the <a href="https://github.com/swcarpentry/website/blob/gh-pages/CITATION" class="external-link">one
-for Software Carpentry</a> states:</p>
+the one for Software Carpentry states:</p>
 <pre class="source"><code>To reference Software Carpentry in publications, please cite both of the following:
 
 Greg Wilson: "Software Carpentry: Getting Scientists to Write Better
@@ -5392,7 +5362,7 @@ work cited.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/13-hosting.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/13-hosting.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 10 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -5448,11 +5418,10 @@ than to run many smaller services to the same standard. It’s also easier
 for people to collaborate. Using a popular service can help connect your
 project with communities already using the same service.</p>
 <p>As an example, Software Carpentry <a href="https://github.com/swcarpentry/" class="external-link">is on GitHub</a> where you can
-find the <a href="https://github.com/swcarpentry/git-novice/blob/main/episodes/13-hosting.md" class="external-link">source
-for this page</a>. Anyone with a GitHub account can suggest changes to
-this text.</p>
-<p>GitHub repositories can also be assigned DOIs, <a href="https://guides.github.com/activities/citable-code/" class="external-link">by connecting
-its releases to Zenodo</a>. For example, <a href="https://zenodo.org/record/7908089" class="external-link"><code>10.5281/zenodo.7908089</code></a>
+find the source for this page. Anyone with a GitHub account can suggest
+changes to this text.</p>
+<p>GitHub repositories can also be assigned DOIs, by connecting its
+releases to Zenodo. For example, <a href="https://zenodo.org/record/7908089" class="external-link"><code>10.5281/zenodo.7908089</code></a>
 is the DOI that has been “minted” for this introduction to Git.</p>
 <p>Using large, well-established services can also help you quickly take
 advantage of powerful tools. One such tool, continuous integration (CI),
@@ -5529,7 +5498,7 @@ information apply no matter where code and data are hosted.</li>
 <hr>
 <p> Last updated on 2023-11-21 | 
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/episodes/14-supplemental-rstudio.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/14-supplemental-rstudio.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 10 minutes </p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -5748,12 +5717,12 @@ project over time.</li>
 				<p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
         
-        <a href="https://github.com/swcarpentry/git-novice/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/README.md" class="external-link">Edit on GitHub</a>
         
 	
-        | <a href="https://github.com/swcarpentry/git-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> 
-        | <a href="https://github.com/swcarpentry/git-novice/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/swcarpentry/git-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="https://github.com/swcarpentry-ja/git-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> 
+        | <a href="https://github.com/swcarpentry-ja/git-novice/" class="external-link">Source</a></p>
+				<p><a href="https://github.com/swcarpentry-ja/git-novice/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
@@ -5778,7 +5747,7 @@ project over time.</li>
   "@id": "https://swcarpentry.github.io/git-novice/instructor/aio.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "software, data, lesson, The Carpentries",
+  "keywords": "ソフトウェア, データ, レッスン, カーペントリーズ",
   "name": "All in One View",
   "creativeWorkStatus": "active",
   "url": "https://swcarpentry.github.io/git-novice/instructor/aio.html",
