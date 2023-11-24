@@ -208,7 +208,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-changes.html">4. Tracking Changes</a>
+        <a href="04-changes.html">4. 変更内容の記録</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -957,10 +957,11 @@ called <code>.git</code>:</p>
 はプロジェクトのディレクトリ内にあるすべてのファイルとサブディレクトリを含む、プロジェクトに関するすべての情報を格納するためにこの特別なサブディレクトリを使用します。
 <code>.git</code>
 サブディレクトリを削除すると、プロジェクトの履歴を失うことになります。</p>
-<p>Next, we will change the default branch to be called
-<code>main</code>. This might be the default branch depending on your
-settings and version of git. See the <a href="02-setup.html#default-git-branch-naming">setup episode</a> for
-more information on this change.</p>
+<p>次に、デフォルトのブランチを <code>main</code>
+という名前に変更します。
+あなたの設定やgitのバージョンによっては、これが既にデフォルトになっているかもしれません。
+この変更の詳細については、<a href="02-setup.html#default-git-branch-naming">「セットアップ」</a>
+を参照してください。</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -989,33 +990,34 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
 </div>
 <p>If you are using a different version of <code>git</code>, the exact
 wording of the output might be slightly different.</p>
-<div id="places-to-create-git-repositories" class="callout challenge">
+<div id="git-リポジトリを作る場所" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="places-to-create-git-repositories" class="callout-inner">
-<h3 class="callout-title">Places to Create Git Repositories<a class="anchor" aria-label="anchor" href="#places-to-create-git-repositories"></a>
+<div id="git-リポジトリを作る場所" class="callout-inner">
+<h3 class="callout-title">Git リポジトリを作る場所<a class="anchor" aria-label="anchor" href="#git-%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8B%E5%A0%B4%E6%89%80"></a>
 </h3>
 <div class="callout-content">
-<p>Along with tracking information about planets (the project we have
-already created), Dracula would also like to track information about
-moons. Despite Wolfman’s concerns, Dracula creates a <code>moons</code>
-project inside his <code>planets</code> project with the following
-sequence of commands:</p>
+<p><code>planets</code>
+（すでに作成したプロジェクト）についての情報を追跡すると共に、
+ドラキュラは moons についての情報も追跡したいと考えています。
+ウルフマンの心配にもかかわらず、ドラキュラは次の一連のコマンドを使って、彼の
+<code>planets</code>プロジェクト内に <code>moons</code>
+プロジェクトを作ります:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop   <span class="co"># return to Desktop directory</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd planets     <span class="co"># go into planets directory, which is already a Git repository</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>          <span class="co"># ensure the .git subdirectory is still present in the planets directory</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir moons    <span class="co"># make a subdirectory planets/moons</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd moons       <span class="co"># go into moons subdirectory</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git init       <span class="co"># make the moons subdirectory a Git repository</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>          <span class="co"># ensure the .git subdirectory is present indicating we have created a new Git repository</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop   <span class="co"># Desktop ディレクトリに戻る</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd planets     <span class="co"># すでに Git リポジトリである planets ディレクトリに移動する</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>          <span class="co"># .git サブディレクトリがまだ planets ディレクトリに存在することを確認する</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir moons    <span class="co"># サブディレクトリ planets/moons を作る</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd moons       <span class="co"># moons サブディレクトリに移動する</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git init       <span class="co"># moons サブディレクトリをGitリポジトリにする</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span>          <span class="co"># .git サブディレクトリが存在し新しいGitリポジトリが作られたと示していることを確認する</span></span></code></pre>
 </div>
-<p>Is the <code>git init</code> command, run inside the
-<code>moons</code> subdirectory, required for tracking files stored in
-the <code>moons</code> subdirectory?</p>
+<p><code>git init</code> コマンドは、<code>moons</code>
+サブディレクトリ内で実行され、<code>moons</code>
+サブディレクトリに保存されているファイルを追跡するために必要でしょうか?</p>
 </div>
 </div>
 </div>
@@ -1028,19 +1030,19 @@ the <code>moons</code> subdirectory?</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>No. Dracula does not need to make the <code>moons</code> subdirectory
-a Git repository because the <code>planets</code> repository can track
-any files, sub-directories, and subdirectory files under the
-<code>planets</code> directory. Thus, in order to track all information
-about moons, Dracula only needed to add the <code>moons</code>
-subdirectory to the <code>planets</code> directory.</p>
-<p>Additionally, Git repositories can interfere with each other if they
-are “nested”: the outer repository will try to version-control the inner
-repository. Therefore, it’s best to create each new Git repository in a
-separate directory. To be sure that there is no conflicting repository
-in the directory, check the output of <code>git status</code>. If it
-looks like the following, you are good to go to create a new repository
-as shown above:</p>
+<p>いいえ。 ドラキュラは <code>moons</code> サブディレクトリを Git
+リポジトリにする必要はありません。<code>planets</code>
+リポジトリは、<code>planets</code>
+ディレクトリの下のすべてのファイル、サブディレクトリ、およびサブディレクトリファイルを追跡するからです。
+従って、<code>moons</code>
+についてのすべての情報を追跡するのは、ドラキュラが <code>moons</code>
+サブディレクトリを<code>planets</code>
+ディレクトリに追加するだけで済みます。</p>
+<p>それと、Git
+リポジトリが「入れ子」にされている場合、Gitリポジトリは互いに干渉する可能性があります：外側のリポジトリは内側のリポジトリのバージョン管理をしようとします。
+したがって、新しいGitリポジトリはそれぞれ別のディレクトリに作るのがベストです。
+ディレクトリに競合するリポジトリががないことを確認するには、<code>git status</code>の出力を確認します。
+次のような場合は、上の方で示したように新しいリポジトリを作ることをお勧めします：</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1055,18 +1057,18 @@ as shown above:</p>
 </div>
 </div>
 </div>
-<div id="correcting-git-init-mistakes" class="callout challenge">
+<div id="git-init-の間違いを修正する" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="correcting-git-init-mistakes" class="callout-inner">
-<h3 class="callout-title">Correcting <code>git init</code> Mistakes<a class="anchor" aria-label="anchor" href="#correcting-git-init-mistakes"></a>
+<div id="git-init-の間違いを修正する" class="callout-inner">
+<h3 class="callout-title">
+<code>git init</code> の間違いを修正する<a class="anchor" aria-label="anchor" href="#git-init-%E3%81%AE%E9%96%93%E9%81%95%E3%81%84%E3%82%92%E4%BF%AE%E6%AD%A3%E3%81%99%E3%82%8B"></a>
 </h3>
 <div class="callout-content">
-<p>Wolfman explains to Dracula how a nested repository is redundant and
-may cause confusion down the road. Dracula would like to remove the
-nested repository. How can Dracula undo his last <code>git init</code>
-in the <code>moons</code> subdirectory?</p>
+<p>ウルフマンはドラキュラに、「入れ子」状態になっているリポジトリがいかに冗長で、混乱を引き起こす可能性があるかを説明しました。
+ドラキュラは「入れ子」状態のリポジトリを削除したいです。
+<code>moons</code>サブディレクトリの最後の<code>git init</code>を、ドラキュラはどうやって、元に戻すことができるのでしょうか？</p>
 </div>
 </div>
 </div>
@@ -1074,45 +1076,40 @@ in the <code>moons</code> subdirectory?</p>
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">
-  Solution – USE WITH CAUTION!
+  解決策 （要注意！）
   </h4>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="section level3">
-<h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
+<h3 id="背景">背景<a class="anchor" aria-label="anchor" href="#%E8%83%8C%E6%99%AF"></a>
 </h3>
-<p>Removing files from a Git repository needs to be done with caution.
-But we have not learned yet how to tell Git to track a particular file;
-we will learn this in the next episode. Files that are not tracked by
-Git can easily be removed like any other “ordinary” files with</p>
+<p>Gitリポジトリからのファイルの削除は、慎重に行う必要があります。
+しかし、特定のファイルを追跡するようにGitに指示する方法については、まだ学んでいません（次のエピソードで学びます）。
+Gitによって追跡されていないファイルは、他の「普通の」ファイルと同じように、次のようにして簡単に削除できます：</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> rm filename</span></code></pre>
 </div>
-<p>Similarly a directory can be removed using <code>rm -r dirname</code>
-or <code>rm -rf dirname</code>. If the files or folder being removed in
-this fashion are tracked by Git, then their removal becomes another
-change that we will need to track, as we will see in the next
-episode.</p>
+<p>同様に、<code>rm -r dirname</code> または <code>rm -rf dirname</code>
+を使ってディレクトリを削除することができます。
+この方法で削除されるファイルやフォルダがGitによって追跡されているなら、次のエピソードで見られるように、それらの削除が、追跡する必要がある別の変更になります。</p>
 </div>
 <div class="section level3">
 <h3 id="solution-1">Solution<a class="anchor" aria-label="anchor" href="#solution-1"></a>
 </h3>
-<p>Git keeps all of its files in the <code>.git</code> directory. To
-recover from this little mistake, Dracula can just remove the
-<code>.git</code> folder in the moons subdirectory by running the
-following command from inside the <code>planets</code> directory:</p>
+<p>Gitはすべてのファイルを<code>.git</code>ディレクトリに保存します。
+この小さなミスから立ち直るには、ドラキュラは<code>planets</code>ディレクトリの中から次のコマンドを実行して、moonsサブディレクトリの中の<code>.git</code>フォルダを削除すれば良い：</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-rf</span> moons/.git</span></code></pre>
 </div>
-<p>But be careful! Running this command in the wrong directory will
-remove the entire Git history of a project you might want to keep.
-Therefore, always check your current directory using the command
-<code>pwd</code>.</p>
+<p>しかし、気をつけてください！
+間違ったディレクトリでこのコマンドを実行すると、残しておきたいプロジェクトのGit履歴がすべて削除されてしまいます。
+したがって、常に <code>pwd</code>
+コマンドを使用してカレントディレクトリを確認してください。</p>
 </div>
 </div>
 </div>
@@ -1128,15 +1125,14 @@ Therefore, always check your current directory using the command
 <div class="callout-content">
 <ul>
 <li>
-<code>git init</code> initializes a repository.</li>
-<li>Git stores all of its repository data in the <code>.git</code>
-directory.</li>
+<code>git init</code> はリポジトリを初期化する。</li>
+<li>Gitはリポジトリデータのすべてを<code>.git</code>ディレクトリに格納する。</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-04-changes"><p>Content from <a href="04-changes.html">Tracking Changes</a></p>
+</div></section><section id="aio-04-changes"><p>Content from <a href="04-changes.html">変更内容の記録</a></p>
 <hr>
-<p> Last updated on 2023-11-21 | 
+<p> Last updated on 2023-11-24 | 
         
         <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/04-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time <i aria-hidden="true" data-feather="clock"></i> 20 minutes </p>
@@ -1163,7 +1159,7 @@ directory.</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Go through the modify-add-commit cycle for one or more files.</li>
+<li>一つ以上のファイルにおいて、「変更・追加・コミット」の作業を行いましょう。</li>
 <li>Explain where information is stored at each stage of that
 cycle.</li>
 <li>Distinguish between descriptive and non-descriptive commit
@@ -2940,7 +2936,7 @@ nothing to commit, working tree clean</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>If you only want to ignore the contents of
 <code>results/plots</code>, you can change your <code>.gitignore</code>
@@ -2983,7 +2979,7 @@ directory except for <code>final.csv</code>? Hint: Find out what
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You would add the following two lines to your .gitignore:</p>
 <div class="codewrapper">
@@ -3034,7 +3030,7 @@ not <code>results/data</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>If you want to ignore the contents of <code>results/</code> but not
 those of <code>results/data/</code>, you can change your
@@ -3084,7 +3080,7 @@ ignore all <code>.csv</code> files in
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Appending <code>results/data/position/gps/*.csv</code> will match
 every file in <code>results/data/position/gps</code> that ends with
@@ -3124,7 +3120,7 @@ listing the names of the corresponding folders?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In the <code>.gitignore</code> file, write:</p>
 <div class="codewrapper">
@@ -3165,7 +3161,7 @@ exception with the exclamation point operator.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>!</code> modifier will negate an entry from a previously
 defined ignore pattern. Because the <code>!*.csv</code> entry negates
@@ -3211,7 +3207,7 @@ via <code>.gitignore</code>.</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>append either <code>log_*</code> or <code>log*</code> as a new
@@ -4184,7 +4180,7 @@ has changed with command line? And on GitHub?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4625,7 +4621,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4865,7 +4861,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5663,7 +5659,7 @@ directory is not version controlled.</li>
   Solution to Challenge
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>This can be done in Rstudio:</p>
 <div class="codewrapper sourceCode" id="cb1">
