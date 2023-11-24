@@ -208,7 +208,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-changes.html">4. 変更内容の記録</a>
+        <a href="04-changes.html">4. Tracking Changes</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -1130,7 +1130,7 @@ Gitによって追跡されていないファイルは、他の「普通の」�
 </ul>
 </div>
 </div>
-</div></section><section id="aio-04-changes"><p>Content from <a href="04-changes.html">変更内容の記録</a></p>
+</div></section><section id="aio-04-changes"><p>Content from <a href="04-changes.html">Tracking Changes</a></p>
 <hr>
 <p> Last updated on 2023-11-24 | 
         
@@ -1147,9 +1147,9 @@ Gitによって追跡されていないファイルは、他の「普通の」�
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I record changes in Git?</li>
-<li>How do I check the status of my version control repository?</li>
-<li>How do I record notes about what changes I made and why?</li>
+<li>どうやって変更点を Git で記録出来ますか？</li>
+<li>どうやってリポジトリの状態をチェック出来ますか？</li>
+<li>何を変更して、なぜ変えたのかをメモするにはどうすればよいですか？</li>
 </ul>
 </div>
 </div>
@@ -1160,33 +1160,29 @@ Gitによって追跡されていないファイルは、他の「普通の」�
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>一つ以上のファイルにおいて、「変更・追加・コミット」の作業を行いましょう。</li>
-<li>Explain where information is stored at each stage of that
-cycle.</li>
-<li>Distinguish between descriptive and non-descriptive commit
-messages.</li>
+<li>「変更・追加・コミット」を行っている際、情報がどこに保管されているのか説明しましょう。</li>
+<li>わかりやすいコミットメッセージと、そうでないメッセージの違いを区別できるようになりましょう。</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>First let’s make sure we’re still in the right directory. You should
-be in the <code>planets</code> directory.</p>
+<p>まずはじめに、正しいディレクトリにいるかどうか確かめましょう。
+<code>planets</code> ディレクトリに入っているはずです。</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~/Desktop/planets</span></code></pre>
 </div>
-<p>Let’s create a file called <code>mars.txt</code> that contains some
-notes about the Red Planet’s suitability as a base. We’ll use
-<code>nano</code> to edit the file; you can use whatever editor you
-like. In particular, this does not have to be the
-<code>core.editor</code> you set globally earlier. But remember, the
-bash command to create or edit a new file will depend on the editor you
-choose (it might not be <code>nano</code>). For a refresher on text
-editors, check out <a href="https://swcarpentry.github.io/shell-novice/03-create.html#which-editor" class="external-link">“Which
-Editor?”</a> in <a href="https://swcarpentry.github.io/shell-novice/" class="external-link">The Unix Shell</a>
-lesson.</p>
+<p>赤い惑星（火星）が基地に最適かどうかについてのノートを書くために<code>mars.txt</code>
+というファイルを作成しましょう。 <code>nano</code>
+（もしくは好きなテキストエディタ）でファイルを編集しましょう。 以前
+<code>core.editor</code>
+で設定したエディタとは別のエディタで編集しても大丈夫です。
+ですが、新しくファイルを作成・編集するコマンドはエディタによって違うということを覚えておいてください（<code>nano</code>
+ではないかもしれません）。 テキストエディタについて復習したい方は、<a href="https://swcarpentry.github.io/shell-novice/" class="external-link">Unix シェル</a> の <a href="https://swcarpentry.github.io/shell-novice/03-create/" class="external-link">どのエディタ？</a>
+のレッスンを見てみてください。</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1799,7 +1795,7 @@ mars.txt”</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -1850,7 +1846,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Would only create a commit if files have already been
@@ -1893,7 +1889,7 @@ changes.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The output below from <code>cat mars.txt</code> reflects only content
 added during this exercise. Your output may vary.</p>
@@ -1982,7 +1978,7 @@ state.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>planets</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb64">
@@ -4180,7 +4176,7 @@ has changed with command line? And on GitHub?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4621,7 +4617,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4861,7 +4857,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
