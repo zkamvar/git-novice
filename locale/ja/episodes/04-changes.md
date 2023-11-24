@@ -35,13 +35,13 @@ $ cd ~/Desktop/planets
 $ nano mars.txt
 ```
 
-Type the text below into the `mars.txt` file:
+以下の文を `mars.txt` に記入してください：
 
 ```output
 Cold and dry, but everything is my favorite color
 ```
 
-Let's first verify that the file was properly created by running the list command (`ls`):
+まず、listコマンド（`ls`）を実行して、ファイルが正しく作成されたことを確認しましょう：
 
 ```bash
 $ ls
@@ -51,7 +51,7 @@ $ ls
 mars.txt
 ```
 
-`mars.txt` contains a single line, which we can see by running:
+これで `mars.txt` は一文だけ入ってる状態になりました。確認してみましょう：
 
 ```bash
 $ cat mars.txt
@@ -61,8 +61,8 @@ $ cat mars.txt
 Cold and dry, but everything is my favorite color
 ```
 
-If we check the status of our project again,
-Git tells us that it's noticed the new file:
+プロジェクトの状態をもう一度確認してみると、
+Git は新しいファイルがあることに気づきます：
 
 ```bash
 $ git status
@@ -81,15 +81,16 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The "untracked files" message means that there's a file in the directory
-that Git isn't keeping track of.
-We can tell Git to track a file using `git add`:
+"untracked files" （追跡されていないファイル）というメッセージは、
+Git が追跡していないファイルがこのディレクトリに存在していることを意味します。
+`git add` を使って、Git にこのファイルを追跡してもらいましょう：
+`git add` を使って、Git にこのファイルを追跡してもらいましょう：
 
 ```bash
 $ git add mars.txt
 ```
 
-and then check that the right thing happened:
+そして、正しく動作したか確認してみましょう：
 
 ```bash
 $ git status
@@ -107,10 +108,9 @@ Changes to be committed:
 
 ```
 
-Git now knows that it's supposed to keep track of `mars.txt`,
-but it hasn't recorded these changes as a commit yet.
-To get it to do that,
-we need to run one more command:
+これで Git は `mars.txt` を追跡するように設定することができました。
+ですが、まだ変更点をコミットとして記録していません。
+これをするには、もう一つコマンドを使う必要があります：
 
 ```bash
 $ git commit -m "Start notes on Mars as a base"
@@ -122,23 +122,20 @@ $ git commit -m "Start notes on Mars as a base"
  create mode 100644 mars.txt
 ```
 
-When we run `git commit`,
-Git takes everything we have told it to save by using `git add`
-and stores a copy permanently inside the special `.git` directory.
-This permanent copy is called a [commit](../learners/reference.md#commit)
-(or [revision](../learners/reference.md#revision)) and its short identifier is `f22b25e`. Your commit may have another identifier.
+`git commit` を使うと、
+Git は `git add` によって一時的に保存されたデータを
+`.git` ディレクトリにコピー、そして永久保存します。
+永久保存されたコピーを [コミット](../learners/reference.md#commit)
+（または [リビジョン](../learners/reference.md#revision))）と呼び、`f22b25e` はコミットの省略されたIDです。 あなたのコミットには別のIDが使われているかもしれません。
 
-We use the `-m` flag (for "message")
-to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
-If we just run `git commit` without the `-m` option,
-Git will launch `nano` (or whatever other editor we configured as `core.editor`)
-so that we can write a longer message.
+`-m` フラグ（「メッセージ」の略）を使い、何を変えて、なぜ変えたのかが後からでも分かるように、簡潔で分かりやすいメッセージを書きましょう。
+`-m` を使わずに `git commit` を使った場合、Git は `nano` （または `core.editor` として設定したエディタ）を開き、もっと長いメッセージを書くことができます。
 
-[Good commit messages][commit-messages] start with a brief (<50 characters) statement about the
-changes made in the commit. Generally, the message should complete the sentence "If applied, this commit will" <commit message here>.
-If you want to go into more detail, add a blank line between the summary line and your additional notes. Use this additional space to explain why you made changes and/or what their impact will be.
+[良いコミットメッセージ][commit-messages] は、どのような変更が行われたのかが分かる短い文（50字以下）
+で始まります。 大抵のメッセージは、「このコミットを適用すると<commit message here>」という文が完全文になるように書かれます。
+もっと詳しく書きたい場合は、このメッセージの後に改行してからノートを加えましょう。 ここには、なぜこのような変更をしたのか、この変更によって何が影響を受けるかなどといった事を書くといいでしょう。
 
-If we run `git status` now:
+今の状態で `git status` を走らせると：
 
 ```bash
 $ git status
@@ -149,9 +146,8 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-it tells us everything is up to date.
-If we want to know what we've done recently,
-we can ask Git to show us the project's history using `git log`:
+といったように、最新の状態であることを教えてくれます。
+つい先程、何をしたのかを見たい場合は `git log` を使って、 Git にプロジェクトの履歴を表示してもらいましょう：
 
 ```bash
 $ git log
@@ -165,30 +161,20 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
     Start notes on Mars as a base
 ```
 
-`git log` lists all commits  made to a repository in reverse chronological order.
-The listing for each commit includes
-the commit's full identifier
-(which starts with the same characters as
-the short identifier printed by the `git commit` command earlier),
-the commit's author,
-when it was created,
-and the log message Git was given when the commit was created.
+`git log` は、リポジトリに施された全てのコミットを最新のものから順に表示します。
+各コミットには、省略されていないコミットID（以前 `git commit` で表示された省略IDと同じ字列で始まります）、コミットの著者、作成日時、そして、コミットが作られた時につけられたログメッセージが含まれています。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Where Are My Changes?
+## 変更点は何処にあるの？
 
-If we run `ls` at this point, we will still see just one file called `mars.txt`.
-That's because Git saves information about files' history
-in the special `.git` directory mentioned earlier
-so that our filesystem doesn't become cluttered
-(and so that we can't accidentally edit or delete an old version).
+ここで `ls` を使用すると、`mars.txt` ファイル一つしかありません。
+なぜかと言うと、Git はファイルの変更履歴を、以前触れた `.git` という特別なディレクトリに保存します。これをする事によって、ファイルシステムが散らからないようにし、うっかり古いバージョンのファイルを変更、または削除できないようにしています。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Now suppose Dracula adds more information to the file.
-(Again, we'll edit with `nano` and then `cat` the file to show its contents;
-you may use a different editor, and don't need to `cat`.)
+それでは、ドラキュラがファイルに新しい情報を加えたとしましょう。
+（以前と同様に、`nano` を使い、`cat` でファイルの中身を表示させます。違うエディタを使ってもいいし、`cat` を使わなくても構いません。）
 
 ```bash
 $ nano mars.txt
@@ -200,8 +186,7 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 ```
 
-When we run `git status` now,
-it tells us that a file it already knows about has been modified:
+`git status` を使うと、追跡しているファイルが変更されたことを知らせてくれます：
 
 ```bash
 $ git status
@@ -218,16 +203,10 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-The last line is the key phrase:
-"no changes added to commit".
-We have changed this file,
-but we haven't told Git we will want to save those changes
-(which we do with `git add`)
-nor have we saved them (which we do with `git commit`).
-So let's do that now. It is good practice to always review
-our changes before saving them. We do this using `git diff`.
-This shows us the differences between the current state
-of the file and the most recently saved version:
+最後に表示された文が一番重要です："no changes added to commit" （「変更点はコミットに追加されていません」）。
+私達はファイルを編集したのですが、まだ Git にこの変更点を保存したいということを（`git add` で）伝えていないし、それを（`git commit` で）保存もしていません。
+というわけで、これらをやってみましょう。 変更点を保存する前に見直すのは、習慣づけると良いでしょう。 見直すには `git diff` を使いましょう。
+これによって、今のファイルの状態と、一つ前までのファイルの状態との違いを確かめることができます：
 
 ```bash
 $ git diff
