@@ -1,5 +1,5 @@
 ---
-title: 変更内容の記録
+title: Tracking Changes
 teaching: 20
 exercises: 0
 ---
@@ -7,31 +7,29 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - 一つ以上のファイルにおいて、「変更・追加・コミット」の作業を行いましょう。
-- Explain where information is stored at each stage of that cycle.
-- Distinguish between descriptive and non-descriptive commit messages.
+- 「変更・追加・コミット」を行っている際、情報がどこに保管されているのか説明しましょう。
+- わかりやすいコミットメッセージと、そうでないメッセージの違いを区別できるようになりましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How do I record changes in Git?
-- How do I check the status of my version control repository?
-- How do I record notes about what changes I made and why?
+- どうやって変更点を Git で記録出来ますか？
+- どうやってリポジトリの状態をチェック出来ますか？
+- 何を変更して、なぜ変えたのかをメモするにはどうすればよいですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-First let's make sure we're still in the right directory.
-You should be in the `planets` directory.
+まずはじめに、正しいディレクトリにいるかどうか確かめましょう。
+`planets` ディレクトリに入っているはずです。
 
 ```bash
 $ cd ~/Desktop/planets
 ```
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
-We'll use `nano` to edit the file;
-you can use whatever editor you like.
-In particular, this does not have to be the `core.editor` you set globally earlier. But remember, the bash command to create or edit a new file will depend on the editor you choose (it might not be `nano`). For a refresher on text editors, check out ["Which Editor?"](https://swcarpentry.github.io/shell-novice/03-create.html#which-editor) in [The Unix Shell](https://swcarpentry.github.io/shell-novice/) lesson.
+赤い惑星（火星）が基地に最適かどうかについてのノートを書くために`mars.txt` というファイルを作成しましょう。
+`nano` （もしくは好きなテキストエディタ）でファイルを編集しましょう。
+以前 `core.editor` で設定したエディタとは別のエディタで編集しても大丈夫です。 ですが、新しくファイルを作成・編集するコマンドはエディタによって違うということを覚えておいてください（`nano` ではないかもしれません）。 テキストエディタについて復習したい方は、[Unix シェル](https://swcarpentry.github.io/shell-novice/) の [どのエディタ？](https://swcarpentry.github.io/shell-novice/03-create/) のレッスンを見てみてください。
 
 ```bash
 $ nano mars.txt
