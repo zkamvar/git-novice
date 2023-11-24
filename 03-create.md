@@ -23,16 +23,16 @@ Gitの設定ができたら、
 火星に惑星着陸船を送ることが可能かどうかを調査しているウルフマンとドラキュラの話に戻りましょう。
 
 ![](fig/motivatingexample.png){alt='motivatingexample'}
-[Werewolf vs dracula](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
+[ウルフマン対ドラキュラ](https://www.deviantart.com/b-maze/art/Werewolf-vs-Dracula-124893530)
 by [b-maze](https://www.deviantart.com/b-maze) / [Deviant Art](https://www.deviantart.com/).
-[Mars](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
+[火星](https://en.wikipedia.org/wiki/File:OSIRIS_Mars_true_color.jpg) by European Space Agency /
 [CC-BY-SA 3.0 IGO](https://creativecommons.org/licenses/by/3.0/deed.en).
-[Pluto](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
+[冥王星](https://commons.wikimedia.org/wiki/File:PIA19873-Pluto-NewHorizons-FlyingPastImage-20150714-transparent.png) /
 Courtesy NASA/JPL-Caltech.
-[Mummy](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
+[ミイラ](https://commons.wikimedia.org/wiki/File:Mummy_icon_-_Noun_Project_4070.svg)
 © Gilad Fried / [The Noun Project](https://thenounproject.com/) /
 [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en).
-[Moon](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
+[月](https://commons.wikimedia.org/wiki/File:Lune_ico.png)
 © Luc Viatour / [https://lucnix.be](https://lucnix.be/) /
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en).
 
@@ -52,15 +52,14 @@ $ git init
 
 重要なのは、`git init` はサブディレクトリとそのファイルを含むことができるリポジトリを作成するということです。サブディレクトリが最初から存在する場合でも、後から追加された場合でも、`planets` リポジトリの中に入れ子になった別のリポジトリを作成する必要はありません。 また、 `planets`ディレクトリの作成と、リポジトリとしての初期化はまったく別の処理であることに注意してください。
 
-If we use `ls` to show the directory's contents,
-it appears that nothing has changed:
+`ls` を使ってディレクトリの内容を表示すると、
+何も変更されていないように見えます:
 
 ```bash
 $ ls
 ```
 
-But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `planets` called `.git`:
+ですが `-a` フラグを追加してすべてを表示すると、Git が `.git`という隠しディレクトリを `planets` の中に作ったことがわかります:
 
 ```bash
 $ ls -a
@@ -85,8 +84,7 @@ $ git checkout -b main
 Switched to a new branch 'main'
 ```
 
-We can check that everything is set up correctly
-by asking Git to tell us the status of our project:
+プロジェクトのステータスをGitに問うことで、すべてが正しく設定されていることを確認できます:
 
 ```bash
 $ git status
@@ -100,8 +98,7 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-If you are using a different version of `git`, the exact
-wording of the output might be slightly different.
+使用している`git`のバージョンによって、出力の表現が少し異なるかもしれません。
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -124,7 +121,7 @@ $ ls -a          # .git サブディレクトリが存在し新しいGitリポ�
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 いいえ。 ドラキュラは `moons` サブディレクトリを Git リポジトリにする必要はありません。`planets` リポジトリは、`planets` ディレクトリの下のすべてのファイル、サブディレクトリ、およびサブディレクトリファイルを追跡するからです。  従って、`moons` についてのすべての情報を追跡するのは、ドラキュラが `moons` サブディレクトリを`planets` ディレクトリに追加するだけで済みます。
 
@@ -142,7 +139,7 @@ fatal: Not a git repository (or any of the parent directories): .git
 
 ## `git init` の間違いを修正する
 
-ウルフマンはドラキュラに、「入れ子」状態になっているリポジトリがいかに冗長で、混乱を引き起こす可能性があるかを説明しました。 ドラキュラは「入れ子」状態のリポジトリを削除したいです。 `moons`サブディレクトリの最後の`git init`を、ドラキュラはどうやって、元に戻すことができるのでしょうか？
+ウルフマンはドラキュラに、「入れ子」状態になっているリポジトリがいかに冗長で、混乱を引き起こす可能性があるかを説明しました。 説明を聞いて、ドラキュラは「入れ子」状態のリポジトリを削除したいと思いました。 `moons`サブディレクトリの最後の`git init`を、ドラキュラはどうやって、元に戻すことができるのでしょうか？
 
 :::::::::::::::  solution
 
@@ -159,7 +156,7 @@ $ rm filename
 同様に、`rm -r dirname` または `rm -rf dirname` を使ってディレクトリを削除することができます。
 この方法で削除されるファイルやフォルダがGitによって追跡されているなら、次のエピソードで見られるように、それらの削除が、追跡する必要がある別の変更になります。
 
-### Solution
+### 解答
 
 Gitはすべてのファイルを`.git`ディレクトリに保存します。
 この小さなミスから立ち直るには、ドラキュラは`planets`ディレクトリの中から次のコマンドを実行して、moonsサブディレクトリの中の`.git`フォルダを削除すれば良い：

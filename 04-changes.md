@@ -222,23 +222,18 @@ index df0654a..315bf3a 100644
 +The two moons may be a problem for Wolfman
 ```
 
-The output is cryptic because
-it is actually a series of commands for tools like editors and `patch`
-telling them how to reconstruct one file given the other.
-If we break it down into pieces:
+すると、暗号のようなメッセージが出力されます。
+これらのメッセージは、エディタや `patch` といったプログラムで使われる
+一連のコマンドで、ファイルをどうやって再構成するのかが書かれています。
+分かりやすいように、一文ずつ見てみましょう：
 
-1. The first line tells us that Git is producing output similar to the Unix `diff` command
-   comparing the old and new versions of the file.
-2. The second line tells exactly which versions of the file
-   Git is comparing;
-   `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
-3. The third and fourth lines once again show the name of the file being changed.
-4. The remaining lines are the most interesting, they show us the actual differences
-   and the lines on which they occur.
-   In particular,
-   the `+` marker in the first column shows where we added a line.
+1. 最初の文は、Git が古いバージョンと新しいバージョンのファイルをUnix の`diff`コマンドと同じように、二つのファイルを比べていることを表しています。
+2. 次に、Git が比べているファイルの正確なバージョンを表示しています。`df0654a` と `315bf3a` はコンピュータが作成した、各バージョン"につけられたIDです。
+3. 3・4つ目の文章は、変更されているファイルの名前を表示しています。
+4. 残りの文章が一番重要です。ここに、何が変わり、どの行が変更されたのかが記されています。
+   特に、この`+` マークは、どこに文章が加えられたのかを表しています。
 
-After reviewing our change, it's time to commit it:
+変更点を確認したら、コミットしましょう：
 
 ```bash
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
@@ -255,8 +250,9 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Whoops:
-Git won't commit because we didn't use `git add` first.
+おっと、
+初めに `git add` を使わなかったので、 Git はコミットさせてくれませんでした。
+直しましょう：
 Let's fix that:
 
 ```bash
@@ -269,53 +265,28 @@ $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
  1 file changed, 1 insertion(+)
 ```
 
-Git insists that we add files to the set we want to commit
-before actually committing anything. This allows us to commit our
-changes in stages and capture changes in logical portions rather than
-only large batches.
-For example,
-suppose we're adding a few citations to relevant research to our thesis.
-We might want to commit those additions,
-and the corresponding bibliography entries,
-but _not_ commit some of our work drafting the conclusion
-(which we haven't finished yet).
+Git は変更をコミットする前に、コミットしたいファイルを
+追加するように要求してきます。 これによって、変更点をこまめに、そして論理的に分割して保存ができ、大きな変更をひとまとめに保存しなくてもよくなります。
+例えば、論文にいくつか引用源を加えるとします。
+これらの引用源、そして使われた参考文献の目録を、まだ書き終わっていない結論とは_別に_保存したい場合はどうすればいいのでしょう。
 
-To allow for this,
-Git has a special _staging area_
-where it keeps track of things that have been added to
-the current [changeset](../learners/reference.md#changeset)
-but not yet committed.
+Git には、まだコミットされていない[changeset](../learners/reference.md#changeset)（一連の変更点）を一時的に保存・把握するために使われる、_staging area_（ステージング・エリア）と呼ばれる特殊な場所が存在します。
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Staging Area
+## ステージングエリア
 
-If you think of Git as taking snapshots of changes over the life of a project,
-`git add` specifies _what_ will go in a snapshot
-(putting things in the staging area),
-and `git commit` then _actually takes_ the snapshot, and
-makes a permanent record of it (as a commit).
-If you don't have anything staged when you type `git commit`,
-Git will prompt you to use `git commit -a` or `git commit --all`,
-which is kind of like gathering _everyone_ to take a group photo!
-However, it's almost always better to
-explicitly add things to the staging area, because you might
-commit changes you forgot you made. (Going back to the group photo simile,
-you might get an extra with incomplete makeup walking on
-the stage for the picture because you used `-a`!)
-Try to stage things manually,
-or you might find yourself searching for "git undo commit" more
-than you would like!
+仮にGit を、プロジェクトの一生の間に起こった変更内容を「スナップショット」として保存するものとして考えると、`git add` は_何が_スナップショットに含まれる（ステージングエリアに入れる）のかを指定して、`git commit` は_実際にスナップショットを撮り_、コミットとして永久保存します。
+`git commit` と入力した際にステージングエリアに何もなかった場合、Git は`git commit -a` もしくは `git commit --all` を入力するように言ってきます。このコマンドは、写真を撮る時の「全員集合！」のようなもので、全ての変更点を強制的にコミットできます。
+ですが、大抵は、コミットしたい変更点のみをステージングエリアに入れるほうが良いでしょう。これによって、不要な変更点を間違えてコミットすることもありません。 （集合写真の例に例えると、メイクの不完全なエキストラがステージの上を横断しているのを一緒に撮ってしまった、みたいなものです。）
+ですので、ステージングエリアにどの変更点を入れるかは自分で管理しましょう。さもないと、必要以上に「git コミットやり直す」で検索をかけることになるでしょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ![](fig/git-staging-area.svg){alt='The Git Staging Area'}
 
-Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
+それでは、ファイルの変更点がエディタからステージングエリア、そして長期保存に移る過程を見てみましょう。
+初めに、新しい文章をファイルに加えましょう：
 
 ```bash
 $ nano mars.txt
@@ -343,23 +314,19 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ```
 
-So far, so good:
-we've added one line to the end of the file
-(shown with a `+` in the first column).
-Now let's put that change in the staging area
-and see what `git diff` reports:
+いい感じです。
+これでファイルの最後に新しく文章を足すことができました。
+（左にある `+` マークで記されています。）
+それでは変更点をステージングエリアに入れて
+`git diff` がなにを表示するのかを見てみましょう：
 
 ```bash
 $ git add mars.txt
 $ git diff
 ```
 
-There is no output:
-as far as Git can tell,
-there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
-However,
-if we do this:
+何も表示されませんでした。Git が見た限りでは、保存したい変更点と今ディレクトリ内にあるファイルには、これといった違いは無いということになります。
+ですが、こう入力すると：
 
 ```bash
 $ git diff --staged
@@ -376,10 +343,8 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ```
 
-it shows us the difference between
-the last committed change
-and what's in the staging area.
-Let's save our changes:
+以前コミットされた状態のファイルとステージングエリアにある変更点の違いが表示されます。
+変更内容を保存しましょう：
 
 ```bash
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
@@ -390,7 +355,7 @@ $ git commit -m "Discuss concerns about Mars' climate for Mummy"
  1 file changed, 1 insertion(+)
 ```
 
-check our status:
+状態をチェックしましょう：
 
 ```bash
 $ git status
@@ -401,7 +366,7 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-and look at the history of what we've done so far:
+そして、今までの変更履歴も見てみましょう：
 
 ```bash
 $ git log
@@ -429,41 +394,30 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Word-based diffing
+## 文字ごとの違いを表示する
 
-Sometimes, e.g. in the case of the text documents a line-wise
-diff is too coarse. That is where the `--color-words` option of
-`git diff` comes in very useful as it highlights the changed
-words using colors.
+時折、例えばテキストドキュメントなど、列ごとの違いを表示するのは大雑把すぎる場合があります。 こういう時は、`git diff` の `--color-words` オプションを使えば、色で文字ごとの違いを表示してくれるので、大変便利です。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Paging the Log
+## ログをめくる
 
-When the output of `git log` is too long to fit in your screen,
-`git` uses a program to split it into pages of the size of your screen.
-When this "pager" is called, you will notice that the last line in your
-screen is a `:`, instead of your usual prompt.
+`git log` の出力がスクリーンよりも長いと、`git` はスクリーンに収まるようにログを分割して表示するプログラムを使います。
+この "pager" （ページャ）というプログラムが開くと、一番下の列がプロンプトではなく、`:` になります。
 
-- To get out of the pager, press <kbd>Q</kbd>.
-- To move to the next page, press <kbd>Spacebar</kbd>.
-- To search for `some_word` in all pages,
-  press <kbd>/</kbd>
-  and type `some_word`.
-  Navigate through matches pressing <kbd>N</kbd>.
+- ページャを閉じるには <kbd>Q</kbd> を押してください。
+- 次のページを表示するには <kbd>Spacebar</kbd>を押してください。
+- ある `<文字>` を全ページの中から検索する時は、<kbd>/</kbd> を押し、`<文字>` を入力してください。 <kbd>N</kbd>を押すと次の一致場所に行けます。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Limit Log Size
+## ログの出力を制限する
 
-To avoid having `git log` cover your entire terminal screen, you can limit the
-number of commits that Git lists by using `-N`, where `N` is the number of
-commits that you want to view. For example, if you only want information from
-the last commit you can use:
+`git log` の出力がスクリーン全体を埋めないようにするために、Gitが表示するコミットの数を `-N` で変えることができます。この `N`は、表示したいコミットの数を表しています。 例えば、最新のコミットの情報だけを表示したい場合は、こう入力します：
 
 ```bash
 $ git log -1
@@ -477,8 +431,7 @@ Date:   Thu Aug 22 10:14:07 2013 -0400
    Discuss concerns about Mars' climate for Mummy
 ```
 
-You can also reduce the quantity of information using the
-`--oneline` option:
+`--oneline` オプションを使うことによって、表示する情報を制限する事ができます：
 
 ```bash
 $ git log --oneline
@@ -490,11 +443,7 @@ $ git log --oneline
 f22b25e Start notes on Mars as a base
 ```
 
-You can also combine the `--oneline` option with others. One useful
-combination adds `--graph` to display the commit history as a text-based
-graph and to indicate which commits are associated with the
-current `HEAD`, the current branch `main`, or
-[other Git references][git-references]:
+`--oneline` オプションを他のオプションと組み合わせることもできます。 便利な組み合わせの一つとして、 `--graph` を追加すると、コミット履歴をテキストベースのグラフとして表示し、どのコミットが現在の `HEAD`、現在のブランチ `main`、あるいは[その他の Git リファレンス][git-references]に関連しているかを示すことができます：
 
 ```bash
 $ git log --oneline --graph
@@ -510,12 +459,12 @@ $ git log --oneline --graph
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Directories
+## ディレクトリ
 
-Two important facts you should know about directories in Git.
+Git でディレクトリを使用する際は、以下の二点を覚えておきましょう。
 
-1. Git does not track directories on their own, only files within them.
-   Try it for yourself:
+1. Git はディレクトリ単体を追跡することはなく、ディレクトリ内のファイルのみを追跡します。
+   自分で試してみてください：
 
 ```bash
 $ mkdir spaceships
@@ -524,21 +473,15 @@ $ git add spaceships
 $ git status
 ```
 
-Note, our newly created empty directory `spaceships` does not appear in
-the list of untracked files even if we explicitly add it (_via_ `git add`) to our
-repository. This is the reason why you will sometimes see `.gitkeep` files
-in otherwise empty directories. Unlike `.gitignore`, these files are not special
-and their sole purpose is to populate a directory so that Git adds it to
-the repository. In fact, you can name such files anything you like.
+注目してほしいのは、新しく作った `directory` ディレクトリは `git add` でリポジトリに追加したにも関わらず、追跡されてないファイルのリストに表示されていません。 たまに `.gitkeep` ファイルが空のディレクトリ内にあるのは、このためです。 `.gitignore`とは違って、このファイルは特別でも何でもなく、空のディレクトリを Git のリポジトリに追加、そして追跡させるためだけに置いてあるだけです。 なので、別の名前のファイルでも同じことができます。
 
-2. If you create a directory in your Git repository and populate it with files,
-   you can add all files in the directory at once by:
+2. Git リポジトリ内でディレクトリを作成し、複数のファイルをそのディレクトリに入れたい場合、ディレクトリ内のファイルをひとまとめに追加する事ができます：
 
 ```bash
 git add <directory-with-files>
 ```
 
-Try it for yourself:
+自分で試してみてください：
 
 ```bash
 $ touch spaceships/apollo-11 spaceships/sputnik-1
@@ -547,7 +490,7 @@ $ git add spaceships
 $ git status
 ```
 
-Before moving on, we will commit these changes.
+次に進む前に、これらの変更をコミットしましょう。
 
 ```bash
 $ git commit -m "Add some initial thoughts on spaceships"
@@ -555,19 +498,15 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-To recap, when we want to add changes to our repository,
-we first need to add the changed files to the staging area
-(`git add`) and then commit the staged changes to the
-repository (`git commit`):
+まとめると、変更内容をリポジトリに追加したい時は`git add` で変更点をステージングエリアに移してから、`git commit` でステージングエリアの変更点をリポジトリに保存します：
 
 ![](fig/git-committing.svg){alt='The Git Commit Workflow'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Choosing a Commit Message
+## コミットメッセージを決める
 
-Which of the following commit messages would be most appropriate for the
-last commit made to `mars.txt`?
+以下のコミットメッセージの内、最後の `mars.txt` のコミットに最適なメッセージはどれでしょう？
 
 1. "Changes"
 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
@@ -577,9 +516,7 @@ last commit made to `mars.txt`?
 
 ## Solution
 
-Answer 1 is not descriptive enough, and the purpose of the commit is unclear;
-and answer 2 is redundant to using "git diff" to see what changed in this commit;
-but answer 3 is good: short, descriptive, and imperative.
+１つ目のメッセージは短すぎてコミットの内容が何なのかわかりにくいです。２つ目は`git diff`で何が変わったのかが分かるので、長い割にはあまり意味がありません。３つ目は、短く、簡潔で、分かりやすいメッセージです。
 
 :::::::::::::::::::::::::
 
@@ -587,10 +524,9 @@ but answer 3 is good: short, descriptive, and imperative.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Committing Changes to Git
+## Git に変更点をコミットする
 
-Which command(s) below would save the changes of `myfile.txt`
-to my local Git repository?
+以下の内、`myfile.txt` を Git リポジトリに保存するためのコマンドはどれでしょう？
 
 1. ```bash
    ```
@@ -616,15 +552,15 @@ $ git commit -m myfile.txt "my recent changes"
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-1. Would only create a commit if files have already been staged.
+1. ファイルがステージングエリアにない限り、コミットできません。
 
-2. Would try to create a new repository.
+2. 新しくリポジトリを作ろうとします。
 
-3. Is correct: first add the file to the staging area, then commit.
+3. 正しい回答です。まずファイルをステージングエリアに追加し、それからコミットします。
 
-4. Would try to commit a file "my recent changes" with the message myfile.txt.
+4. "my recent changes" というファイルを myfile.txt というメッセージでコミットしようとします。
 
 :::::::::::::::::::::::::
 
@@ -632,26 +568,21 @@ $ git commit -m myfile.txt "my recent changes"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Committing Multiple Files
+## 複数のファイルをコミットする
 
-The staging area can hold changes from any number of files
-that you want to commit as a single snapshot.
+一つのコミットに対し、ステージングエリアは複数のファイルの変更点を保持する事ができます。
 
-1. Add some text to `mars.txt` noting your decision
-   to consider Venus as a base
-2. Create a new file `venus.txt` with your initial thoughts
-   about Venus as a base for you and your friends
-3. Add changes from both files to the staging area,
-   and commit those changes.
+1. `mars.txt` に、火星ではなく金星に基地を作ることにしたという文章を加えましょう。
+2. 新しく `venus.txt` というファイルを作り、金星に基地を置く決断についての感想を書きましょう。
+3. 二つのファイルの変更内容をステージングエリアに加えて、コミットしましょう。
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-The output below from `cat mars.txt` reflects only content added during
-this exercise. Your output may vary.
+以下の`cat mars.txt`の出力は、この課題で追加された内容のみを反映しています。 出力は異なる場合があります。
 
-First we make our changes to the `mars.txt` and `venus.txt` files:
+まずは `mars.txt` と `venus.txt` を編集しましょう：
 
 ```bash
 $ nano mars.txt
@@ -671,20 +602,20 @@ $ cat venus.txt
 Venus is a nice planet and I definitely should consider it as a base.
 ```
 
-Now you can add both files to the staging area. We can do that in one line:
+これで二つのファイルをステージングエリアに追加することができます。 二つのファイルを一気に追加するには：
 
 ```bash
 $ git add mars.txt venus.txt
 ```
 
-Or with multiple commands:
+一つずつ追加するには：
 
 ```bash
 $ git add mars.txt
 $ git add venus.txt
 ```
 
-Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
+これでファイルをコミットする準備ができました。 `git status` でチェックしましょう。 コミットをするには：
 
 ```bash
 $ git commit -m "Write plans to start a base on Venus"
@@ -703,49 +634,46 @@ $ git commit -m "Write plans to start a base on Venus"
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## `bio` Repository
+## `bio` リポジトリ
 
-- Create a new Git repository on your computer called `bio`.
-- Write a three-line biography for yourself in a file called `me.txt`,
-  commit your changes
-- Modify one line, add a fourth line
-- Display the differences
-  between its updated state and its original state.
+- `bio` という Git リポジトリ新しく作りましょう。
+- `me.txt` というファイルに自分について３文書いて、変更点をコミットしてください。
+- すでに書いた文章の内、ひとつだけ編集して、更にもう一文加えてください。
+- 編集した後の状態とその前の違いを表示してください。
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-If needed, move out of the `planets` folder:
+必要であれば、`planets` から出ましょう：
 
 ```bash
 $ cd ..
 ```
 
-Create a new folder called `bio` and 'move' into it:
+新しく `bio` というディレクトリを作り、中に移動しましょう：
 
 ```bash
 $ mkdir bio
 $ cd bio
 ```
 
-Initialise git:
+リポジトリを作りましょう：
 
 ```bash
 $ git init
 ```
 
-Create your biography file `me.txt` using `nano` or another text editor.
-Once in place, add and commit it to the repository:
+`nano` か他のテキストエディタで `me.txt` を作りましょう。
+作ったら、変更点を追加してコミットしてください：
 
 ```bash
 $ git add me.txt
 $ git commit -m "Add biography file" 
 ```
 
-Modify the file as described (modify one line, add a fourth line).
-To display the differences
-between its updated state and its original state, use `git diff`:
+指示通りにファイルを編集してください（一文だけ変えて、もう一文足す）。
+オリジナルと編集後のファイルの違いを表示させるために、`git diff` を使います：
 
 ```bash
 $ git diff me.txt
@@ -761,10 +689,10 @@ $ git diff me.txt
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git status` shows the status of a repository.
-- Files can be stored in a project's working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded).
-- `git add` puts files in the staging area.
-- `git commit` saves the staged content as a new commit in the local repository.
-- Write a commit message that accurately describes your changes.
+- `git status` はリポジトリの状態を表示する。
+- ファイルはプロジェクトの作業ディレクトリ、ステージング・エリア（次のコミットに含まれる変更点が蓄積される場所）、そしてローカル・リポジトリ（コミットが永久に記録される場所）に保存される。
+- `git add` はファイルをステージング・エリアに移動させる。
+- `git commit` はステージされた内容をローカル・リポジトリに保存する。
+- コミットメッセージは、変更点がわかりやすいように書きましょう。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
