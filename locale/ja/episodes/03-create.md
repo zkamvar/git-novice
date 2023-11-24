@@ -44,19 +44,13 @@ $ mkdir planets
 $ cd planets
 ```
 
-Then we tell Git to make `planets` a [repository](../learners/reference.md#repository)
-\-- a place where Git can store versions of our files:
+次に、Gitに`planets`を[リポジトリ](../learners/reference.md#repository)（Gitがファイルのバージョンを保存できる場所）にするように伝えます。
 
 ```bash
 $ git init
 ```
 
-It is important to note that `git init` will create a repository that
-can include subdirectories and their files---there is no need to create
-separate repositories nested within the `planets` repository, whether
-subdirectories are present from the beginning or added later. Also, note
-that the creation of the `planets` directory and its initialization as a
-repository are completely separate processes.
+重要なのは、`git init` はサブディレクトリとそのファイルを含むことができるリポジトリを作成するということです。サブディレクトリが最初から存在する場合でも、後から追加された場合でも、`planets` リポジトリの中に入れ子になった別のリポジトリを作成する必要はありません。 また、 `planets`ディレクトリの作成と、リポジトリとしての初期化はまったく別の処理であることに注意してください。
 
 If we use `ls` to show the directory's contents,
 it appears that nothing has changed:
@@ -76,10 +70,8 @@ $ ls -a
 .	..	.git
 ```
 
-Git uses this special subdirectory to store all the information about the project,
-including the tracked files and sub-directories located within the project's directory.
-If we ever delete the `.git` subdirectory,
-we will lose the project's history.
+Git はプロジェクトのディレクトリ内にあるすべてのファイルとサブディレクトリを含む、プロジェクトに関するすべての情報を格納するためにこの特別なサブディレクトリを使用します。
+`.git` サブディレクトリを削除すると、プロジェクトの履歴を失うことになります。
 
 Next, we will change the default branch to be called `main`.
 This might be the default branch depending on your settings and version
