@@ -323,7 +323,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring History</h1>
-        <p> Last updated on 2023-11-21 | 
+        <p> Last updated on 2023-11-24 | 
         
         <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/05-history.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -344,9 +344,9 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can I identify old versions of files?</li>
-<li>How do I review my changes?</li>
-<li>How can I recover old versions of files?</li>
+<ul><li>ファイルの古いバージョンを復元するにはどうすればよいでしょうか?</li>
+<li>変更内容を再調査するにはどうすればよいでしょうか?</li>
+<li>ファイルの古いバージョンを復元するにはどうすればよいでしょうか?</li>
 </ul></div>
 </div>
 </div>
@@ -354,22 +354,22 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Explain what the HEAD of a repository is and how to use it.</li>
-<li>Identify and use Git commit numbers.</li>
-<li>Compare various versions of tracked files.</li>
-<li>Restore old versions of files.</li>
+<ul><li>リポジトリのHEADとは何か、またその使い方を説明出来るようになりましょう。</li>
+<li>Gitのコミット番号を特定して使ってみましょう。</li>
+<li>追跡調査されるファイルのいろいろなバージョンを比較してみましょう。</li>
+<li>ファイルの古いバージョンを復元してみましょう。</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<p>As we saw in the previous episode, we can refer to commits by their
-identifiers. You can refer to the <em>most recent commit</em> of the
-working directory by using the identifier <code>HEAD</code>.</p>
-<p>We’ve been adding one line at a time to <code>mars.txt</code>, so
-it’s easy to track our progress by looking, so let’s do that using our
-<code>HEAD</code>s. Before we start, let’s make a change to
-<code>mars.txt</code>, adding yet another line.</p>
+<p>前のレッスンで見たように、コミットを識別子で参照できます。 識別子
+<code>HEAD</code> を使うことで作業ディレクトリの <em>最新のコミット</em>
+を参照できます。</p>
+<p><code>mars.txt</code>
+に一度に1行ずつ追加しているので、進展を見て確認することは簡単です。それでは
+<code>HEAD</code> を使ってそれを行ってみましょう。 始める前に、
+<code>mars.txt</code> にもう1行加えることで変更を加えてみましょう。</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -384,7 +384,7 @@ The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 An ill-considered change</code></pre>
 </div>
-<p>Now, let’s see what we get.</p>
+<p>それでは、何が得られるか見てみましょう。</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -403,19 +403,20 @@ index b36abfd..0848c8d 100644
  But the Mummy will appreciate the lack of humidity
 +An ill-considered change.</code></pre>
 </div>
-<p>which is the same as what you would get if you leave out
-<code>HEAD</code> (try it). The real goodness in all this is when you
-can refer to previous commits. We do that by adding <code>~1</code>
-(where “~” is “tilde”, pronounced [<strong>til</strong>-d_uh_]) to refer
-to the commit one before <code>HEAD</code>.</p>
+<p>これは、 <code>HEAD</code> を省略した場合 (試してみてください)
+に得られるものと同じです。
+これの本当の利点は、以前のコミットを参照できることです。
+それを行うには、<code>HEAD</code> より前のコミットを参照するために
+<code>~1</code> (「~」は「チルダ」、発音は [<strong>til</strong>-d_uh_])
+を追加します。</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git diff HEAD~1 mars.txt</span></code></pre>
 </div>
-<p>If we want to see the differences between older commits we can use
-<code>git diff</code> again, but with the notation <code>HEAD~1</code>,
-<code>HEAD~2</code>, and so on, to refer to them:</p>
+<p>古いコミット間の違いを確認したい場合は、<code>git diff</code>
+を再度使用できますが、<code>HEAD~1</code>、<code>HEAD~2</code>
+などの表記を使用して、それらを参照するには下記を行います:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -434,10 +435,10 @@ index df0654a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change</code></pre>
 </div>
-<p>We could also use <code>git show</code> which shows us what changes
-we made at an older commit as well as the commit message, rather than
-the <em>differences</em> between a commit and our working directory that
-we see by using <code>git diff</code>.</p>
+<p><code>git diff</code>
+を使用して表示されるコミットと作業ディレクトリの <em>違い</em>
+ではなく、古いコミットで行った変更だけでなくコミットメッセージも表示する
+<code>git show</code>を使用することもできます。</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -460,18 +461,18 @@ index 0000000..df0654a
 @@ -0,0 +1 @@
 +Cold and dry, but everything is my favorite color</code></pre>
 </div>
-<p>In this way, we can build up a chain of commits. The most recent end
-of the chain is referred to as <code>HEAD</code>; we can refer to
-previous commits using the <code>~</code> notation, so
-<code>HEAD~1</code> means “the previous commit”, while
-<code>HEAD~123</code> goes back 123 commits from where we are now.</p>
-<p>We can also refer to commits using those long strings of digits and
-letters that <code>git log</code> displays. These are unique IDs for the
-changes, and “unique” really does mean unique: every change to any set
-of files on any computer has a unique 40-character identifier. Our first
-commit was given the ID
-<code>f22b25e3233b4645dabd0d81e651fe074bd8e73b</code>, so let’s try
-this:</p>
+<p>このようにして、コミットのチェーンを構築できます。
+チェーンの最新の終わりは <code>HEAD</code> と呼ばれます; <code>~</code>
+表記を使用して以前のコミットを参照できるため、<code>HEAD~1</code>
+は「以前のコミット」を意味し、<code>HEAD~123</code>
+は現在の場所から123個前のコミットに戻ります。</p>
+<p><code>git log</code>
+が表示する、数字と文字の長い文字列を使用してコミットを参照することもできます。
+これらは一個一個の変更に対するユニークなIDであり、「ユニーク」は本当に唯一であることを意味します:
+どのコンピューターのどのファイルの変更の組み合わせに対しても、ユニークな40文字の
+ID があります。 最初のコミットにはID
+<code>f22b25e3233b4645dabd0d81e651fe074bd8e73b</code>
+が与えられたので、これを試してみましょう:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -490,9 +491,7 @@ index df0654a..93a3e13 100644
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change</code></pre>
 </div>
-<p>That’s the right answer, but typing out random 40-character strings
-is annoying, so Git lets us use just the first few characters (typically
-seven for normal size projects):</p>
+<p>これは正しい答えですが、ランダムな40文字の文字列を入力するのは面倒なので、Gitは最初の数文字だけを使えばよいようにしてくれています:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -511,12 +510,12 @@ index df0654a..93a3e13 100644
 +But the Mummy will appreciate the lack of humidity
 +An ill-considered change</code></pre>
 </div>
-<p>All right! So we can save changes to files and see what we’ve
-changed. Now, how can we restore older versions of things? Let’s suppose
-we change our mind about the last update to <code>mars.txt</code> (the
-“ill-considered change”).</p>
-<p><code>git status</code> now tells us that the file has been changed,
-but those changes haven’t been staged:</p>
+<p>やりました! こんなわけで
+ファイルへの変更を保存して、何が変更されたかを確認できます。
+では、どうすれば古いバージョンのものを復元できるでしょうか?
+<code>mars.txt</code>への最後の更新（「熟考を欠いた変更」）について気が変わったとしましょう。</p>
+<p><code>git status</code>
+は、ファイルが変更されたことを示しますが、それらの変更はステージングされていません:</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -534,8 +533,7 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>We can put things back the way they were by using
-<code>git checkout</code>:</p>
+<p><code>git checkout</code>を使うと、元の状態に戻すことができます:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -549,11 +547,11 @@ no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity</code></pre>
 </div>
-<p>As you might guess from its name, <code>git checkout</code> checks
-out (i.e., restores) an old version of a file. In this case, we’re
-telling Git that we want to recover the version of the file recorded in
-<code>HEAD</code>, which is the last saved commit. If we want to go back
-even further, we can use a commit identifier instead:</p>
+<p>その名前から推測できるように、<code>git checkout</code>
+はファイルの古いバージョンをチェックアウト (つまり、復元) します。
+この場合、最後に保存されたコミットである <code>HEAD</code>
+に記録されたファイルのバージョン を復元することをGitに伝えています。
+さらに戻りたい場合は、代わりにコミット Id を使うことができます:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -584,33 +582,33 @@ Changes to be committed:
     modified:   mars.txt
 </code></pre>
 </div>
-<p>Notice that the changes are currently in the staging area. Again, we
-can put things back the way they were by using
-<code>git checkout</code>:</p>
+<p>変更はステージング領域にあることに注意してください。
+繰り返しますが、<code>git checkout</code>
+を使うと、元の状態に戻すことができます:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout HEAD mars.txt</span></code></pre>
 </div>
-<div id="dont-lose-your-head" class="callout callout">
+<div id="head-を見失わないようにしましょう" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="dont-lose-your-head" class="callout-inner">
-<h3 class="callout-title">Don’t Lose Your HEAD<a class="anchor" aria-label="anchor" href="#dont-lose-your-head"></a>
+<div id="head-を見失わないようにしましょう" class="callout-inner">
+<h3 class="callout-title">HEAD を見失わないようにしましょう<a class="anchor" aria-label="anchor" href="#head-%E3%82%92%E8%A6%8B%E5%A4%B1%E3%82%8F%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%BE%E3%81%97%E3%82%87%E3%81%86"></a>
 </h3>
 <div class="callout-content">
-<p>Above we used</p>
+<p>上記では下記を使いました</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout f22b25e mars.txt</span></code></pre>
 </div>
-<p>to revert <code>mars.txt</code> to its state after the commit
-<code>f22b25e</code>. But be careful! The command <code>checkout</code>
-has other important functionalities and Git will misunderstand your
-intentions if you are not accurate with the typing. For example, if you
-forget <code>mars.txt</code> in the previous command.</p>
+<p><code>mars.txt</code> をコミット <code>f22b25e</code>
+後の状態に戻すためにです。 しかし、気をつけてください！ コマンド
+<code>checkout</code>
+には他の重要な機能があり、入力が正確でない場合、Gitはあなたの意図を誤解する可能性があります。
+たとえば、前のコマンドで <code>mars.txt</code> を忘れた場合です。</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -632,20 +630,17 @@ do so (now or later) by using -b with the checkout command again. Example:
 
 HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
 </div>
-<p>The “detached HEAD” is like “look, but don’t touch” here, so you
-shouldn’t make any changes in this state. After investigating your
-repo’s past state, reattach your <code>HEAD</code> with
-<code>git checkout main</code>.</p>
+<p>ここでの「HEADが切り離された」状態は「見れるが触ってはいけない」ようなものなので、この状態で変更を加えないでください。
+リポジトリの過去の状態を調査した後、<code>git checkout main</code> で
+<code>HEAD</code>を再接続してください。</p>
 </div>
 </div>
 </div>
-<p>It’s important to remember that we must use the commit number that
-identifies the state of the repository <em>before</em> the change we’re
-trying to undo. A common mistake is to use the number of the commit in
-which we made the change we’re trying to discard. In the example below,
-we want to retrieve the state from before the most recent commit
-(<code>HEAD~1</code>), which is commit <code>f22b25e</code>:</p>
-<figure><img src="../fig/git-checkout.svg" alt="Git Checkout" class="figure mx-auto d-block"></figure><p>So, to put it all together, here’s how Git works in cartoon form:</p>
+<p>取り消したい変更の一個<strong>前</strong>のコミット番号を使う必要があることを覚えておくことが重要です。
+よくある間違いは、破棄しようとしている変更を行ったコミットの番号を使用することです。
+以下の例では、最新のコミットの前 (<code>HEAD~1</code>)
+、すなわち<code>f22b25e</code>から状態を取得したいと考えています:</p>
+<figure><img src="../fig/git-checkout.svg" alt="Git Checkout" class="figure mx-auto d-block"></figure><p>つまり、すべてをまとめると、Gitがどのように機能するかは次の漫画のようになります:</p>
 <figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How%5C_Git%5C_works%5C_a%5C_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266</a></figcaption></figure><div id="simplifying-the-common-case" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -654,18 +649,19 @@ we want to retrieve the state from before the most recent commit
 <h3 class="callout-title">Simplifying the Common Case<a class="anchor" aria-label="anchor" href="#simplifying-the-common-case"></a>
 </h3>
 <div class="callout-content">
-<p>If you read the output of <code>git status</code> carefully, you’ll
-see that it includes this hint:</p>
+<p><code>git status</code>
+の出力を注意深く読むと、次のヒントを含んでいることが分かります:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>(use "git checkout -- &lt;file&gt;..." to discard changes in working directory)</code></pre>
 </div>
-<p>As it says, <code>git checkout</code> without a version identifier
-restores files to the state saved in <code>HEAD</code>. The double dash
-<code>--</code> is needed to separate the names of the files being
-recovered from the command itself: without it, Git would try to use the
-name of the file as the commit identifier.</p>
+<p>それが言っているように、バージョン識別子のない
+<code>git checkout</code>
+はファイルを<code>HEAD</code>に保存された状態に復元します。
+二重のダッシュ
+<code>--</code>はコマンドから復元されるファイルの名前を区別するために必要です：それがないと、Git
+はファイルの名前をコミット Id として使用しようとします。</p>
 </div>
 </div>
 </div>
@@ -705,7 +701,7 @@ version of her Python script called <code>data_cruncher.py</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>checkout</code> command restores files from the repository,
@@ -767,7 +763,7 @@ e.g. 0b1d055).</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -826,7 +822,7 @@ Error because you have changed venus.txt without committing the changes</code></
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The answer is 2.</p>
 <p>The command <code>git add venus.txt</code> places the current version
@@ -892,7 +888,7 @@ use <code>git checkout</code> to see if you can remove your change.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>After adding a change, <code>git checkout</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -1081,7 +1077,7 @@ both commit messages and the difference between each commit.</p>
   "url": "https://swcarpentry.github.io/git-novice/instructor/05-history.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/05-history.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-11-21",
+  "dateModified": "2023-11-24",
   "datePublished": "2023-11-24"
 }
 
