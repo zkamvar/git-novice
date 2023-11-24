@@ -501,7 +501,7 @@ Wordの場合、こういった変更やコメントを変更履歴機能で受�
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>以前書いた数百行の回復は、古いバージョンの論文のコピーを作成した場合にのみ可能です。
@@ -1188,14 +1188,13 @@ Gitによって追跡されていないファイルは、他の「普通の」�
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> nano mars.txt</span></code></pre>
 </div>
-<p>Type the text below into the <code>mars.txt</code> file:</p>
+<p>以下の文を <code>mars.txt</code> に記入してください：</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color</code></pre>
 </div>
-<p>Let’s first verify that the file was properly created by running the
-list command (<code>ls</code>):</p>
+<p>まず、listコマンド（<code>ls</code>）を実行して、ファイルが正しく作成されたことを確認しましょう：</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1206,8 +1205,8 @@ list command (<code>ls</code>):</p>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="va">mars.txt</span></span></code></pre>
 </div>
-<p><code>mars.txt</code> contains a single line, which we can see by
-running:</p>
+<p>これで <code>mars.txt</code>
+は一文だけ入ってる状態になりました。確認してみましょう：</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1218,8 +1217,8 @@ running:</p>
 </h3>
 <pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color</code></pre>
 </div>
-<p>If we check the status of our project again, Git tells us that it’s
-noticed the new file:</p>
+<p>プロジェクトの状態をもう一度確認してみると、 Git
+は新しいファイルがあることに気づきます：</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1239,15 +1238,18 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </div>
-<p>The “untracked files” message means that there’s a file in the
-directory that Git isn’t keeping track of. We can tell Git to track a
-file using <code>git add</code>:</p>
+<p>“untracked files” （追跡されていないファイル）というメッセージは、
+Git
+が追跡していないファイルがこのディレクトリに存在していることを意味します。
+<code>git add</code> を使って、Git
+にこのファイルを追跡してもらいましょう： <code>git add</code>
+を使って、Git にこのファイルを追跡してもらいましょう：</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add mars.txt</span></code></pre>
 </div>
-<p>and then check that the right thing happened:</p>
+<p>そして、正しく動作したか確認してみましょう：</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1266,9 +1268,10 @@ Changes to be committed:
 	new file:   mars.txt
 </code></pre>
 </div>
-<p>Git now knows that it’s supposed to keep track of
-<code>mars.txt</code>, but it hasn’t recorded these changes as a commit
-yet. To get it to do that, we need to run one more command:</p>
+<p>これで Git は <code>mars.txt</code>
+を追跡するように設定することができました。
+ですが、まだ変更点をコミットとして記録していません。
+これをするには、もう一つコマンドを使う必要があります：</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1281,27 +1284,23 @@ yet. To get it to do that, we need to run one more command:</p>
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt</code></pre>
 </div>
-<p>When we run <code>git commit</code>, Git takes everything we have
-told it to save by using <code>git add</code> and stores a copy
-permanently inside the special <code>.git</code> directory. This
-permanent copy is called a <a href="reference.html#commit">commit</a>
-(or <a href="reference.html#revision">revision</a>) and its short
-identifier is <code>f22b25e</code>. Your commit may have another
-identifier.</p>
-<p>We use the <code>-m</code> flag (for “message”) to record a short,
-descriptive, and specific comment that will help us remember later on
-what we did and why. If we just run <code>git commit</code> without the
-<code>-m</code> option, Git will launch <code>nano</code> (or whatever
-other editor we configured as <code>core.editor</code>) so that we can
-write a longer message.</p>
-<p><a href="https://chris.beams.io/posts/git-commit/" class="external-link">Good commit
-messages</a> start with a brief (&lt;50 characters) statement about the
-changes made in the commit. Generally, the message should complete the
-sentence “If applied, this commit will” <commit message here>. If you
-want to go into more detail, add a blank line between the summary line
-and your additional notes. Use this additional space to explain why you
-made changes and/or what their impact will be.</commit></p>
-<p>If we run <code>git status</code> now:</p>
+<p><code>git commit</code> を使うと、 Git は <code>git add</code>
+によって一時的に保存されたデータを <code>.git</code>
+ディレクトリにコピー、そして永久保存します。 永久保存されたコピーを <a href="reference.html#commit">コミット</a> （または <a href="reference.html#revision">リビジョン</a>)）と呼び、<code>f22b25e</code>
+はコミットの省略されたIDです。
+あなたのコミットには別のIDが使われているかもしれません。</p>
+<p><code>-m</code>
+フラグ（「メッセージ」の略）を使い、何を変えて、なぜ変えたのかが後からでも分かるように、簡潔で分かりやすいメッセージを書きましょう。
+<code>-m</code> を使わずに <code>git commit</code> を使った場合、Git は
+<code>nano</code> （または <code>core.editor</code>
+として設定したエディタ）を開き、もっと長いメッセージを書くことができます。</p>
+<p><a href="https://chris.beams.io/posts/git-commit/" class="external-link">良いコミットメッセージ</a>
+は、どのような変更が行われたのかが分かる短い文（50字以下）
+で始まります。
+大抵のメッセージは、「このコミットを適用すると<commit message here>」という文が完全文になるように書かれます。
+もっと詳しく書きたい場合は、このメッセージの後に改行してからノートを加えましょう。
+ここには、なぜこのような変更をしたのか、この変更によって何が影響を受けるかなどといった事を書くといいでしょう。</commit></p>
+<p>今の状態で <code>git status</code> を走らせると：</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1313,9 +1312,9 @@ made changes and/or what their impact will be.</commit></p>
 <pre class="output" tabindex="0"><code>On branch main
 nothing to commit, working tree clean</code></pre>
 </div>
-<p>it tells us everything is up to date. If we want to know what we’ve
-done recently, we can ask Git to show us the project’s history using
-<code>git log</code>:</p>
+<p>といったように、最新の状態であることを教えてくれます。
+つい先程、何をしたのかを見たい場合は <code>git log</code> を使って、 Git
+にプロジェクトの履歴を表示してもらいましょう：</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1330,32 +1329,29 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 
     Start notes on Mars as a base</code></pre>
 </div>
-<p><code>git log</code> lists all commits made to a repository in
-reverse chronological order. The listing for each commit includes the
-commit’s full identifier (which starts with the same characters as the
-short identifier printed by the <code>git commit</code> command
-earlier), the commit’s author, when it was created, and the log message
-Git was given when the commit was created.</p>
-<div id="where-are-my-changes" class="callout callout">
+<p><code>git log</code>
+は、リポジトリに施された全てのコミットを最新のものから順に表示します。
+各コミットには、省略されていないコミットID（以前 <code>git commit</code>
+で表示された省略IDと同じ字列で始まります）、コミットの著者、作成日時、そして、コミットが作られた時につけられたログメッセージが含まれています。</p>
+<div id="変更点は何処にあるの" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="where-are-my-changes" class="callout-inner">
-<h3 class="callout-title">Where Are My Changes?<a class="anchor" aria-label="anchor" href="#where-are-my-changes"></a>
+<div id="変更点は何処にあるの" class="callout-inner">
+<h3 class="callout-title">変更点は何処にあるの？<a class="anchor" aria-label="anchor" href="#%E5%A4%89%E6%9B%B4%E7%82%B9%E3%81%AF%E4%BD%95%E5%87%A6%E3%81%AB%E3%81%82%E3%82%8B%E3%81%AE"></a>
 </h3>
 <div class="callout-content">
-<p>If we run <code>ls</code> at this point, we will still see just one
-file called <code>mars.txt</code>. That’s because Git saves information
-about files’ history in the special <code>.git</code> directory
-mentioned earlier so that our filesystem doesn’t become cluttered (and
-so that we can’t accidentally edit or delete an old version).</p>
+<p>ここで <code>ls</code> を使用すると、<code>mars.txt</code>
+ファイル一つしかありません。 なぜかと言うと、Git
+はファイルの変更履歴を、以前触れた <code>.git</code>
+という特別なディレクトリに保存します。これをする事によって、ファイルシステムが散らからないようにし、うっかり古いバージョンのファイルを変更、または削除できないようにしています。</p>
 </div>
 </div>
 </div>
-<p>Now suppose Dracula adds more information to the file. (Again, we’ll
-edit with <code>nano</code> and then <code>cat</code> the file to show
-its contents; you may use a different editor, and don’t need to
-<code>cat</code>.)</p>
+<p>それでは、ドラキュラがファイルに新しい情報を加えたとしましょう。
+（以前と同様に、<code>nano</code> を使い、<code>cat</code>
+でファイルの中身を表示させます。違うエディタを使ってもいいし、<code>cat</code>
+を使わなくても構いません。）</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1368,8 +1364,8 @@ its contents; you may use a different editor, and don’t need to
 <pre class="output" tabindex="0"><code>Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman</code></pre>
 </div>
-<p>When we run <code>git status</code> now, it tells us that a file it
-already knows about has been modified:</p>
+<p><code>git status</code>
+を使うと、追跡しているファイルが変更されたことを知らせてくれます：</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1387,14 +1383,15 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")</code></pre>
 </div>
-<p>The last line is the key phrase: “no changes added to commit”. We
-have changed this file, but we haven’t told Git we will want to save
-those changes (which we do with <code>git add</code>) nor have we saved
-them (which we do with <code>git commit</code>). So let’s do that now.
-It is good practice to always review our changes before saving them. We
-do this using <code>git diff</code>. This shows us the differences
-between the current state of the file and the most recently saved
-version:</p>
+<p>最後に表示された文が一番重要です：“no changes added to commit”
+（「変更点はコミットに追加されていません」）。
+私達はファイルを編集したのですが、まだ Git
+にこの変更点を保存したいということを（<code>git add</code>
+で）伝えていないし、それを（<code>git commit</code>
+で）保存もしていません。 というわけで、これらをやってみましょう。
+変更点を保存する前に見直すのは、習慣づけると良いでしょう。 見直すには
+<code>git diff</code> を使いましょう。
+これによって、今のファイルの状態と、一つ前までのファイルの状態との違いを確かめることができます：</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1795,7 +1792,7 @@ mars.txt”</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Answer 1 is not descriptive enough, and the purpose of the commit is
 unclear; and answer 2 is redundant to using “git diff” to see what
@@ -1846,7 +1843,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Would only create a commit if files have already been
@@ -1889,7 +1886,7 @@ changes.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The output below from <code>cat mars.txt</code> reflects only content
 added during this exercise. Your output may vary.</p>
@@ -1978,7 +1975,7 @@ state.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>If needed, move out of the <code>planets</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb64">
@@ -3711,7 +3708,7 @@ shell?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -3775,7 +3772,7 @@ GitHub record times, and why?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -3805,7 +3802,7 @@ push” different from “git commit”?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -3837,7 +3834,7 @@ happened when you tried to link your local and remote repositories?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -4612,7 +4609,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4852,7 +4849,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
