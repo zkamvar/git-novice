@@ -65,5 +65,14 @@ jobs:
           dovetail:::make_translated_dir(
             translated_dir = lesson_trans_dir, overwrite = TRUE, lang = "ja",
             l10n_branch = NULL, clean = FALSE)
+          # Remove this call once the relevant branches are merged
+          sandpaper::set_config(
+            c(
+              sandpaper = "joelnitta/sandpaper@translate",
+              varnish = "carpentries/varnish@add-l10n-support"),
+            path = lesson_trans_dir,
+            create = TRUE,
+            write = TRUE
+          )
           sandpaper:::ci_deploy(path = lesson_trans_dir, reset = reset)
         shell: Rscript {0}
