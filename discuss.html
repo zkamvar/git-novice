@@ -31,8 +31,8 @@
         </ul></div>
     </div>
   </div>
-  <hr></header><nav class="navbar navbar-expand-xl navbar-light bg-white bottom-nav software" aria-label="Main Navigation"><div class="container-fluid nav-container">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <hr></header><nav class="navbar navbar-expand-xl navbar-light bg-white bottom-nav software" aria-label="メインナビゲーション"><div class="container-fluid nav-container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="menu-title">メニュー</span>
     </button>
@@ -43,7 +43,7 @@
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
-        <i role="img" aria-label="search button" data-feather="search"></i>
+        <i role="img" aria-label="検索ボタン" data-feather="search"></i>
       -->
     </div>
     <div class="desktop-nav">
@@ -70,7 +70,7 @@
       </ul></div>
     <form class="d-flex col-md-2 search-form">
       <fieldset disabled><input class="form-control me-2 searchbox" type="search" placeholder="検索" aria-label="検索"><button class="btn btn-outline-success tablet-search-button" type="submit">
-          <i class="search-icon" data-feather="search" role="img" aria-label="search button"></i>
+          <i class="search-icon" data-feather="search" role="img" aria-label="検索ボタン"></i>
         </button>
       </fieldset></form>
   </div><!--/div.container-fluid -->
@@ -82,7 +82,7 @@
     NA%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: NA%" aria-valuenow="NA" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" style="width: NA%" aria-valuenow="NA" aria-label="レッスンの進捗状況" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -90,7 +90,7 @@
         <!-- START: inst/pkgdown/templates/navbar.html -->
 <div id="sidebar-col" class="col-lg-4">
   <div id="sidebar" class="sidebar">
-      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle">
+      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="メニューを閉じる" alt="メニューを閉じる" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle" data-collapse="Collapse " data-episodes="エピソード ">
           <i class="search-icon" data-feather="x" role="img"></i>
         </button>
         <div class="sidebar-inner">
@@ -305,7 +305,7 @@
 
         <!-- START: inst/pkgdown/templates/content-instructor.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
-    <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+    <nav class="lesson-content mx-md-4" aria-label="前の章と次の章"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>前へ</a>
         <a class="chapter-link float-end" href="index.html">次へ<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
@@ -329,19 +329,19 @@
         
         
         <div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> 回答を全て見る <i aria-hidden="true" data-feather="plus"></i></button>
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="回答を全て見る " data-collapse="Collapse All Solutions "> 回答を全て見る <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
 
         
 
-<section id="frequently-asked-questions"><h2 class="section-heading">Frequently Asked Questions<a class="anchor" aria-label="anchor" href="#frequently-asked-questions"></a>
+<section id="frequently-asked-questions"><h2 class="section-heading">Frequently Asked Questions<a class="anchor" aria-label="アンカー" href="#frequently-asked-questions"></a>
 </h2>
 <hr class="half-width"><p>People often have questions about Git beyond the scope of the core
 material. Students who have completed the rest of the lessons might find
 value in looking through the following topics.</p>
 <p>Note that since this material isn’t essential for basic Git usage, it
 won’t be covered by the instructor.</p>
-</section><section id="more-advanced-git-configuration"><h2 class="section-heading">More Advanced Git Configuration<a class="anchor" aria-label="anchor" href="#more-advanced-git-configuration"></a>
+</section><section id="more-advanced-git-configuration"><h2 class="section-heading">More Advanced Git Configuration<a class="anchor" aria-label="アンカー" href="#more-advanced-git-configuration"></a>
 </h2>
 <hr class="half-width"><p>In <a href="02-setup.html">Setting Up Git</a>, we used
 <code>git config --global</code> to set some default options for Git. It
@@ -395,7 +395,7 @@ command:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git co f22b25e mars.txt</span></code></pre>
 </div>
-</section><section id="styling-gits-log"><h2 class="section-heading">Styling Git’s Log<a class="anchor" aria-label="anchor" href="#styling-gits-log"></a>
+</section><section id="styling-gits-log"><h2 class="section-heading">Styling Git’s Log<a class="anchor" aria-label="アンカー" href="#styling-gits-log"></a>
 </h2>
 <hr class="half-width"><p>A good target for customization is output from the log. The default
 log is quite verbose but gives no graphical hints such as information
@@ -426,7 +426,7 @@ have:</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="undoing-git-configuration-changes" class="callout-inner">
-<h3 class="callout-title">Undoing Git Configuration Changes<a class="anchor" aria-label="anchor" href="#undoing-git-configuration-changes"></a>
+<h3 class="callout-title">Undoing Git Configuration Changes<a class="anchor" aria-label="アンカー" href="#undoing-git-configuration-changes"></a>
 </h3>
 <div class="callout-content">
 <p>You can use the <code>--unset</code> flag to delete unwanted options
@@ -441,7 +441,7 @@ you clone them.</p>
 </div>
 </div>
 </div>
-</section><section id="non-text-files"><h2 class="section-heading">Non-text Files<a class="anchor" aria-label="anchor" href="#non-text-files"></a>
+</section><section id="non-text-files"><h2 class="section-heading">Non-text Files<a class="anchor" aria-label="アンカー" href="#non-text-files"></a>
 </h2>
 <hr class="half-width"><p>Recall when we discussed <a href="09-conflict.html">Conflicts</a>
 there was a challenge that asked, “What does Git do when there is a
@@ -538,7 +538,7 @@ project. Even though a logo will be stored in a binary format such as
 fairly static through the lifetime of your repository. On the rare
 occasion that branding does change, you will probably just want to
 replace the logo completely rather than merge little differences in.</p>
-</section><section id="removing-a-file"><h2 class="section-heading">Removing a File<a class="anchor" aria-label="anchor" href="#removing-a-file"></a>
+</section><section id="removing-a-file"><h2 class="section-heading">Removing a File<a class="anchor" aria-label="アンカー" href="#removing-a-file"></a>
 </h2>
 <hr class="half-width"><p>Adding and modifying files are not the only actions one might take
 when working on a project. It might be required to remove a file from
@@ -590,7 +590,7 @@ were to retrieve that specific commit.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Removing info on Nibiru.  It is not a real planet!'</span></span></code></pre>
 </div>
-</section><section id="removing-a-file-with-unix"><h2 class="section-heading">Removing a File with Unix<a class="anchor" aria-label="anchor" href="#removing-a-file-with-unix"></a>
+</section><section id="removing-a-file-with-unix"><h2 class="section-heading">Removing a File with Unix<a class="anchor" aria-label="アンカー" href="#removing-a-file-with-unix"></a>
 </h2>
 <hr class="half-width"><p>Sometimes we might forget to remove the file through Git. If you
 removed the file with Unix <code>rm</code> instead of using
@@ -649,7 +649,7 @@ committed.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Removing info on Nibiru, again!'</span></span></code></pre>
 </div>
-</section><section id="renaming-a-file"><h2 class="section-heading">Renaming a File<a class="anchor" aria-label="anchor" href="#renaming-a-file"></a>
+</section><section id="renaming-a-file"><h2 class="section-heading">Renaming a File<a class="anchor" aria-label="アンカー" href="#renaming-a-file"></a>
 </h2>
 <hr class="half-width"><p>Another common change when working on a project is to rename a
 file.</p>
@@ -691,7 +691,7 @@ Changes to be committed:
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Superman'</span>s home is now Earth<span class="st">'</span></span></code></pre>
 </div>
-</section><section id="renaming-a-file-with-unix"><h2 class="section-heading">Renaming a File with Unix<a class="anchor" aria-label="anchor" href="#renaming-a-file-with-unix"></a>
+</section><section id="renaming-a-file-with-unix"><h2 class="section-heading">Renaming a File with Unix<a class="anchor" aria-label="アンカー" href="#renaming-a-file-with-unix"></a>
 </h2>
 <hr class="half-width"><p>If you forgot to use Git and you used Unix <code>mv</code> instead of
 <code>git mv</code>, you will have a touch more work to do but Git will
@@ -759,7 +759,7 @@ repository:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">'Superman'</span>s home is Earth, told you before.<span class="st">'</span></span></code></pre>
 </div>
-</section><section id="further-.gitignore-concepts"><h2 class="section-heading">Further .gitignore concepts<a class="anchor" aria-label="anchor" href="#further-.gitignore-concepts"></a>
+</section><section id="further-.gitignore-concepts"><h2 class="section-heading">Further .gitignore concepts<a class="anchor" aria-label="アンカー" href="#further-.gitignore-concepts"></a>
 </h2>
 <hr class="half-width"><p>For additional documentation on .gitignore, please reference <a href="https://git-scm.com/docs/gitignore" class="external-link">the official git
 documentation</a>.</p>
@@ -776,7 +776,7 @@ root directory.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="ignoring-nested-files-challenge-problem" class="callout-inner">
-<h3 class="callout-title">Ignoring Nested Files: Challenge Problem<a class="anchor" aria-label="anchor" href="#ignoring-nested-files-challenge-problem"></a>
+<h3 class="callout-title">Ignoring Nested Files: Challenge Problem<a class="anchor" aria-label="アンカー" href="#ignoring-nested-files-challenge-problem"></a>
 </h3>
 <div class="callout-content">
 <p>Given a directory structure that looks like:</p>
@@ -823,7 +823,7 @@ results/*             # ignore the files in the results directory
 </div>
 </div>
 </section></div> <!-- / div.lesson-content -->
-    </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
+    </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="前の章と次の章"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>前へ</a>
         <a class="chapter-link float-end" href="index.html">次へ<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
@@ -857,13 +857,14 @@ results/*             # ignore the files in the results directory
         
         <p>材料はthe authorsによって<a href="LICENSE.html">CC-BY 4.0</a>のもとに掲載を許諾されている</p>
         
-        <p>テンプレートは<a href="https://carpentries.org/" class="external-link">The Carpentries</a>によって<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0のもとに掲載を許諾されている</a></p>
-        <p>このレッスンは<a href="https://github.com/joelnitta/sandpaper/tree/translate" class="external-link">sandpaper (0.14.1.9000)</a>、<a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.3)</a>、および<a href="https://github.com/carpentries/varnish/tree/add-l10n-support" class="external-link">varnish (0.3.3.9000)</a>によって作られた</p>
+        <p>テンプレートは<a href="https://carpentries.org/" class="external-link">The Carpentries</a>によって<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a>のもとに掲載を許諾されている</p>
+        <p>このレッスンは<a href="https://github.com/joelnitta/sandpaper/tree/translate" class="external-link">sandpaper (0.15.0.9000)</a>、<a href="https://github.com/carpentries/pegboard/tree/main" class="external-link">pegboard (0.7.3)</a>、および<a href="https://github.com/carpentries/varnish/tree/add-l10n-support" class="external-link">varnish (0.3.3.9000)</a>によって作られた</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
 		<a href="#top">
-      <i class="search-icon" data-feather="arrow-up" role="img" aria-label="上へ戻る"></i><br><span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top
+      <i class="search-icon" data-feather="arrow-up" role="img" aria-label="上へ戻る"></i><br><!-- <span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">Back</span> To Top -->
+      上へ<span class="d-none d-sm-none d-md-none d-lg-none d-xl-block">戻る</span>
 		</a>
 	</div>
   <script type="application/ld+json">
@@ -880,7 +881,7 @@ results/*             # ignore the files in the results directory
   "identifier": "https://swcarpentry.github.io/git-novice/discuss.html",
   "dateCreated": "2014-12-04",
   "dateModified": "2023-11-21",
-  "datePublished": "2023-12-01"
+  "datePublished": "2023-12-05"
 }
 
   </script><script>
