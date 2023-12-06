@@ -503,7 +503,7 @@ Wordの場合、こういった変更やコメントを変更履歴機能で受�
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>以前書いた数百行の回復は、古いバージョンの論文のコピーを作成した場合にのみ可能です。
@@ -1030,7 +1030,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>いいえ。 ドラキュラは <code>moons</code> サブディレクトリを Git
 リポジトリにする必要はありません。<code>planets</code>
@@ -1081,7 +1081,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   解決策 （要注意！）
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="背景">背景<a class="anchor" aria-label="anchor" href="#%E8%83%8C%E6%99%AF"></a>
@@ -1791,7 +1791,7 @@ mars.txt”</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>１つ目のメッセージは短すぎてコミットの内容が何なのかわかりにくいです。２つ目は<code>git diff</code>で何が変わったのかが分かるので、長い割にはあまり意味がありません。３つ目は、短く、簡潔で、分かりやすいメッセージです。</p>
 </div>
@@ -1839,7 +1839,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>ファイルがステージングエリアにない限り、コミットできません。</p></li>
@@ -1879,7 +1879,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>以下の<code>cat mars.txt</code>の出力は、この課題で追加された内容のみを反映しています。
 出力は異なる場合があります。</p>
@@ -1968,7 +1968,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>必要であれば、<code>planets</code> から出ましょう：</p>
 <div class="codewrapper sourceCode" id="cb64">
@@ -2412,7 +2412,7 @@ HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>The answer is (5)-Both 2 and 4.</p>
+<p>答えは (5) - 2 と 4 の両方です。</p>
 <p>The <code>checkout</code> command restores files from the repository,
 overwriting the files in your working directory. Answers 2 and 4 both
 restore the <em>latest</em> version <em>in the repository</em> of the
@@ -2435,34 +2435,30 @@ you don’t want to be there.</p>
 </div>
 </div>
 </div>
-<div id="reverting-a-commit" class="callout challenge">
+<div id="コミットを戻すことについて" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="reverting-a-commit" class="callout-inner">
-<h3 class="callout-title">Reverting a Commit<a class="anchor" aria-label="アンカー" href="#reverting-a-commit"></a>
+<div id="コミットを戻すことについて" class="callout-inner">
+<h3 class="callout-title">コミットを戻すことについて<a class="anchor" aria-label="アンカー" href="#%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%82%92%E6%88%BB%E3%81%99%E3%81%93%E3%81%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"></a>
 </h3>
 <div class="callout-content">
-<p>Jennifer is collaborating with colleagues on her Python script. She
-realizes her last commit to the project’s repository contained an error,
-and wants to undo it. Jennifer wants to undo correctly so everyone in
-the project’s repository gets the correct change. The command
-<code>git revert [erroneous commit ID]</code> will create a new commit
-that reverses the erroneous commit.</p>
-<p>The command <code>git revert</code> is different from
-<code>git checkout [commit ID]</code> because <code>git checkout</code>
-returns the files not yet committed within the local repository to a
-previous state, whereas <code>git revert</code> reverses changes
-committed to the local and project repositories.</p>
-<p>Below are the right steps and explanations for Jennifer to use
-<code>git revert</code>, what is the missing command?</p>
+<p>ジェニファーは同僚とPythonスクリプトで共同作業を行っており、グループのリポジトリへの彼女の最新のコミットが間違っていることに気付き、それを元に戻したいと思っています。
+ジェニファーは、グループリポジトリのみんなが正しい変更を取得できるように、正しく元に戻す必要があります。
+ジェニファーは、グループリポジトリのみんなが正しい変更を取得できるように、正しく元に戻す必要があります。
+<code>git revert [wrong commit ID]</code>
+は、ジェニファーの誤ったコミットを元に戻す新しいコミットを作ります。</p>
+<p>従って<code>git revert</code>は<code>git checkout [commit ID]</code>とは異なります。なぜなら
+<code>checkout</code>
+はグループのリポジトリにはコミットされていないローカルの変更用のコマンドだからです。</p>
+<p>以下は、ジェニファーが<code>git revert</code>を使用するための正しい手順と説明ですが、不足しているコマンドは何でしょうか？</p>
 <ol style="list-style-type: decimal">
-<li><p><code>________ # Look at the git history of the project to find the commit ID</code></p></li>
-<li><p>Copy the ID (the first few characters of the ID,
-e.g. 0b1d055).</p></li>
+<li><p><code>________ # コミットIDを見つけるために、プロジェクトのgitの 履歴を見ます</code></p></li>
+<li><p>そのIDをコピーします (IDの最初の数文字は例えば
+0b1d055)。</p></li>
 <li><p><code>git revert [commit ID]</code></p></li>
-<li><p>Type in the new commit message.</p></li>
-<li><p>Save and close</p></li>
+<li><p>新しいコミットメッセージを入力します。</p></li>
+<li><p>保存して閉じます。</p></li>
 </ol>
 </div>
 </div>
@@ -2486,15 +2482,15 @@ changes to the repository.</p>
 </div>
 </div>
 </div>
-<div id="understanding-workflow-and-history" class="callout challenge">
+<div id="ワークフローと履歴の理解" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="understanding-workflow-and-history" class="callout-inner">
-<h3 class="callout-title">Understanding Workflow and History<a class="anchor" aria-label="アンカー" href="#understanding-workflow-and-history"></a>
+<div id="ワークフローと履歴の理解" class="callout-inner">
+<h3 class="callout-title">ワークフローと履歴の理解<a class="anchor" aria-label="アンカー" href="#%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC%E3%81%A8%E5%B1%A5%E6%AD%B4%E3%81%AE%E7%90%86%E8%A7%A3"></a>
 </h3>
 <div class="callout-content">
-<p>What is the output of the last command in</p>
+<p>最後のコマンドの出力は何でしょうか？</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2571,28 +2567,29 @@ the most recently committed version of <code>venus.txt</code>.</p>
 <code>git diff</code><a class="anchor" aria-label="アンカー" href="#checking-understanding-of-git-diff"></a>
 </h3>
 <div class="callout-content">
-<p>Consider this command: <code>git diff HEAD~9 mars.txt</code>. What do
-you predict this command will do if you execute it? What happens when
-you do execute it? Why?</p>
-<p>Try another command, <code>git diff [ID] mars.txt</code>, where [ID]
-is replaced with the unique identifier for your most recent commit. What
-do you think will happen, and what does happen?</p>
+<p>このコマンドをよく考えてみてください:
+<code>git diff HEAD~9 mars.txt</code>。
+このコマンドを実行したらどうなるだろうと予測しますか?
+実行すると何が起こっていますか? またそれはなぜでしょうか?</p>
+<p>別のコマンド <code>git diff [ID] mars.txt</code>
+を試しましょう、ここでの [ID] は最新のコミットのユニークな ID
+で置き換えられます。 あなたは何が起こるだろうと思いますか?</p>
 </div>
 </div>
 </div>
-<div id="getting-rid-of-staged-changes" class="callout challenge">
+<div id="ステージされた変更の除去" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="getting-rid-of-staged-changes" class="callout-inner">
-<h3 class="callout-title">Getting Rid of Staged Changes<a class="anchor" aria-label="アンカー" href="#getting-rid-of-staged-changes"></a>
+<div id="ステージされた変更の除去" class="callout-inner">
+<h3 class="callout-title">ステージされた変更の除去<a class="anchor" aria-label="アンカー" href="#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%81%95%E3%82%8C%E3%81%9F%E5%A4%89%E6%9B%B4%E3%81%AE%E9%99%A4%E5%8E%BB"></a>
 </h3>
 <div class="callout-content">
-<p><code>git checkout</code> can be used to restore a previous commit
-when unstaged changes have been made, but will it also work for changes
-that have been staged but not committed? Make a change to
-<code>mars.txt</code>, add that change using <code>git add</code>, then
-use <code>git checkout</code> to see if you can remove your change.</p>
+<p><code>git checkout</code> は、ステージされていない変更があったときに
+以前のコミットを復元するために使用できます。しかしそれはステージされているがコミットされていない変更に対しても機能するでしょうか?
+<code>mars.txt</code>
+に変更を用意し、その変更を加え（<code>git add</code>を使い）、<code>git checkout</code>
+を使い変更を取り除くことができるかどうか確かめましょう。</p>
 </div>
 </div>
 </div>
@@ -2679,16 +2676,17 @@ nothing to commit, working tree clean</code></pre>
 <h3 class="callout-title">Explore and Summarize Histories<a class="anchor" aria-label="アンカー" href="#explore-and-summarize-histories"></a>
 </h3>
 <div class="callout-content">
-<p>Exploring history is an important part of Git, and often it is a
-challenge to find the right commit ID, especially if the commit is from
-several months ago.</p>
-<p>Imagine the <code>planets</code> project has more than 50 files. You
-would like to find a commit that modifies some specific text in
-<code>mars.txt</code>. When you type <code>git log</code>, a very long
-list appeared. How can you narrow down the search?</p>
-<p>Recall that the <code>git diff</code> command allows us to explore
-one specific file, e.g., <code>git diff mars.txt</code>. We can apply a
-similar idea here.</p>
+<p>履歴の探索はgitの重要な要素であり、特にそのコミットが数ヶ月前のものである場合は、適切なコミットIDを見つけるのが難しいことがよくあります。</p>
+<p><code>planets</code>
+プロジェクトに50を超えるファイルがあると考えてください。 あなたは
+<code>mars.txt</code>
+中の特定のテキストが変更されたコミットを見つけたいとします。
+<code>git log</code> と入力すると、非常に長いリストが表示されました。
+どうやって探す範囲を限定しますか?</p>
+<p><code>git diff</code>
+コマンドを使用すると、1つの特定のファイルを探索できることを思い出してください、
+例えば、<code>git diff mars.txt</code> 。
+ここでも同様のアイデアを適用できます。</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2916,7 +2914,7 @@ nothing to commit, working tree clean</code></pre>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>If you only want to ignore the contents of
 <code>results/plots</code>, you can change your <code>.gitignore</code>
@@ -2959,7 +2957,7 @@ directory except for <code>final.csv</code>? Hint: Find out what
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You would add the following two lines to your .gitignore:</p>
 <div class="codewrapper">
@@ -3010,7 +3008,7 @@ not <code>results/data</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>If you want to ignore the contents of <code>results/</code> but not
 those of <code>results/data/</code>, you can change your
@@ -3060,7 +3058,7 @@ ignore all <code>.csv</code> files in
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Appending <code>results/data/position/gps/*.csv</code> will match
 every file in <code>results/data/position/gps</code> that ends with
@@ -3100,7 +3098,7 @@ listing the names of the corresponding folders?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>In the <code>.gitignore</code> file, write:</p>
 <div class="codewrapper">
@@ -3141,7 +3139,7 @@ exception with the exclamation point operator.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>The <code>!</code> modifier will negate an entry from a previously
 defined ignore pattern. Because the <code>!*.csv</code> entry negates
@@ -3187,7 +3185,7 @@ via <code>.gitignore</code>.</p></li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>append either <code>log_*</code> or <code>log*</code> as a new
@@ -3698,7 +3696,7 @@ shell?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -3762,7 +3760,7 @@ GitHub record times, and why?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -3792,7 +3790,7 @@ push” different from “git commit”?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -3824,7 +3822,7 @@ happened when you tried to link your local and remote repositories?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -4160,7 +4158,7 @@ has changed with command line? And on GitHub?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4601,7 +4599,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4841,7 +4839,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5639,7 +5637,7 @@ directory is not version controlled.</li>
   Solution to Challenge
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>This can be done in Rstudio:</p>
 <div class="codewrapper sourceCode" id="cb1">
