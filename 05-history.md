@@ -273,26 +273,20 @@ HEAD is now at f22b25e Start notes on Mars as a base
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The fact that files can be reverted one by one
-tends to change the way people organize their work.
-If everything is in one large document,
-it's hard (but not impossible) to undo changes to the introduction
-without also undoing changes made later to the conclusion.
-If the introduction and conclusion are stored in separate files,
-on the other hand,
-moving backward and forward in time becomes much easier.
+ファイルを1つずつ元に戻すことができるという事実は
+人々が研究を整理する方法を変えることがあります。
+すべての変更が1つの大きなドキュメントに含まれている場合、
+後で結論に加えられた変更を元に戻さずに、
+序論への変更を元に戻すことは困難です(不可能ではありませんが)。
+一方、序論と結論を別々のファイルに保存すると、時間を前後に移動するのがはるかに簡単になります。
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Recovering Older Versions of a File
+## ファイルの古いバージョンの復元
 
-Jennifer has made changes to the Python script that she has been working on for weeks, and the
-modifications she made this morning "broke" the script and it no longer runs. She has spent
-\~ 1hr trying to fix it, with no luck...
+ジェニファーは、数週間取り組んできたPythonスクリプトに変更を加えました。そして今朝行った変更により、スクリプトが "壊れ"、動作しなくなりました。 彼女はそれを修正しようとして約1時間費やしましたが、うまく機能しません...
 
-Luckily, she has been keeping track of her project's versions using Git! Which commands below will
-let her recover the last committed version of her Python script called
-`data_cruncher.py`?
+幸い、彼女はGitを使用してプロジェクトのバージョンを追跡していました! 以下のどのコマンドで、`data_cruncher.py` と呼ばれるPythonスクリプトの最後にコミットされたバージョンを復元できるでしょうか？
 
 1. `$ git checkout HEAD`
 
