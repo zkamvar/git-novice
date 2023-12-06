@@ -302,7 +302,7 @@ HEAD is now at f22b25e Start notes on Mars as a base
 
 ## Solution
 
-The answer is (5)-Both 2 and 4.
+答えは (5) - 2 と 4 の両方です。
 
 The `checkout` command restores files from the repository, overwriting the files in your working
 directory. Answers 2 and 4 both restore the _latest_ version _in the repository_ of the file
@@ -325,31 +325,23 @@ As discussed above, you are left in a _detached_ `HEAD` state, and you don't wan
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Reverting a Commit
+## コミットを戻すことについて
 
-Jennifer is collaborating with colleagues on her Python script.  She
-realizes her last commit to the project's repository contained an error, and
-wants to undo it.  Jennifer wants to undo correctly so everyone in the project's
-repository gets the correct change. The command `git revert [erroneous commit ID]` will create a
-new commit that reverses the erroneous commit.
+ジェニファーは同僚とPythonスクリプトで共同作業を行っており、グループのリポジトリへの彼女の最新のコミットが間違っていることに気付き、それを元に戻したいと思っています。  ジェニファーは、グループリポジトリのみんなが正しい変更を取得できるように、正しく元に戻す必要があります。  ジェニファーは、グループリポジトリのみんなが正しい変更を取得できるように、正しく元に戻す必要があります。 `git revert [wrong commit ID]` は、ジェニファーの誤ったコミットを元に戻す新しいコミットを作ります。
 
-The command `git revert` is
-different from `git checkout [commit ID]` because `git checkout` returns the
-files not yet committed within the local repository to a previous state, whereas `git revert`
-reverses changes committed to the local and project repositories.
+従って`git revert`は`git checkout [commit ID]`とは異なります。なぜなら `checkout` はグループのリポジトリにはコミットされていないローカルの変更用のコマンドだからです。
 
-Below are the right steps and explanations for Jennifer to use `git revert`,
-what is the missing command?
+以下は、ジェニファーが`git revert`を使用するための正しい手順と説明ですが、不足しているコマンドは何でしょうか？
 
-1. `________ # Look at the git history of the project to find the commit ID`
+1. `________ # コミットIDを見つけるために、プロジェクトのgitの 履歴を見ます`
 
-2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
+2. そのIDをコピーします (IDの最初の数文字は例えば 0b1d055)。
 
 3. `git revert [commit ID]`
 
-4. Type in the new commit message.
+4. 新しいコミットメッセージを入力します。
 
-5. Save and close
+5. 保存して閉じます。
 
 :::::::::::::::  solution
 
@@ -367,9 +359,9 @@ else has committed changes to the repository.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Understanding Workflow and History
+## ワークフローと履歴の理解
 
-What is the output of the last command in
+最後のコマンドの出力は何でしょうか？
 
 ```bash
 $ cd planets
@@ -434,23 +426,18 @@ Venus is beautiful and full of love.
 
 ## Checking Understanding of `git diff`
 
-Consider this command: `git diff HEAD~9 mars.txt`. What do you predict this command
-will do if you execute it? What happens when you do execute it? Why?
+このコマンドをよく考えてみてください: `git diff HEAD~9 mars.txt`。 このコマンドを実行したらどうなるだろうと予測しますか? 実行すると何が起こっていますか? またそれはなぜでしょうか?
 
-Try another command, `git diff [ID] mars.txt`, where \[ID] is replaced with
-the unique identifier for your most recent commit. What do you think will happen,
-and what does happen?
+別のコマンド `git diff [ID] mars.txt` を試しましょう、ここでの \[ID] は最新のコミットのユニークな ID で置き換えられます。 あなたは何が起こるだろうと思いますか?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Getting Rid of Staged Changes
+## ステージされた変更の除去
 
-`git checkout` can be used to restore a previous commit when unstaged changes have
-been made, but will it also work for changes that have been staged but not committed?
-Make a change to `mars.txt`, add that change using `git add`,
-then use `git checkout` to see if you can remove your change.
+`git checkout` は、ステージされていない変更があったときに 以前のコミットを復元するために使用できます。しかしそれはステージされているがコミットされていない変更に対しても機能するでしょうか?
+`mars.txt` に変更を用意し、その変更を加え（`git add`を使い）、`git checkout` を使い変更を取り除くことができるかどうか確かめましょう。
 
 :::::::::::::::  solution
 
@@ -524,16 +511,14 @@ nothing to commit, working tree clean
 
 ## Explore and Summarize Histories
 
-Exploring history is an important part of Git, and often it is a challenge to find
-the right commit ID, especially if the commit is from several months ago.
+履歴の探索はgitの重要な要素であり、特にそのコミットが数ヶ月前のものである場合は、適切なコミットIDを見つけるのが難しいことがよくあります。
 
-Imagine the `planets` project has more than 50 files.
-You would like to find a commit that modifies some specific text in `mars.txt`.
-When you type `git log`, a very long list appeared.
-How can you narrow down the search?
+`planets` プロジェクトに50を超えるファイルがあると考えてください。
+あなたは `mars.txt` 中の特定のテキストが変更されたコミットを見つけたいとします。
+`git log` と入力すると、非常に長いリストが表示されました。
+どうやって探す範囲を限定しますか?
 
-Recall that the `git diff` command allows us to explore one specific file,
-e.g., `git diff mars.txt`. We can apply a similar idea here.
+`git diff` コマンドを使用すると、1つの特定のファイルを探索できることを思い出してください、 例えば、`git diff mars.txt` 。 ここでも同様のアイデアを適用できます。
 
 ```bash
 $ git log mars.txt
