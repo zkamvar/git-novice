@@ -1,5 +1,5 @@
 ---
-title: Exploring History
+title: 履歴の探索
 teaching: 25
 exercises: 0
 ---
@@ -300,7 +300,7 @@ HEAD is now at f22b25e Start notes on Mars as a base
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 答えは (5) - 2 と 4 の両方です。
 
@@ -345,7 +345,7 @@ As discussed above, you are left in a _detached_ `HEAD` state, and you don't wan
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 The command `git log` lists project history with commit IDs.
 
@@ -396,7 +396,7 @@ Error because you have changed venus.txt without committing the changes
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 The answer is 2.
 
@@ -441,7 +441,7 @@ Venus is beautiful and full of love.
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 After adding a change, `git checkout` can not be used directly.
 Let's look at the output of `git status`:
