@@ -1,5 +1,5 @@
 ---
-title: Tracking Changes
+title: 変更内容の記録
 teaching: 20
 exercises: 0
 ---
@@ -514,7 +514,7 @@ $ git commit -m "Add some initial thoughts on spaceships"
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 １つ目のメッセージは短すぎてコミットの内容が何なのかわかりにくいです。２つ目は`git diff`で何が変わったのかが分かるので、長い割にはあまり意味がありません。３つ目は、短く、簡潔で、分かりやすいメッセージです。
 
