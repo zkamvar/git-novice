@@ -26,7 +26,7 @@ title: セットアップ
 2023年にGitHubは 、セキュリティを強化するためすべてのアカウントに [多要素認証(2FA)](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication)の設定を行うという要件を導入した。
 2FAを設定するためにいくつかのオプションがあります。
 
-1. Google Authenticator]\(https\://support.google.com/accounts/answer/1066447?hl=en\&co=GENIE.Platform%3DiOS\&oco=0)や [Duo Mobile](https://duo.com/product/multi-factor-authentication-mfa/duo-mobile-app) のような認証アプリを既に使っている場合は、 [そのアプリにGitHub を追加](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-totp-mobile-app) してください。
+1. [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en\&co=GENIE.Platform%3DiOS\&oco=0)や [Duo Mobile](https://duo.com/product/multi-factor-authentication-mfa/duo-mobile-app) のような認証アプリを既に使っている場合は、 [そのアプリにGitHub を追加](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-totp-mobile-app) してください。
 2. スマートフォンにアクセスできるが、まだ認証アプリを使っていない場合は、認証アプリをインストールし、 [アプリにGitHubを追加](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-a-totp-mobile-app)してください。
 3. スマートフォンにアクセスできない場合、または認証アプリをインストールしたくない場合は、2つの選択肢があります：
    1. [テキストメッセージによる2FAの設定](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-text-messages)
