@@ -503,7 +503,7 @@ Wordの場合、こういった変更やコメントを変更履歴機能で受�
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li><p>以前書いた数百行の回復は、古いバージョンの論文のコピーを作成した場合にのみ可能です。
@@ -1030,7 +1030,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>いいえ。 ドラキュラは <code>moons</code> サブディレクトリを Git
 リポジトリにする必要はありません。<code>planets</code>
@@ -1081,7 +1081,7 @@ nothing to commit (create/copy files and use "git add" to track)</code></pre>
   解決策 （要注意！）
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="section level3">
 <h3 id="背景">背景<a class="anchor" aria-label="anchor" href="#%E8%83%8C%E6%99%AF"></a>
@@ -1791,7 +1791,7 @@ mars.txt”</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>１つ目のメッセージは短すぎてコミットの内容が何なのかわかりにくいです。２つ目は<code>git diff</code>で何が変わったのかが分かるので、長い割にはあまり意味がありません。３つ目は、短く、簡潔で、分かりやすいメッセージです。</p>
 </div>
@@ -1839,7 +1839,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>ファイルがステージングエリアにない限り、コミットできません。</p></li>
@@ -1879,7 +1879,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>以下の<code>cat mars.txt</code>の出力は、この課題で追加された内容のみを反映しています。
 出力は異なる場合があります。</p>
@@ -1968,7 +1968,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>必要であれば、<code>planets</code> から出ましょう：</p>
 <div class="codewrapper sourceCode" id="cb64">
@@ -2034,7 +2034,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
 </div>
 </div></section><section id="aio-05-history"><p>Content from <a href="05-history.html">Exploring History</a></p>
 <hr>
-<p>最終更新日：2023-11-24 |
+<p>最終更新日：2023-12-06 |
         
         <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/05-history.md" class="external-link">ページの編集 <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>所要時間：<i aria-hidden="true" data-feather="clock"></i> 25分</p>
@@ -2373,27 +2373,26 @@ HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
 </div>
 </div>
 </div>
-<p>The fact that files can be reverted one by one tends to change the
-way people organize their work. If everything is in one large document,
-it’s hard (but not impossible) to undo changes to the introduction
-without also undoing changes made later to the conclusion. If the
-introduction and conclusion are stored in separate files, on the other
-hand, moving backward and forward in time becomes much easier.</p>
-<div id="recovering-older-versions-of-a-file" class="callout challenge">
+<p>ファイルを1つずつ元に戻すことができるという事実は
+人々が研究を整理する方法を変えることがあります。
+すべての変更が1つの大きなドキュメントに含まれている場合、
+後で結論に加えられた変更を元に戻さずに、
+序論への変更を元に戻すことは困難です(不可能ではありませんが)。
+一方、序論と結論を別々のファイルに保存すると、時間を前後に移動するのがはるかに簡単になります。</p>
+<div id="ファイルの古いバージョンの復元" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="recovering-older-versions-of-a-file" class="callout-inner">
-<h3 class="callout-title">Recovering Older Versions of a File<a class="anchor" aria-label="アンカー" href="#recovering-older-versions-of-a-file"></a>
+<div id="ファイルの古いバージョンの復元" class="callout-inner">
+<h3 class="callout-title">ファイルの古いバージョンの復元<a class="anchor" aria-label="アンカー" href="#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%8F%A4%E3%81%84%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E5%BE%A9%E5%85%83"></a>
 </h3>
 <div class="callout-content">
-<p>Jennifer has made changes to the Python script that she has been
-working on for weeks, and the modifications she made this morning
-“broke” the script and it no longer runs. She has spent ~ 1hr trying to
-fix it, with no luck…</p>
-<p>Luckily, she has been keeping track of her project’s versions using
-Git! Which commands below will let her recover the last committed
-version of her Python script called <code>data_cruncher.py</code>?</p>
+<p>ジェニファーは、数週間取り組んできたPythonスクリプトに変更を加えました。そして今朝行った変更により、スクリプトが
+“壊れ”、動作しなくなりました。
+彼女はそれを修正しようとして約1時間費やしましたが、うまく機能しません…</p>
+<p>幸い、彼女はGitを使用してプロジェクトのバージョンを追跡していました!
+以下のどのコマンドで、<code>data_cruncher.py</code>
+と呼ばれるPythonスクリプトの最後にコミットされたバージョンを復元できるでしょうか？</p>
 <ol style="list-style-type: decimal">
 <li><p><code>$ git checkout HEAD</code></p></li>
 <li><p><code>$ git checkout HEAD data_cruncher.py</code></p></li>
@@ -3699,7 +3698,7 @@ shell?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -3763,7 +3762,7 @@ GitHub record times, and why?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -3793,7 +3792,7 @@ push” different from “git commit”?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -3825,7 +3824,7 @@ happened when you tried to link your local and remote repositories?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -4602,7 +4601,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4842,7 +4841,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5720,8 +5719,8 @@ project over time.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/aio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-12-05",
-  "datePublished": "2023-12-05"
+  "dateModified": "2023-12-06",
+  "datePublished": "2023-12-06"
 }
 
   </script><script>

@@ -68,5 +68,3 @@ profiles:
 url: 'https://swcarpentry.github.io/git-novice'
 analytics: carpentries
 lang: ja
-sandpaper: 'joelnitta/sandpaper@translate'
-varnish: 'carpentries/varnish@add-l10n-support'

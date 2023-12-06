@@ -326,7 +326,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Exploring History</h1>
-        <p>最終更新日：2023-11-24 |
+        <p>最終更新日：2023-12-06 |
         
         <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/05-history.md" class="external-link">ページの編集 <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -666,27 +666,26 @@ HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
 </div>
 </div>
 </div>
-<p>The fact that files can be reverted one by one tends to change the
-way people organize their work. If everything is in one large document,
-it’s hard (but not impossible) to undo changes to the introduction
-without also undoing changes made later to the conclusion. If the
-introduction and conclusion are stored in separate files, on the other
-hand, moving backward and forward in time becomes much easier.</p>
-<div id="recovering-older-versions-of-a-file" class="callout challenge">
+<p>ファイルを1つずつ元に戻すことができるという事実は
+人々が研究を整理する方法を変えることがあります。
+すべての変更が1つの大きなドキュメントに含まれている場合、
+後で結論に加えられた変更を元に戻さずに、
+序論への変更を元に戻すことは困難です(不可能ではありませんが)。
+一方、序論と結論を別々のファイルに保存すると、時間を前後に移動するのがはるかに簡単になります。</p>
+<div id="ファイルの古いバージョンの復元" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="recovering-older-versions-of-a-file" class="callout-inner">
-<h3 class="callout-title">Recovering Older Versions of a File<a class="anchor" aria-label="アンカー" href="#recovering-older-versions-of-a-file"></a>
+<div id="ファイルの古いバージョンの復元" class="callout-inner">
+<h3 class="callout-title">ファイルの古いバージョンの復元<a class="anchor" aria-label="アンカー" href="#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%8F%A4%E3%81%84%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E5%BE%A9%E5%85%83"></a>
 </h3>
 <div class="callout-content">
-<p>Jennifer has made changes to the Python script that she has been
-working on for weeks, and the modifications she made this morning
-“broke” the script and it no longer runs. She has spent ~ 1hr trying to
-fix it, with no luck…</p>
-<p>Luckily, she has been keeping track of her project’s versions using
-Git! Which commands below will let her recover the last committed
-version of her Python script called <code>data_cruncher.py</code>?</p>
+<p>ジェニファーは、数週間取り組んできたPythonスクリプトに変更を加えました。そして今朝行った変更により、スクリプトが
+“壊れ”、動作しなくなりました。
+彼女はそれを修正しようとして約1時間費やしましたが、うまく機能しません…</p>
+<p>幸い、彼女はGitを使用してプロジェクトのバージョンを追跡していました!
+以下のどのコマンドで、<code>data_cruncher.py</code>
+と呼ばれるPythonスクリプトの最後にコミットされたバージョンを復元できるでしょうか？</p>
 <ol style="list-style-type: decimal"><li><p><code>$ git checkout HEAD</code></p></li>
 <li><p><code>$ git checkout HEAD data_cruncher.py</code></p></li>
 <li><p><code>$ git checkout HEAD~1 data_cruncher.py</code></p></li>
@@ -1077,8 +1076,8 @@ both commit messages and the difference between each commit.</p>
   "url": "https://swcarpentry.github.io/git-novice/05-history.html",
   "identifier": "https://swcarpentry.github.io/git-novice/05-history.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-11-24",
-  "datePublished": "2023-12-05"
+  "dateModified": "2023-12-06",
+  "datePublished": "2023-12-06"
 }
 
   </script><script>
