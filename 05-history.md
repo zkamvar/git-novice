@@ -260,7 +260,7 @@ HEAD is now at f22b25e Start notes on Mars as a base
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Simplifying the Common Case
+## よくあるケースの簡単化
 
 `git status` の出力を注意深く読むと、次のヒントを含んでいることが分かります:
 
@@ -398,7 +398,7 @@ Error because you have changed venus.txt without committing the changes
 
 ## 解答
 
-The answer is 2.
+答えは2です。
 
 The command `git add venus.txt` places the current version of `venus.txt` into the staging area.
 The changes to the file from the second `echo` command are only applied to the working copy,
@@ -424,7 +424,7 @@ Venus is beautiful and full of love.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Checking Understanding of `git diff`
+## `git diff` の理解のチェック
 
 このコマンドをよく考えてみてください: `git diff HEAD~9 mars.txt`。 このコマンドを実行したらどうなるだろうと予測しますか? 実行すると何が起こっていますか? またそれはなぜでしょうか?
 
@@ -509,7 +509,7 @@ nothing to commit, working tree clean
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Explore and Summarize Histories
+## 履歴を探索し、要約する
 
 履歴の探索はgitの重要な要素であり、特にそのコミットが数ヶ月前のものである場合は、適切なコミットIDを見つけるのが難しいことがよくあります。
 
@@ -548,7 +548,7 @@ $ git log --patch HEAD~9 *.txt
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- `git diff` displays differences between commits.
-- `git checkout` recovers old versions of files.
+- `git diff` は、コミット間の違いを表示します。
+- `git checkout` は、ファイルの古いバージョンを復元します。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::

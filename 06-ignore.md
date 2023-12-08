@@ -1,33 +1,31 @@
 ---
-title: Ignoring Things
+title: ファイルを無視する
 teaching: 5
 exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Configure Git to ignore specific files.
-- Explain why ignoring files can be useful.
+- Git で追跡したくないファイルを指定しましょう
+- ファイルを無視する利点を理解しましょう
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- How can I tell Git to ignore files I don't want to track?
+- Git で追跡したくないファイルを指定するにはどうすればよいですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-What if we have files that we do not want Git to track for us,
-like backup files created by our editor
-or intermediate files created during data analysis?
-Let's create a few dummy files:
+Git に追跡して欲しくないファイル、例えばエディタが作成したバックアップファイルやデータ解析中に作られた中間ファイルなどは、どう対処すればいいのでしょう？
+例として、いくつかファイルを作ってみましょう：
 
 ```bash
 $ mkdir results
 $ touch a.csv b.csv c.csv results/a.out results/b.out
 ```
 
-and see what Git says:
+そして Git が何と言うか見てみましょう：
 
 ```bash
 $ git status
@@ -46,12 +44,11 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Putting these files under version control would be a waste of disk space.
-What's worse,
-having them all listed could distract us from changes that actually matter,
-so let's tell Git to ignore them.
+これらのファイルをバージョンコントロールで保存するのはディスク容量の無駄になります。
+さらに、これら全てが表示されると、本当に必要な変更点に集中できなくなってしまうかもしれないので、
+Git にこれらのファイルを無視してもらいましょう。
 
-We do this by creating a file in the root directory of our project called `.gitignore`:
+これをするには、`.gitignore` というファイルをルートディレクトリに作ります：
 
 ```bash
 $ nano .gitignore
@@ -63,13 +60,10 @@ $ cat .gitignore
 results/
 ```
 
-These patterns tell Git to ignore any file whose name ends in `.csv`
-and everything in the `results` directory.
-(If any of these files were already being tracked,
-Git would continue to track them.)
+入力したパターンは、 Git に `.dat` で終わるファイル名と`results` ディレクトリ内にあるファイルを無視するように指示しています。
+（Git がすでに追跡しているファイルは、引き続き追跡されます。）
 
-Once we have created this file,
-the output of `git status` is much cleaner:
+このファイルを作った後`git status` の出力を見てみると、大分綺麗になっています：
 
 ```bash
 $ git status
@@ -85,11 +79,9 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-The only thing Git notices now is the newly-created `.gitignore` file.
-You might think we wouldn't want to track it,
-but everyone we're sharing our repository with will probably want to ignore
-the same things that we're ignoring.
-Let's add and commit `.gitignore`:
+Git は新しく作られた `.gitignore` ファイルしか表示していません。
+このファイルは追跡しなくても良いかと思うでしょうが、リポジトリを共有する際に、他の人達も私達が無視したものを同じように無視したいでしょう。
+なので、`.gitignore` を追加してコミットしましょう：
 
 ```bash
 $ git add .gitignore
@@ -102,7 +94,7 @@ On branch main
 nothing to commit, working tree clean
 ```
 
-As a bonus, using `.gitignore` helps us avoid accidentally adding files to the repository that we don't want to track:
+`.gitignore` を作った事によって、間違えて不要なファイルをリポジトリに追加する事を防ぐことができます：
 
 ```bash
 $ git add a.csv
@@ -114,10 +106,8 @@ a.csv
 Use -f if you really want to add them.
 ```
 
-If we really want to override our ignore settings,
-we can use `git add -f` to force Git to add something. For example,
-`git add -f a.csv`.
-We can also always see the status of ignored files if we want:
+この設定を強制的に無視してファイルを追加するには、`git add -f` を使います。 例えば、`git add -f a.csv` と入力します。
+もちろん、無視されたファイルの状況はいつでも見ることができます：
 
 ```bash
 $ git status --ignored
@@ -138,16 +128,16 @@ nothing to commit, working tree clean
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring Nested Files
+## 埋もれた（ネストされた）ファイルを無視する
 
-Given a directory structure that looks like:
+以下のようなディレクトリ構造があるとします：
 
 ```bash
 results/data
 results/plots
 ```
 
-How would you ignore only `results/plots` and not `results/data`?
+`results/data` ではなく、`results/plots` のみを無視するにはどうすればいいのでしょう？
 
 :::::::::::::::  solution
 
