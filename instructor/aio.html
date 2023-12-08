@@ -235,7 +235,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-ignore.html">6. Ignoring Things</a>
+        <a href="06-ignore.html">6. ファイルを無視する</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -1791,7 +1791,7 @@ mars.txt”</li>
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>１つ目のメッセージは短すぎてコミットの内容が何なのかわかりにくいです。２つ目は<code>git diff</code>で何が変わったのかが分かるので、長い割にはあまり意味がありません。３つ目は、短く、簡潔で、分かりやすいメッセージです。</p>
 </div>
@@ -1839,7 +1839,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>ファイルがステージングエリアにない限り、コミットできません。</p></li>
@@ -1879,7 +1879,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>以下の<code>cat mars.txt</code>の出力は、この課題で追加された内容のみを反映しています。
 出力は異なる場合があります。</p>
@@ -1968,7 +1968,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>必要であれば、<code>planets</code> から出ましょう：</p>
 <div class="codewrapper sourceCode" id="cb64">
@@ -2034,7 +2034,7 @@ $ git commit -m myfile.txt "my recent changes"</code></pre>
 </div>
 </div></section><section id="aio-05-history"><p>Content from <a href="05-history.html">履歴の探索</a></p>
 <hr>
-<p>最終更新日：2023-12-06 |
+<p>最終更新日：2023-12-08 |
         
         <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/05-history.md" class="external-link">ページの編集 <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>所要時間：<i aria-hidden="true" data-feather="clock"></i> 25分</p>
@@ -2349,12 +2349,12 @@ HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
 以下の例では、最新のコミットの前 (<code>HEAD~1</code>)
 、すなわち<code>f22b25e</code>から状態を取得したいと考えています:</p>
 <figure><img src="../fig/git-checkout.svg" alt="Git Checkout" class="figure mx-auto d-block"></figure><p>つまり、すべてをまとめると、Gitがどのように機能するかは次の漫画のようになります:</p>
-<figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How%5C_Git%5C_works%5C_a%5C_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266</a></figcaption></figure><div id="simplifying-the-common-case" class="callout callout">
+<figure><img src="../fig/git_staging.svg" alt="" class="figure mx-auto d-block"><figcaption><a href="https://figshare.com/articles/How%5C_Git%5C_works%5C_a%5C_cartoon/1328266" class="external-link uri">https://figshare.com/articles/How\_Git\_works\_a\_cartoon/1328266</a></figcaption></figure><div id="よくあるケースの簡単化" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="simplifying-the-common-case" class="callout-inner">
-<h3 class="callout-title">Simplifying the Common Case<a class="anchor" aria-label="アンカー" href="#simplifying-the-common-case"></a>
+<div id="よくあるケースの簡単化" class="callout-inner">
+<h3 class="callout-title">よくあるケースの簡単化<a class="anchor" aria-label="アンカー" href="#%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E3%82%B1%E3%83%BC%E3%82%B9%E3%81%AE%E7%B0%A1%E5%8D%98%E5%8C%96"></a>
 </h3>
 <div class="callout-content">
 <p><code>git status</code>
@@ -2410,7 +2410,7 @@ HEAD is now at f22b25e Start notes on Mars as a base</code></pre>
   解答
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>答えは (5) - 2 と 4 の両方です。</p>
 <p>The <code>checkout</code> command restores files from the repository,
@@ -2470,7 +2470,7 @@ you don’t want to be there.</p>
   解答
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The command <code>git log</code> lists project history with commit
 IDs.</p>
@@ -2533,9 +2533,9 @@ Error because you have changed venus.txt without committing the changes</code></
   解答
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>The answer is 2.</p>
+<p>答えは2です。</p>
 <p>The command <code>git add venus.txt</code> places the current version
 of <code>venus.txt</code> into the staging area. The changes to the file
 from the second <code>echo</code> command are only applied to the
@@ -2558,13 +2558,13 @@ the most recently committed version of <code>venus.txt</code>.</p>
 </div>
 </div>
 </div>
-<div id="checking-understanding-of-git-diff" class="callout discussion">
+<div id="git-diff-の理解のチェック" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="checking-understanding-of-git-diff" class="callout-inner">
-<h3 class="callout-title">Checking Understanding of
-<code>git diff</code><a class="anchor" aria-label="アンカー" href="#checking-understanding-of-git-diff"></a>
+<div id="git-diff-の理解のチェック" class="callout-inner">
+<h3 class="callout-title">
+<code>git diff</code> の理解のチェック<a class="anchor" aria-label="アンカー" href="#git-diff-%E3%81%AE%E7%90%86%E8%A7%A3%E3%81%AE%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF"></a>
 </h3>
 <div class="callout-content">
 <p>このコマンドをよく考えてみてください:
@@ -2600,7 +2600,7 @@ the most recently committed version of <code>venus.txt</code>.</p>
   解答
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>After adding a change, <code>git checkout</code> can not be used
 directly. Let’s look at the output of <code>git status</code>:</p>
@@ -2668,12 +2668,12 @@ nothing to commit, working tree clean</code></pre>
 </div>
 </div>
 </div>
-<div id="explore-and-summarize-histories" class="callout discussion">
+<div id="履歴を探索し要約する" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="explore-and-summarize-histories" class="callout-inner">
-<h3 class="callout-title">Explore and Summarize Histories<a class="anchor" aria-label="アンカー" href="#explore-and-summarize-histories"></a>
+<div id="履歴を探索し要約する" class="callout-inner">
+<h3 class="callout-title">履歴を探索し、要約する<a class="anchor" aria-label="アンカー" href="#%E5%B1%A5%E6%AD%B4%E3%82%92%E6%8E%A2%E7%B4%A2%E3%81%97%E8%A6%81%E7%B4%84%E3%81%99%E3%82%8B"></a>
 </h3>
 <div class="callout-content">
 <p>履歴の探索はgitの重要な要素であり、特にそのコミットが数ヶ月前のものである場合は、適切なコミットIDを見つけるのが難しいことがよくあります。</p>
@@ -2723,15 +2723,16 @@ both commit messages and the difference between each commit.</p>
 <div class="callout-content">
 <ul>
 <li>
-<code>git diff</code> displays differences between commits.</li>
+<code>git diff</code> は、コミット間の違いを表示します。</li>
 <li>
-<code>git checkout</code> recovers old versions of files.</li>
+<code>git checkout</code>
+は、ファイルの古いバージョンを復元します。</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-06-ignore"><p>Content from <a href="06-ignore.html">Ignoring Things</a></p>
+</div></section><section id="aio-06-ignore"><p>Content from <a href="06-ignore.html">ファイルを無視する</a></p>
 <hr>
-<p>最終更新日：2023-11-21 |
+<p>最終更新日：2023-12-08 |
         
         <a href="https://github.com/swcarpentry-ja/git-novice/edit/main/episodes/06-ignore.md" class="external-link">ページの編集 <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>所要時間：<i aria-hidden="true" data-feather="clock"></i> 5分</p>
@@ -2746,7 +2747,8 @@ both commit messages and the difference between each commit.</p>
 <div class="inner">
 <h3 class="card-title">質問</h3>
 <ul>
-<li>How can I tell Git to ignore files I don’t want to track?</li>
+<li>Git
+で追跡したくないファイルを指定するにはどうすればよいですか？</li>
 </ul>
 </div>
 </div>
@@ -2756,24 +2758,24 @@ both commit messages and the difference between each commit.</p>
 <div class="inner bordered">
 <h3 class="card-title">目的</h3>
 <ul>
-<li>Configure Git to ignore specific files.</li>
-<li>Explain why ignoring files can be useful.</li>
+<li>Git で追跡したくないファイルを指定しましょう</li>
+<li>ファイルを無視する利点を理解しましょう</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>What if we have files that we do not want Git to track for us, like
-backup files created by our editor or intermediate files created during
-data analysis? Let’s create a few dummy files:</p>
+<p>Git
+に追跡して欲しくないファイル、例えばエディタが作成したバックアップファイルやデータ解析中に作られた中間ファイルなどは、どう対処すればいいのでしょう？
+例として、いくつかファイルを作ってみましょう：</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir results</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> touch a.csv b.csv c.csv results/a.out results/b.out</span></code></pre>
 </div>
-<p>and see what Git says:</p>
+<p>そして Git が何と言うか見てみましょう：</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2793,11 +2795,11 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </div>
-<p>Putting these files under version control would be a waste of disk
-space. What’s worse, having them all listed could distract us from
-changes that actually matter, so let’s tell Git to ignore them.</p>
-<p>We do this by creating a file in the root directory of our project
-called <code>.gitignore</code>:</p>
+<p>これらのファイルをバージョンコントロールで保存するのはディスク容量の無駄になります。
+さらに、これら全てが表示されると、本当に必要な変更点に集中できなくなってしまうかもしれないので、
+Git にこれらのファイルを無視してもらいましょう。</p>
+<p>これをするには、<code>.gitignore</code>
+というファイルをルートディレクトリに作ります：</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2810,12 +2812,12 @@ called <code>.gitignore</code>:</p>
 <pre class="output" tabindex="0"><code>*.csv
 results/</code></pre>
 </div>
-<p>These patterns tell Git to ignore any file whose name ends in
-<code>.csv</code> and everything in the <code>results</code> directory.
-(If any of these files were already being tracked, Git would continue to
-track them.)</p>
-<p>Once we have created this file, the output of <code>git status</code>
-is much cleaner:</p>
+<p>入力したパターンは、 Git に <code>.dat</code>
+で終わるファイル名と<code>results</code>
+ディレクトリ内にあるファイルを無視するように指示しています。 （Git
+がすでに追跡しているファイルは、引き続き追跡されます。）</p>
+<p>このファイルを作った後<code>git status</code>
+の出力を見てみると、大分綺麗になっています：</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2832,11 +2834,10 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)</code></pre>
 </div>
-<p>The only thing Git notices now is the newly-created
-<code>.gitignore</code> file. You might think we wouldn’t want to track
-it, but everyone we’re sharing our repository with will probably want to
-ignore the same things that we’re ignoring. Let’s add and commit
-<code>.gitignore</code>:</p>
+<p>Git は新しく作られた <code>.gitignore</code>
+ファイルしか表示していません。
+このファイルは追跡しなくても良いかと思うでしょうが、リポジトリを共有する際に、他の人達も私達が無視したものを同じように無視したいでしょう。
+なので、<code>.gitignore</code> を追加してコミットしましょう：</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2850,8 +2851,8 @@ ignore the same things that we’re ignoring. Let’s add and commit
 <pre class="output" tabindex="0"><code>On branch main
 nothing to commit, working tree clean</code></pre>
 </div>
-<p>As a bonus, using <code>.gitignore</code> helps us avoid accidentally
-adding files to the repository that we don’t want to track:</p>
+<p><code>.gitignore</code>
+を作った事によって、間違えて不要なファイルをリポジトリに追加する事を防ぐことができます：</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2864,10 +2865,9 @@ adding files to the repository that we don’t want to track:</p>
 a.csv
 Use -f if you really want to add them.</code></pre>
 </div>
-<p>If we really want to override our ignore settings, we can use
-<code>git add -f</code> to force Git to add something. For example,
-<code>git add -f a.csv</code>. We can also always see the status of
-ignored files if we want:</p>
+<p>この設定を強制的に無視してファイルを追加するには、<code>git add -f</code>
+を使います。 例えば、<code>git add -f a.csv</code> と入力します。
+もちろん、無視されたファイルの状況はいつでも見ることができます：</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2887,23 +2887,23 @@ Ignored files:
 
 nothing to commit, working tree clean</code></pre>
 </div>
-<div id="ignoring-nested-files" class="callout challenge">
+<div id="埋もれたネストされたファイルを無視する" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="ignoring-nested-files" class="callout-inner">
-<h3 class="callout-title">Ignoring Nested Files<a class="anchor" aria-label="アンカー" href="#ignoring-nested-files"></a>
+<div id="埋もれたネストされたファイルを無視する" class="callout-inner">
+<h3 class="callout-title">埋もれた（ネストされた）ファイルを無視する<a class="anchor" aria-label="アンカー" href="#%E5%9F%8B%E3%82%82%E3%82%8C%E3%81%9F%E3%83%8D%E3%82%B9%E3%83%88%E3%81%95%E3%82%8C%E3%81%9F%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E7%84%A1%E8%A6%96%E3%81%99%E3%82%8B"></a>
 </h3>
 <div class="callout-content">
-<p>Given a directory structure that looks like:</p>
+<p>以下のようなディレクトリ構造があるとします：</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">results/data</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">results/plots</span></span></code></pre>
 </div>
-<p>How would you ignore only <code>results/plots</code> and not
-<code>results/data</code>?</p>
+<p><code>results/data</code> ではなく、<code>results/plots</code>
+のみを無視するにはどうすればいいのでしょう？</p>
 </div>
 </div>
 </div>
@@ -3696,7 +3696,7 @@ shell?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The left-most button (with the picture of a clipboard) copies the
 full identifier of the commit to the clipboard. In the shell,
@@ -3760,7 +3760,7 @@ GitHub record times, and why?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>GitHub displays timestamps in a human readable relative format
 (i.e. “22 hours ago” or “three weeks ago”). However, if you hover over
@@ -3790,7 +3790,7 @@ push” different from “git commit”?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>When we push changes, we’re interacting with a remote repository to
 update it with the changes we’ve made locally (often this corresponds to
@@ -3822,7 +3822,7 @@ happened when you tried to link your local and remote repositories?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In this case, we’d see a merge conflict due to unrelated histories.
 When GitHub creates a README.md file, it performs a commit in the remote
@@ -4158,7 +4158,7 @@ has changed with command line? And on GitHub?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>On the command line, the Collaborator can use
 <code>git fetch origin main</code> to get the remote changes into the
@@ -4599,7 +4599,7 @@ non-textual file that is stored in version control?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Let’s try it. Suppose Dracula takes a picture of Martian surface and
 calls it <code>mars.jpg</code>.</p>
@@ -4839,7 +4839,7 @@ started.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -5717,8 +5717,8 @@ project over time.</li>
   "url": "https://swcarpentry.github.io/git-novice/instructor/aio.html",
   "identifier": "https://swcarpentry.github.io/git-novice/instructor/aio.html",
   "dateCreated": "2014-12-04",
-  "dateModified": "2023-12-06",
-  "datePublished": "2023-12-06"
+  "dateModified": "2023-12-08",
+  "datePublished": "2023-12-08"
 }
 
   </script><script>
