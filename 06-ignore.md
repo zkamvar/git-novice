@@ -141,22 +141,17 @@ results/plots
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-If you only want to ignore the contents of
-`results/plots`, you can change your `.gitignore` to ignore
-only the `/plots/` subfolder by adding the following line to
-your .gitignore:
+`results/plots` 内のファイルのみを無視するのであれば、`.gitignore` に `/plots/` サブフォルダを無視するように.gitignore に以下の文を加えれば解決できます：
 
 ```output
 results/plots/
 ```
 
-This line will ensure only the contents of `results/plots` is ignored, and
-not the contents of `results/data`.
+この行によって、`results/plots`の内容だけが無視され、`results/data`の内容は無視されません。
 
-As with most programming issues, there
-are a few alternative ways that one may ensure this ignore rule is followed.
+様々なプログラミングの問題と同様に、この無視ルールが守られるようにする回答方法はいくつかありま。
 The "Ignoring Nested Files: Variation" exercise has a slightly
 different directory structure
 that presents an alternative solution.
@@ -170,22 +165,21 @@ Further, the discussion page has more detail on ignore rules.
 
 ## Including Specific Files
 
-How would you ignore all `.csv` files in your root directory except for
-`final.csv`?
-Hint: Find out what `!` (the exclamation point operator) does
+`final.csv`以外の、ルートディレクトリ内にある他の `.data` ファイルを全て無視したい場合はどうすればいいのでしょう？
+ヒント： `!` （感嘆符）が何をするのか調べてみましょう。
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-You would add the following two lines to your .gitignore:
+以下二文を .gitignore に加えましょう：
 
 ```output
-*.csv           # ignore all data files
-!final.csv      # except final.csv
+*.data           # 全ての data ファイルを無視する
+!final.data      # final.data は対象から除外する
 ```
 
-The exclamation point operator will include a previously excluded entry.
+感嘆符は、無視してあったファイルを対象から外します。
 
 Note also that because you've previously committed `.csv` files in this
 lesson they will not be ignored with this new rule. Only future additions
@@ -216,7 +210,7 @@ before.
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 If you want to ignore the contents of
 `results/` but not those of `results/data/`, you can change your `.gitignore` to ignore
@@ -234,9 +228,9 @@ results/*               # ignore everything in results folder
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Ignoring all data Files in a Directory
+## ディレクトリ内の全てのデータファイルを無視する
 
-Assuming you have an empty .gitignore file, and given a directory structure that looks like:
+空の.gitignoreファイルがあり、以下のようなディレクトリ構造があるとします：
 
 ```bash
 results/data/position/gps/a.csv
@@ -246,16 +240,14 @@ results/data/position/gps/info.txt
 results/plots
 ```
 
-What's the shortest `.gitignore` rule you could write to ignore all `.csv`
-files in `result/data/position/gps`? Do not ignore the `info.txt`.
+`result/data/position/gps` 内にある全ての `.data` ファイルを無視する一番短い`.gitignore`ルールは何でしょう？ `info.txt` ファイルは無視しないでください。
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-Appending `results/data/position/gps/*.csv` will match every file in `results/data/position/gps`
-that ends with `.csv`.
-The file `results/data/position/gps/info.txt` will not be ignored.
+`results/data/position/gps/*.data` を使えば `results/data/position/gps` 内にある全ての `.data` ファイルを無視できます。
+`results/data/position/gps/info.txt` ファイルは無視されません。
 
 :::::::::::::::::::::::::
 
@@ -279,7 +271,7 @@ How do you ignore all the `.csv` files, without explicitly listing the names of 
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
 In the `.gitignore` file, write:
 
@@ -296,24 +288,23 @@ You can still include some specific exception with the exclamation point operato
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## The Order of Rules
+## ルールの順番
 
-Given a `.gitignore` file with the following contents:
+以下の内容の `.gitignore` ファイルがあるとします：
 
 ```bash
 *.csv
 !*.csv
 ```
 
-What will be the result?
+結果的に何が無視されるのでしょうか？
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-The `!` modifier will negate an entry from a previously defined ignore pattern.
-Because the `!*.csv` entry negates all of the previous `.csv` files in the `.gitignore`,
-none of them will be ignored, and all `.csv` files will be tracked.
+感嘆符 `!` は無視してあったファイルを対象から除外する効果があります。
+`!*.csv` は、その前に入力されている `.csv` ファイルを対象から外すので、全ての `.csv` ファイルは引き続き追跡されることになります。
 
 :::::::::::::::::::::::::
 
@@ -321,26 +312,26 @@ none of them will be ignored, and all `.csv` files will be tracked.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Log Files
+## ログファイル
 
-You wrote a script that creates many intermediate log-files of the form `log_01`, `log_02`, `log_03`, etc.
-You want to keep them but you do not want to track them through `git`.
+仮に `log_01`、 `log_02`、 `log_03`、というように、中間的にログファイルを作成するスクリプトを書いたとします。
+これらのログファイルは取っておきたいのですが、`git` で追跡したくありません。
 
-1. Write **one** `.gitignore` entry that excludes files of the form `log_01`, `log_02`, etc.
+1. `log_01`、 `log_02`、などのファイルを無視するためのルールを**一つだけ** `.gitignore` に入力してください。
 
-2. Test your "ignore pattern" by creating some dummy files of the form `log_01`, etc.
+2. 入力したパターン正常に動作しているか確認するために `log_01` などのファイルを作成してください。
 
-3. You find that the file `log_01` is very important after all, add it to the tracked files without changing the `.gitignore` again.
+3. 最終的に `log_01` ファイルがものすごく重要であることが分かりました。`.gitignore` を編集せずに、このファイルを追跡しているファイルに加えてください。
 
-4. Discuss with your neighbor what other types of files could reside in your directory that you do not want to track and thus would exclude via `.gitignore`.
+4. 隣の人と、追跡したくないファイルは他にどのようなものがあるのか、そして`.gitignore` に何を入力すればこれらのファイルを無視できるのかを話し合ってください。
 
 :::::::::::::::  solution
 
-## Solution
+## 解答
 
-1. append either `log_*`  or  `log*`  as a new entry in your .gitignore
+1. `log_*` もしくは `log*` を .gitignore に加えます。
 
-2. track `log_01` using   `git add -f log_01`
+2. `git add -f log_01` を使って `log_01` を追跡しましょう。
 
 :::::::::::::::::::::::::
 
@@ -348,6 +339,6 @@ You want to keep them but you do not want to track them through `git`.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- The `.gitignore` file tells Git what files to ignore.
+- `.gitignore` で無視するファイルを指定する
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
