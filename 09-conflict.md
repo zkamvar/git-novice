@@ -82,7 +82,7 @@ To https://github.com/vlad/planets.git
 
 Now let's have the owner
 make a different change to their copy
-_without_ updating from GitHub:
+*without* updating from GitHub:
 
 ```bash
 $ nano mars.txt
@@ -313,6 +313,7 @@ When asked by your instructor,
 pull her changes from the repository to create a conflict,
 then resolve it.
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -359,7 +360,7 @@ $ git commit -m "Add picture of Martian surface"
 ```
 
 Suppose that Wolfman has added a similar picture in the meantime.
-His is a picture of the Martian sky, but it is _also_ called `mars.jpg`.
+His is a picture of the Martian sky, but it is *also* called `mars.jpg`.
 When Dracula tries to push, he gets a familiar message:
 
 ```bash
@@ -440,9 +441,9 @@ $ git commit -m "Use image of sky instead of surface"
 [main da21b34] Use image of sky instead of surface
 ```
 
-We can also keep _both_ images. The catch is that we cannot keep them
+We can also keep *both* images. The catch is that we cannot keep them
 under the same name. But, we can check out each version in succession
-and _rename_ it, then add the renamed versions. First, check out each
+and *rename* it, then add the renamed versions. First, check out each
 image and rename it:
 
 ```bash
@@ -471,6 +472,8 @@ $ git commit -m "Use two images: surface and sky"
 Now both images of Mars are checked into the repository, and `mars.jpg`
 no longer exists.
 
+
+
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -483,40 +486,40 @@ You sit down at your computer to work on a shared project that is tracked in a
 remote Git repository. During your work session, you take the following
 actions, but not in this order:
 
-- _Make changes_ by appending the number `100` to a text file `numbers.txt`
-- _Update remote_ repository to match the local repository
-- _Celebrate_ your success with some fancy beverage(s)
-- _Update local_ repository to match the remote repository
-- _Stage changes_ to be committed
-- _Commit changes_ to the local repository
+- *Make changes* by appending the number `100` to a text file `numbers.txt`
+- *Update remote* repository to match the local repository
+- *Celebrate* your success with some fancy beverage(s)
+- *Update local* repository to match the remote repository
+- *Stage changes* to be committed
+- *Commit changes* to the local repository
 
 In what order should you perform these actions to minimize the chances of
-conflicts? Put the commands above in order in the _action_ column of the table
+conflicts? Put the commands above in order in the *action* column of the table
 below. When you have the order right, see if you can write the corresponding
-commands in the _command_ column. A few steps are populated to get you
+commands in the *command* column. A few steps are populated to get you
 started.
 
-| order | action . . . . . . . . . . | command . . . . . . . . . . |
-| ----- | -------------------------- | --------------------------- |
-| 1     |                            |                             |
-| 2     |                            | `echo 100 >> numbers.txt`   |
-| 3     |                            |                             |
-| 4     |                            |                             |
-| 5     |                            |                             |
-| 6     | Celebrate!                 | `AFK`                       |
+| order | action . . . . . . . . . . | command . . . . . . . . . .                   | 
+| ----- | -------------------------- | --------------------------------------------- |
+| 1     |                            |                                               | 
+| 2     |                            | `echo 100 >> numbers.txt`                                              | 
+| 3     |                            |                                               | 
+| 4     |                            |                                               | 
+| 5     |                            |                                               | 
+| 6     | Celebrate!                 | `AFK`                                              | 
 
 :::::::::::::::  solution
 
 ## Solution
 
-| order | action . . . . . . | command . . . . . . . . . . . . . . . . . . . |
-| ----- | ------------------ | --------------------------------------------- |
-| 1     | Update local       | `git pull origin main`                        |
-| 2     | Make changes       | `echo 100 >> numbers.txt`                     |
-| 3     | Stage changes      | `git add numbers.txt`                         |
-| 4     | Commit changes     | `git commit -m "Add 100 to numbers.txt"`      |
-| 5     | Update remote      | `git push origin main`                        |
-| 6     | Celebrate!         | `AFK`                                         |
+| order | action . . . . . .         | command . . . . . . . . . . . . . . . . . . . | 
+| ----- | -------------------------- | --------------------------------------------- |
+| 1     | Update local               | `git pull origin main`                                              | 
+| 2     | Make changes               | `echo 100 >> numbers.txt`                                              | 
+| 3     | Stage changes              | `git add numbers.txt`                                              | 
+| 4     | Commit changes             | `git commit -m "Add 100 to numbers.txt"`                                              | 
+| 5     | Update remote              | `git push origin main`                                              | 
+| 6     | Celebrate!                 | `AFK`                                              | 
 
 :::::::::::::::::::::::::
 
@@ -528,3 +531,5 @@ started.
 - The version control system does not allow people to overwrite each other's changes blindly, but highlights conflicts so that they can be resolved.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

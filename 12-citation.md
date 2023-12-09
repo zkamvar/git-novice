@@ -18,8 +18,8 @@ exercises: 0
 
 You may want to include a file called `CITATION` or `CITATION.txt`
 that describes how to reference your project;
-the one for Software
-Carpentry
+the [one for Software
+Carpentry](https://github.com/swcarpentry/website/blob/gh-pages/CITATION)
 states:
 
 ```source
@@ -69,3 +69,5 @@ make citable.
 - Add a CITATION file to a repository to explain how you want your work cited.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

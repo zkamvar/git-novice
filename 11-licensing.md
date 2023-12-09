@@ -44,9 +44,9 @@ considerations include:
 Choosing a license that is in common use makes life easier for
 contributors and users, because they are more likely to already be
 familiar with the license and don't have to wade through a bunch of
-jargon to decide if they're ok with it.  The Open Source
-Initiative and Free Software
-Foundation both
+jargon to decide if they're ok with it.  The [Open Source
+Initiative](https://opensource.org/licenses) and [Free Software
+Foundation](https://www.gnu.org/licenses/license-list.html) both
 maintain lists of licenses which are good choices.
 
 [This article][software-licensing] provides an excellent overview of
@@ -69,6 +69,7 @@ Can you do this unilaterally,
 or do you need permission from someone in your institution?
 If so, who?
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -85,10 +86,12 @@ the licenses discussed in this session? How is it different?
 - [CPython](https://github.com/python/cpython), the standard implementation of the Python language
 - [Jupyter](https://github.com/jupyter), the project behind the web-based Python notebooks we'll be using
 - [EtherPad](https://github.com/ether/etherpad-lite), a real-time collaborative editor
+  
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [software-licensing]: https://doi.org/10.1371/journal.pcbi.1002598
+
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -98,3 +101,5 @@ the licenses discussed in this session? How is it different?
 - People who are not lawyers should not try to write licenses from scratch.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
